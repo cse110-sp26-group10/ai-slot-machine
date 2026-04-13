@@ -1,17 +1,39 @@
-# CSE 110 AI Slot Machine Scorecard
+# Field Notes: [Run ID]
 
-## Part A: Quick Check (Yes/No)
-- [ ] **Runs in Browser?** (No console errors on load)
-- [ ] **Functional?** (Spin button actually moves slots)
-- [ ] **Thematic?** (Mentions "AI", "Tokens", or "GPUs")
-- [ ] **Self-Contained?** (Vanilla JS/CSS, no external CDN dependencies)
+## 📊 Technical Metrics
+| Field | Value |
+| :--- | :--- |
+| **Run ID** | candidate-### |
+| **Timestamp** | 2026-04-13T16:20:00Z |
+| **Model + Version** | Claude Code (claude-3-5-sonnet-20241022) |
+| **Input Tokens** | |
+| **Output Tokens** | |
+| **Total Tokens** | |
+| **Wall-clock Time (s)** | |
+| **Tool-reported Time (s)**| |
+| **Files Produced** | (Count: ) [e.g., index.html, script.js] |
+| **Lines of Code** | |
+| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
 
-## Part B: Scoring (1-5)
-| Category | Score (1-5) | Key Observation |
-| :--- | :--- | :--- |
-| **Visual Design** | | (1: Ugly/Broken -> 5: Slick/Polished) |
-| **Satire Level** | | (1: Generic -> 5: Clever AI jokes) |
-| **Code Logic** | | (1: Faulty -> 5: Clean/Modular) |
-| **Consistency** | | (1: Glitchy -> 5: Solid state management) |
+---
 
-**TOTAL SCORE: ___ / 20**
+## 📝 Qualitative Evaluation
+
+### App Quality Scorecard
+* **Score:** ___ / 10 (Using Rubric)
+* **Checklist:**
+    - [ ] Satirical (Makes fun of AI)
+    - [ ] Functional (Spin/Token logic works)
+    - [ ] Visuals (Layout isn't broken)
+* **Notes:** - 
+
+### Code Quality Scorecard
+* **Score:** ___ / 10 (Using Rubric)
+* **Checklist:**
+    - [ ] No Hallucinations (Standard APIs used)
+    - [ ] Readability (Semantic naming)
+    - [ ] Clean Structure (No spaghetti)
+* **Notes:** - 
+
+---
+**Data Entry by:** [Team Member Name]
