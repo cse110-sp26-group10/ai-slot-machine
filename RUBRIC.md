@@ -4,7 +4,7 @@
 | Field | Value |
 | :--- | :--- |
 | **Run ID** | candidate-### |
-| **Timestamp** | 2026-04-13T16:20:00Z |
+| **Timestamp** | |
 | **Model + Version** | Claude Code (Sonnet 4.6) |
 | **Input Tokens** | |
 | **Output Tokens** | |
