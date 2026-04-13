@@ -5,7 +5,7 @@
 | :--- | :--- |
 | **Run ID** | candidate-### |
 | **Timestamp** | |
-| **Model + Version** | Claude Code (Sonnet 4.6) |
+| **Model + Version** | OpenAI Codex (GPT-5.4) |
 | **Input Tokens** | |
 | **Output Tokens** | |
 | **Total Tokens** | |
