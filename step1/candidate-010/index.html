@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burner 9000</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Generative Gambling Interface</p>
+        <h1>Token Burner 9000</h1>
+        <p class="subhead">
+          Spend tokens to pull the lever. Win more tokens if the machine decides
+          your prompt deserves funding.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI-themed slot machine">
+        <div class="machine-top">
+          <div class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="token-balance">250</strong>
+            <span class="stat-meta">Tokens left to impress the model</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spin-cost">25</strong>
+            <span class="stat-meta">Inference is not cheap</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Best Hit</span>
+            <strong id="best-win">0</strong>
+            <span class="stat-meta">Peak artificial confidence</span>
+          </div>
+        </div>
+
+        <div class="reel-frame">
+          <div class="jackpot-banner" id="jackpot-banner">Model warming up...</div>
+          <div class="reels" role="img" aria-label="Three slot machine reels">
+            <div class="reel" id="reel-0">PROMPT</div>
+            <div class="reel" id="reel-1">TOKEN</div>
+            <div class="reel" id="reel-2">GPU</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Burn 25 Tokens
+          </button>
+          <button id="reset-button" class="secondary-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <div class="feed-wrap">
+          <section class="payouts" aria-labelledby="payouts-heading">
+            <h2 id="payouts-heading">Payout Logic</h2>
+            <ul>
+              <li>3x <code>TOKEN</code> = +200 tokens</li>
+              <li>3x <code>GPU</code> = +150 tokens</li>
+              <li>3x <code>UNICORN</code> = +125 tokens</li>
+              <li>Any 3 matching symbols = +100 tokens</li>
+              <li>2 matching symbols = +30 tokens</li>
+              <li>Any reel with <code>HALLUCINATION</code> = the machine roasts you</li>
+            </ul>
+          </section>
+
+          <section class="console" aria-labelledby="console-heading">
+            <div class="console-head">
+              <h2 id="console-heading">Inference Console</h2>
+              <span id="streak-indicator">No hot streak</span>
+            </div>
+            <p id="status-line" class="status-line">
+              Wallet initialized. Please overfit responsibly.
+            </p>
+            <ol id="history-log" class="history-log" aria-live="polite"></ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

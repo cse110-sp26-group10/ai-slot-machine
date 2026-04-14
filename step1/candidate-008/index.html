@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Extraction Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley Boardwalk</p>
+        <h1>Token Extraction Casino</h1>
+        <p class="tagline">
+          Spin the reels, win synthetic tokens, and immediately spend them on
+          “premium intelligence.”
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="machine-title">
+        <div class="machine-top">
+          <div>
+            <p class="panel-label">Balance</p>
+            <strong id="token-balance" class="counter">1200</strong>
+            <span class="counter-unit">tokens</span>
+          </div>
+          <div>
+            <p class="panel-label">Spin Cost</p>
+            <strong class="counter">75</strong>
+            <span class="counter-unit">tokens</span>
+          </div>
+          <div>
+            <p class="panel-label">Hype Level</p>
+            <strong id="hype-meter" class="counter">Seed Round</strong>
+          </div>
+        </div>
+
+        <div class="machine-body">
+          <div class="marquee">
+            <span class="marquee-badge">Beta</span>
+            <p id="machine-title">Guaranteed disruption, not guaranteed payouts.</p>
+          </div>
+
+          <div class="reels" aria-live="polite">
+            <div class="reel-window"><span id="reel-1" class="reel-symbol">🤖</span></div>
+            <div class="reel-window"><span id="reel-2" class="reel-symbol">🔥</span></div>
+            <div class="reel-window"><span id="reel-3" class="reel-symbol">🪙</span></div>
+          </div>
+
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">Spin the Model</button>
+            <button id="reset-button" class="secondary-button" type="button">New Funding Round</button>
+          </div>
+
+          <div class="status-grid">
+            <article class="status-card">
+              <p class="panel-label">Latest Outcome</p>
+              <p id="result-title" class="status-title">Idle inference.</p>
+              <p id="result-copy" class="status-copy">
+                The machine is warming up its GPUs and preparing to monetize your curiosity.
+              </p>
+            </article>
+            <article class="status-card">
+              <p class="panel-label">Spend Sink</p>
+              <p id="spend-title" class="status-title">No upsell selected.</p>
+              <p id="spend-copy" class="status-copy">
+                Any winnings may be redirected into “context window expansion” at once.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="ledger" aria-labelledby="ledger-title">
+        <div class="ledger-header">
+          <h2 id="ledger-title">Token Ledger</h2>
+          <p>The house keeps detailed metrics. Naturally.</p>
+        </div>
+        <div class="ledger-grid">
+          <article class="ledger-card">
+            <p class="panel-label">Spins</p>
+            <strong id="spin-count">0</strong>
+          </article>
+          <article class="ledger-card">
+            <p class="panel-label">Tokens Won</p>
+            <strong id="tokens-won">0</strong>
+          </article>
+          <article class="ledger-card">
+            <p class="panel-label">Tokens Burned</p>
+            <strong id="tokens-burned">0</strong>
+          </article>
+          <article class="ledger-card">
+            <p class="panel-label">Best Balance</p>
+            <strong id="best-balance">1200</strong>
+          </article>
+        </div>
+        <ol id="feed" class="feed" aria-label="Recent events"></ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
