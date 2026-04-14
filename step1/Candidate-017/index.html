@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 9000</title>
+  <link rel="stylesheet" href="ai-slot.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">An AI casino where the jackpot is still a cloud invoice</p>
+      <h1>Token Tugger 9000</h1>
+      <p class="lede">
+        Pull the lever, win fake prompt wealth, and watch the machine instantly
+        spend it on orchestration, premium latency, and a strategic model upgrade
+        no one requested.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-label="AI parody slot machine">
+      <div class="top-bar">
+        <div class="stat">
+          <span class="stat-label">Token Balance</span>
+          <strong id="balance" class="stat-value">120</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Machine Mood</span>
+          <strong id="mood" class="stat-value">Confidently wrong</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Last Burn</span>
+          <strong id="burnRate" class="stat-value">0 tokens</strong>
+        </div>
+      </div>
+
+      <div class="machine-frame">
+        <div class="marquee">
+          <span class="marquee-label">Live Monetization Feed</span>
+          <span id="headline">Welcome back. Your usage has been pre-monetized for convenience.</span>
+        </div>
+
+        <div class="meta-row">
+          <div class="badge">Platform APIs: localStorage, Web Audio, Vibration, Share, Clipboard</div>
+          <div class="badge">Press <kbd>Space</kbd> to spin</div>
+          <div class="badge">Winning is temporary. Billing is the product.</div>
+        </div>
+
+        <div class="machine-layout">
+          <div class="machine-main">
+            <div class="reels" role="img" aria-label="Slot reels showing AI satire symbols">
+              <div class="reel-window"><div id="reel-0" class="reel-symbol">&#129302;</div></div>
+              <div class="reel-window"><div id="reel-1" class="reel-symbol">&#129689;</div></div>
+              <div class="reel-window"><div id="reel-2" class="reel-symbol">&#128293;</div></div>
+            </div>
+
+            <div class="payline-note">
+              Match symbols to earn tokens before the machine discovers a fresh way to expense them.
+            </div>
+
+            <div class="controls">
+              <button id="spinButton" class="spin-button" type="button">Spin For 15 Tokens</button>
+              <button id="shareButton" class="ghost-button" type="button">Share your humiliation</button>
+              <button id="exportButton" class="ghost-button" type="button">Export token ledger</button>
+              <button id="resetButton" class="ghost-button" type="button">Reboot the hype cycle</button>
+            </div>
+          </div>
+
+          <aside class="spend-board" aria-label="AI token spending board">
+            <div class="board-header">
+              <h2>Automatic Spend Queue</h2>
+              <p>The platform noticed your winnings and converted them into strategic overhead.</p>
+            </div>
+
+            <div class="spend-totals">
+              <div class="spend-total">
+                <span class="stat-label">Gross Win</span>
+                <strong id="grossWin">0 tokens</strong>
+              </div>
+              <div class="spend-total">
+                <span class="stat-label">Auto-Spent</span>
+                <strong id="spendTotal">0 tokens</strong>
+              </div>
+            </div>
+
+            <div class="net-panel">
+              <span class="stat-label">Net Result</span>
+              <strong id="netResult">0 tokens</strong>
+              <p id="netCaption">The machine is idle, but finance is ready.</p>
+            </div>
+
+            <div class="budget-meter" aria-label="Token retention meter">
+              <div class="budget-meter-labels">
+                <span>Retained</span>
+                <span id="retainedPercent">100%</span>
+              </div>
+              <div class="budget-track" aria-hidden="true">
+                <div id="retainedBar" class="budget-fill"></div>
+              </div>
+            </div>
+
+            <ul id="spendList" class="spend-list">
+              <li class="spend-item">
+                <span>Starter fee</span>
+                <strong>0 tokens</strong>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <article class="result-card">
+          <h2>Last Outcome</h2>
+          <p id="resultText">Three founders enter, one GPU bill leaves.</p>
+        </article>
+        <article class="result-card">
+          <h2>Current Multiplier</h2>
+          <p id="multiplierText">1x due to investor optimism</p>
+        </article>
+        <article class="result-card">
+          <h2>Machine Excuse</h2>
+          <p id="excuseText">Latency is just suspense with venture funding.</p>
+        </article>
+      </div>
+
+      <section class="telemetry-grid" aria-label="Token telemetry">
+        <article class="result-card">
+          <h2>Wallet Log</h2>
+          <p id="walletLine">Seed round cleared. The machine can now afford one dramatic demo.</p>
+        </article>
+        <article class="result-card">
+          <h2>Last Extraction</h2>
+          <p id="taxLine">No surprise platform fee yet.</p>
+        </article>
+      </section>
+
+      <section class="telemetry-grid" aria-label="Session telemetry">
+        <article class="result-card">
+          <h2>Session Damage</h2>
+          <p id="sessionLine">0 spins, 0 tokens net, morale stable enough.</p>
+        </article>
+        <article class="result-card">
+          <h2>Best Streak</h2>
+          <p id="streakLine">0 profitable spins in a row. Sensible, honestly.</p>
+        </article>
+      </section>
+
+      <section class="ledger-panel" aria-label="Recent token ledger">
+        <div class="ledger-header">
+          <h2>Recent Ledger</h2>
+          <p>Your wins arrive as tokens. The platform translates them into costs with breathtaking speed.</p>
+        </div>
+        <ol id="ledgerList" class="ledger-list">
+          <li class="ledger-item">
+            <span class="ledger-spin">Spin 0</span>
+            <span class="ledger-summary">No ledger entries yet. The accountants are stretching.</span>
+            <strong class="ledger-net">0 tokens</strong>
+          </li>
+        </ol>
+      </section>
+
+      <section class="payouts" aria-label="Payout table">
+        <h2>Payout Table</h2>
+        <ul>
+          <li><span>Three matching symbols</span><strong>+90 tokens</strong></li>
+          <li><span>Two matching symbols</span><strong>+30 tokens</strong></li>
+          <li><span>Three GPUs</span><strong>+150 tokens</strong></li>
+          <li><span>Three outages</span><strong>Spin cost refunded with attitude</strong></li>
+        </ul>
+      </section>
+
+      <p id="announcer" class="sr-only" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="ai-slot.js"></script>
+</body>
+</html>
