@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Run ID | candidate-011 |
-| Timestamp | Apr 13, 2026, 1:05 PM PDT |
+| Timestamp | Apr 13, 2026, 8:05 PM PDT |
 | Model + Version | OpenAI Codex (GPT-5.4) |
 | Input Tokens | Not captured |
 | Output Tokens | Not captured |
