@@ -12,7 +12,7 @@
 | Tool-reported Time (s) | 174 |
 | Files Produced | (Count: 3) index.html, styles.css, script.js |
 | Lines of Code | 698 |
-| Runs in Browser? | [ ] Yes / [ ] No / [x] Partial |
+| Runs in Browser? | [x] Yes / [ ] No / [ ] Partial |
 
 ## 📝 Qualitative Evaluation
 
