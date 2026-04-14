@@ -4,15 +4,36 @@
 To ensure data integrity, all team members must strictly adhere to these constants:
 
 * **Coding Assistant:** Anthropic's Claude Code
-* **Model String:** `claude-4-6-sonnet` (Latest available Sonnet model)
-* **Harness/Environment:** Local terminal via `claude` CLI
+* **Model String:** `Codex (GPT-5.4)` (Latest available model)
+* **Harness/Environment:** Local terminal via `Codex` CLI
 * **Baseline Prompt:** (Stored in `prompts/original-prompt.txt`)
     > "Create a slot machine app that uses vanilla web technology like HTML, CSS, JavaScript, and platform APIs. The slot machine should make fun of AI, as in you are winning tokens and spending tokens."
 
 ## Protocol
-1.  **Clean Sessions:** Before every run, ensure no `CLAUDE.md`, no project memory, and no active context exists. Use `claude chat --no-history` (or equivalent) to ensure a fresh start.
-2.  **No Hand-Editing:** Do not modify a single character of generated code. If it doesn't run, mark "Runs in browser? No" in the metrics.
-3.  **Data Capture:** Record all metrics (tokens, time, lines of code) immediately after generation into the specific candidate folder.
+### 1. PRE-RUN SETUP
+- Model: Ensure you are using Codex (GPT-5.4).
+-  Clean Session: You must start a FRESH chat for every single run.
+- No Context: Delete or move any CODEX.md or local config files. If using the CLI, ensure no previous session history is being pulled.
+- The Prompt: Copy it from prompts/original-prompt.txt. Do NOT change a single character (no "please," no extra instructions).
+
+### 2. THE RUN
+
+- Start Stopwatch: Start timing as soon as you hit Enter.
+- Hands Off: Once the code is generated, DO NOT EDIT IT. 
+- Capture Tokens: Remember to save the input/output token counts immediately from the tool output. 
+- Stop Timer: Stop your watch once the file generation is complete. -> Save this time for notes
+
+### 3. SAVING & SCORING 
+- Move Files: Move the generated code into step1/candidate-XXX/.
+- Log Metrics: Fill out any info reviewer needs (e.g. timestamp, tokens, wall-clock time, tool-reported time, etc.) in a notes.md in your candidate folder. (Make a copy of RUBRIC.md)
+- Close the chat window/terminal session entirely before starting your next run.
+
+### 4. REVIEWING QUALITY
+- Review it in notes.md and check for any missing info -> Check with baseline runner assigned for that candidate if there is missing info.
+- Open Browser: Open the index.html in Chrome.
+- App Quality: (1-5) based on the satire and if it actually spins.
+- Code Quality: (1-5) based on how clean/modular the JS is.
+- Browser Test: Note if it runs: Yes / No / Partial.
 
 ## Directory Structure
 * `/prompts`: Contains `original-prompt.txt` and all `refinement-prompt-stepX.txt` files.
