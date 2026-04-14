@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Furnace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Always-on monetization engine</p>
+        <h1>Token Furnace</h1>
+        <p class="tagline">
+          Feed the machine your hard-earned prompt credits and pray the model
+          gives you premium nonsense back.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI satire slot machine">
+        <div class="status-bar">
+          <div class="meter">
+            <span class="meter-label">Wallet</span>
+            <strong id="tokenCount">120</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Jackpot</span>
+            <strong id="jackpotValue">250</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+        </div>
+
+        <div class="display-frame">
+          <div class="marquee">
+            <span>Prompt harder</span>
+            <span>Hallucinate responsibly</span>
+            <span>Enterprise-grade overconfidence</span>
+          </div>
+
+          <div class="reels" role="group" aria-label="Slot reels">
+            <div class="reel" id="reel0" aria-live="polite"></div>
+            <div class="reel" id="reel1" aria-live="polite"></div>
+            <div class="reel" id="reel2" aria-live="polite"></div>
+          </div>
+
+          <p class="message" id="message" aria-live="polite">
+            Welcome back, valued training data provider.
+          </p>
+        </div>
+
+        <div class="controls">
+          <button class="primary-action" id="spinButton" type="button">
+            Spin For Insights
+          </button>
+          <button class="secondary-action" id="topUpButton" type="button">
+            Beg For Free Credits
+          </button>
+        </div>
+
+        <section class="payouts" aria-label="Payout table">
+          <h2>Payout Logic</h2>
+          <ul>
+            <li><strong>3 x AGI</strong> pays the jackpot and a smug press release.</li>
+            <li><strong>3 matching symbols</strong> pays a big refund.</li>
+            <li><strong>2 matching symbols</strong> pays a modest rebate.</li>
+            <li><strong>3 x 404</strong> refunds your spin because even satire has limits.</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
