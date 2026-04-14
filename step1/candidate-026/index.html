@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tide Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Token Tide Casino</p>
+        <h1>Spin the machine. Win tokens. Immediately spend them on fake AI prestige.</h1>
+        <p class="subhead">
+          A fully local slot machine for people who love “free credits” and then instantly use
+          them on giant context windows, premium vibes, and suspiciously expensive inference.
+        </p>
+
+        <div class="stats-grid" aria-label="Game stats">
+          <article class="stat">
+            <span class="stat-label">Wallet</span>
+            <strong id="walletTokens">120</strong>
+            <span class="stat-note">tokens left to impress no one</span>
+          </article>
+          <article class="stat">
+            <span class="stat-label">Last Spin</span>
+            <strong id="lastDelta">0</strong>
+            <span class="stat-note">profit, loss, or “model drift”</span>
+          </article>
+          <article class="stat">
+            <span class="stat-label">Jackpots</span>
+            <strong id="jackpotCount">0</strong>
+            <span class="stat-note">moments you became a thought leader</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="slot-title">
+        <div class="machine-header">
+          <div>
+            <p class="machine-kicker">LLM Leisure Division</p>
+            <h2 id="slot-title">Prompt-and-Pray Slot Machine</h2>
+          </div>
+          <div class="cost-pill">Spin cost: <span id="spinCost">15</span> tokens</div>
+        </div>
+
+        <div class="reels-frame" aria-live="polite" aria-atomic="true">
+          <div class="payline"></div>
+          <div class="reels" id="reels">
+            <div class="reel" data-reel="0">
+              <div class="symbol" id="reel0">...</div>
+            </div>
+            <div class="reel" data-reel="1">
+              <div class="symbol" id="reel1">...</div>
+            </div>
+            <div class="reel" data-reel="2">
+              <div class="symbol" id="reel2">...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spin for tokens</button>
+          <button id="resetButton" class="secondary-button" type="button">Reset economy</button>
+        </div>
+
+        <p id="statusMessage" class="status-message">
+          You have 120 tokens. That is roughly one confident demo and two disastrous follow-up
+          prompts.
+        </p>
+
+        <section class="ledger" aria-labelledby="ledger-title">
+          <div class="ledger-header">
+            <h3 id="ledger-title">Where your winnings go</h3>
+            <p>Because no token survives contact with the AI industry.</p>
+          </div>
+          <ul id="spendingLog" class="spending-log">
+            <li>Your wallet is waiting for a bad decision.</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <template id="logItemTemplate">
+      <li class="log-entry">
+        <span class="log-title"></span>
+        <span class="log-cost"></span>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
