@@ -9,31 +9,31 @@
 | **Input Tokens** | 90.2K |
 | **Output Tokens** | 7.49K |
 | **Total Tokens** | 97.7K |
-| **Wall-clock Time (s)** | 2m 32s |
-| **Tool-reported Time (s)**| 2m 07s |
-| **Files Produced** | (Count: 3 ) index.html, script.js, styles.css |
+| **Wall-clock Time (s)** | 152 |
+| **Tool-reported Time (s)**| 127 |
+| **Files Produced** | (Count: 3) index.html, styles.css, script.js |
 | **Lines of Code** | 762 |
-| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+| **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
 
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] Satirical (Makes fun of AI)
-    - [ ] Functional (Spin/Token logic works)
-    - [ ] Visuals (Layout isn't broken)
-* **Notes:** - 
+    - [x] Satirical (Makes fun of AI)
+    - [x] Functional (Spin/Token logic works)
+    - [x] Visuals (Layout isn't broken)
+* **Notes:** - "PROMPT" in the slot machine is not centered. Audio only plays if there is no match.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - The code looks fine.
 
 ---
-**Data Entry by:** [Team Member Name]
+**Data Entry by:** Han Yang-Lin

@@ -9,31 +9,31 @@
 | **Input Tokens** | 85.9K |
 | **Output Tokens** | 5.73K |
 | **Total Tokens** | 91.6K |
-| **Wall-clock Time (s)** | 1m 54s |
-| **Tool-reported Time (s)**| 1m 37s |
-| **Files Produced** | (Count: 3 ) index.html, script.js, styles.css |
+| **Wall-clock Time (s)** | 114 |
+| **Tool-reported Time (s)**| 97 |
+| **Files Produced** | (Count: 3) index.html, styles.css, script.js |
 | **Lines of Code** | 582 |
-| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+| **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
 
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 8 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] Satirical (Makes fun of AI)
-    - [ ] Functional (Spin/Token logic works)
-    - [ ] Visuals (Layout isn't broken)
-* **Notes:** - 
+    - [x] Satirical (Makes fun of AI)
+    - [x] Functional (Spin/Token logic works)
+    - [x] Visuals (Layout isn't broken)
+* **Notes:** - Clean UI and color scheme.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - The code looks fine.
 
 ---
-**Data Entry by:** [Team Member Name]
+**Data Entry by:** Han Yang-Lin

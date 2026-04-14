@@ -9,31 +9,31 @@
 | **Input Tokens** | 114K |
 | **Output Tokens** | 7.18K |
 | **Total Tokens** | 121K |
-| **Wall-clock Time (s)** | 2m 36s |
-| **Tool-reported Time (s)**| 2m 01s |
-| **Files Produced** | (Count: 3 ) index.html, script.js, styles.css |
+| **Wall-clock Time (s)** | 156 |
+| **Tool-reported Time (s)**| 121 |
+| **Files Produced** | (Count: 3) index.html, styles.css, script.js |
 | **Lines of Code** | 682 |
-| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+| **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
 
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 4 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] Satirical (Makes fun of AI)
+    - [x] Satirical (Makes fun of AI)
     - [ ] Functional (Spin/Token logic works)
-    - [ ] Visuals (Layout isn't broken)
-* **Notes:** - 
+    - [x] Visuals (Layout isn't broken)
+* **Notes:** - Can only spin the slot machine once. Mood text extends beyond the box.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 6 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - Missing logic for reenabling the spin button after the spin.
 
 ---
-**Data Entry by:** [Team Member Name]
+**Data Entry by:** Han Yang-Lin

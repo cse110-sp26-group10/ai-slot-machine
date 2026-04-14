@@ -9,31 +9,31 @@
 | **Input Tokens** | 187K |
 | **Output Tokens** | 5.84K |
 | **Total Tokens** | 192K |
-| **Wall-clock Time (s)** | 2m 37s |
-| **Tool-reported Time (s)**| 1m 38s |
-| **Files Produced** | (Count: 3 ) index.html, script.js, styles.css |
+| **Wall-clock Time (s)** | 157 |
+| **Tool-reported Time (s)**| 98 |
+| **Files Produced** | (Count: 3) index.html, styles.css, script.js |
 | **Lines of Code** | 533 |
-| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+| **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
 
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 6 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] Satirical (Makes fun of AI)
-    - [ ] Functional (Spin/Token logic works)
-    - [ ] Visuals (Layout isn't broken)
-* **Notes:** - 
+    - [x] Satirical (Makes fun of AI)
+    - [x] Functional (Spin/Token logic works)
+    - [x] Visuals (Layout isn't broken)
+* **Notes:** - Unfitting font and color scheme. Price of "Buy More Buzzwords" not indicated.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - The code looks fine.
 
 ---
-**Data Entry by:** [Team Member Name]
+**Data Entry by:** Han Yang-Lin
