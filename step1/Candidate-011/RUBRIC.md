@@ -11,7 +11,7 @@
 | Wall-clock Time (s) | 511 |
 | Tool-reported Time (s) | 502 |
 | Files Produced | (Count: 3) index.html, styles.css, script.js |
-| Lines of Code | TBD |
+| Lines of Code | 957 |
 | Runs in Browser? | [x] Yes / [ ] No / [ ] Partial |
 
 ## 📝 Qualitative Evaluation
