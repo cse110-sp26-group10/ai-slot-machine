@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Burn Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Generative gambling for the post-hype era</p>
+      <h1>Token Burn Casino</h1>
+      <p class="tagline">
+        Spin the reels, win more vapor tokens, and immediately spend them on premium AI nonsense.
+      </p>
+
+      <div class="scoreboard" aria-label="scoreboard">
+        <article class="stat">
+          <span class="stat-label">Wallet</span>
+          <strong id="token-count">120</strong>
+          <span class="stat-foot">Prompt chips</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="stat-foot">Tokens per prophecy</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Mood</span>
+          <strong id="mood">Cautiously bullish</strong>
+          <span class="stat-foot">Model confidence</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="machine-header">
+        <div>
+          <p class="eyebrow">Enterprise-ready amusement</p>
+          <h2 id="machine-title">Fine-tuned Fortune Reels</h2>
+        </div>
+        <button id="speak-status" class="ghost-button" type="button">Read latest result</button>
+      </div>
+
+      <div class="machine-frame">
+        <div class="reels" aria-live="polite" aria-atomic="true">
+          <div class="reel-window"><span id="reel-0" class="reel-symbol">🤖</span></div>
+          <div class="reel-window"><span id="reel-1" class="reel-symbol">💸</span></div>
+          <div class="reel-window"><span id="reel-2" class="reel-symbol">🪙</span></div>
+        </div>
+        <button id="spin-button" class="spin-button" type="button">Spend 15 tokens to spin</button>
+      </div>
+
+      <div class="status-panel">
+        <p id="result-line" class="result-line">Welcome back, visionary. The machine is ready to monetize your curiosity.</p>
+        <p id="spend-line" class="spend-line">No tokens wasted yet. A suspiciously efficient quarter.</p>
+      </div>
+    </section>
+
+    <section class="perk-grid" aria-label="AI joke perks">
+      <article class="perk">
+        <h3>Hallucination Multiplier</h3>
+        <p>Matching three nonsense symbols unlocks a confidence bonus with no supporting evidence.</p>
+      </article>
+      <article class="perk">
+        <h3>Prompt Tax</h3>
+        <p>Every spin costs tokens because your ideas deserve a recurring billing model.</p>
+      </article>
+      <article class="perk">
+        <h3>Synergy Bundle</h3>
+        <p>Win enough and the casino graciously lets you buy more AI-generated buzzwords.</p>
+      </article>
+    </section>
+  </main>
+
+  <template id="burst-template">
+    <span class="burst-token">🪙</span>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

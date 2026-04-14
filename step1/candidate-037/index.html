@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burn Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+        <h1>Token Burn Casino</h1>
+        <p class="lede">
+          Pull the lever, sacrifice a few prompt tokens, and pray the inference
+          gods return more than they consumed.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI satire slot machine">
+        <div class="machine-top">
+          <div class="stat-card">
+            <span class="stat-label">Token Wallet</span>
+            <strong id="token-balance">120</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Jackpots</span>
+            <strong id="jackpot-count">0</strong>
+          </div>
+        </div>
+
+        <div class="reels" role="img" aria-label="Three spinning satire reels">
+          <div class="reel" data-reel>
+            <span class="reel-symbol">404</span>
+          </div>
+          <div class="reel" data-reel>
+            <span class="reel-symbol">GPU</span>
+          </div>
+          <div class="reel" data-reel>
+            <span class="reel-symbol">LAG</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Burn 15 Tokens
+          </button>
+          <button id="top-up-button" class="secondary-button" type="button">
+            Ask Investors For More
+          </button>
+        </div>
+
+        <div class="ticker" aria-live="polite">
+          <p id="status-message">
+            The model is idle. This is the cheapest it will ever be.
+          </p>
+        </div>
+
+        <div class="payouts">
+          <h2>Payout Table</h2>
+          <ul>
+            <li><span>3x GPU</span><strong>+120 tokens</strong></li>
+            <li><span>3x AGI</span><strong>+90 tokens</strong></li>
+            <li><span>3x PROMPT</span><strong>+70 tokens</strong></li>
+            <li><span>Any pair</span><strong>+20 tokens</strong></li>
+            <li><span>No match</span><strong>Sad LinkedIn post</strong></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <template id="toast-template">
+      <div class="toast" role="status"></div>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
