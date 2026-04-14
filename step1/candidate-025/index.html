@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Extractor 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's least responsible casino</p>
+        <h1>AI Token Extractor 3000</h1>
+        <p class="tagline">
+          Spin the reels, burn your prompt budget, and pray the model does not
+          hallucinate your retirement plan.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="Slot machine">
+        <div class="scoreboard">
+          <article class="stat">
+            <span class="label">Your tokens</span>
+            <strong id="token-balance">0</strong>
+          </article>
+          <article class="stat">
+            <span class="label">Spin cost</span>
+            <strong id="spin-cost">25</strong>
+          </article>
+          <article class="stat">
+            <span class="label">Peak grift</span>
+            <strong id="best-balance">0</strong>
+          </article>
+        </div>
+
+        <div class="marquee" id="status-banner" aria-live="polite">
+          Venture capital approved one more irresponsible experiment.
+        </div>
+
+        <div class="reel-frame">
+          <div class="reel-window" aria-label="Slot reels">
+            <div class="reel" data-reel>
+              <span class="symbol" id="reel-0">🤖</span>
+            </div>
+            <div class="reel" data-reel>
+              <span class="symbol" id="reel-1">💸</span>
+            </div>
+            <div class="reel" data-reel>
+              <span class="symbol" id="reel-2">🪙</span>
+            </div>
+          </div>
+          <div class="payline" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend 25 tokens
+          </button>
+          <button id="seed-button" class="ghost-button" type="button">
+            Beg investors for bailout
+          </button>
+        </div>
+
+        <section class="payouts" aria-label="Payout table">
+          <h2>Payout Logic</h2>
+          <ul>
+            <li>3 matching icons: big token dump</li>
+            <li>2 matching icons: modest benchmark fraud</li>
+            <li>🧠 + 💰 + 🚀: “Series A” bonus</li>
+            <li>☠️ anywhere: the model shipped to prod too early</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="feed">
+        <h2>Live Investor Update</h2>
+        <p id="round-summary">
+          Welcome back. The machine has remembered your token addiction with
+          localStorage.
+        </p>
+        <ol id="event-log" class="event-log" aria-label="Recent events"></ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
