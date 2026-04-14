@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Treadmill 9000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <p class="eyebrow">Silicon Valley Carnival</p>
+        <h1>Token Treadmill 9000</h1>
+        <p class="tagline">
+          Insert tokens. Receive vibes, jargon, and the occasional statistically
+          suspicious miracle.
+        </p>
+
+        <div class="stats-grid" aria-label="Slot machine stats">
+          <article class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="tokenBalance" class="stat-value">120</strong>
+            <span class="stat-note">tokens remaining</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spinCost" class="stat-value">15</strong>
+            <span class="stat-note">venture-backed per pull</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Lifetime Wins</span>
+            <strong id="lifetimeWins" class="stat-value">0</strong>
+            <span class="stat-note">tokens farmed</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Hallucination Tax</span>
+            <strong id="taxMeter" class="stat-value">0</strong>
+            <span class="stat-note">compliance fees paid</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-panel" aria-label="AI satire slot machine">
+        <div class="machine-topper">
+          <div class="topper-copy">
+            <p class="machine-kicker">Prompt Engine</p>
+            <h2>Align the buzzwords, harvest the tokens</h2>
+          </div>
+          <button id="resetButton" class="ghost-button" type="button">
+            Reset Economy
+          </button>
+        </div>
+
+        <div class="reel-frame" role="group" aria-label="Slot reels">
+          <div class="payline" aria-hidden="true"></div>
+          <div class="reel-window">
+            <div class="reel" id="reel0" aria-live="polite">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel1" aria-live="polite">SEED</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel2" aria-live="polite">MOAT</div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button id="spinButton" class="spin-button" type="button">
+            Burn 15 Tokens
+          </button>
+          <div class="streak-pill">
+            Win streak: <strong id="streakCount">0</strong>
+          </div>
+        </div>
+
+        <section class="result-panel" aria-label="Round result">
+          <p id="statusLine" class="status-line">
+            Welcome to the AI casino, where every buzzword is monetized.
+          </p>
+          <ul class="legend">
+            <li>3 matching symbols = payout</li>
+            <li>2 matching symbols = pity funding</li>
+            <li>Three bugs = instant audit</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <template id="historyTemplate">
+      <li class="history-item"></li>
+    </template>
+
+    <section class="history-panel">
+      <div class="history-header">
+        <h2>Recent Investor Updates</h2>
+        <p>Every spin leaves a paper trail. Sadly.</p>
+      </div>
+      <ol id="historyList" class="history-list" aria-live="polite"></ol>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
