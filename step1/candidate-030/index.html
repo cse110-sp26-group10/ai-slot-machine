@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Extractor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Prompt Casino</p>
+        <h1>AI Token Extractor</h1>
+        <p class="tagline">
+          Spin the reels, burn through tokens, and pray the machine rewards your
+          "groundbreaking" prompt engineering.
+        </p>
+
+        <div class="scoreboard" aria-label="slot machine status">
+          <article>
+            <span class="label">Wallet</span>
+            <strong id="token-balance">120</strong>
+            <span class="meta">tokens left</span>
+          </article>
+          <article>
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+            <span class="meta">per hallucination</span>
+          </article>
+          <article>
+            <span class="label">Jackpot</span>
+            <strong id="jackpot-value">180</strong>
+            <span class="meta">VC-approved tokens</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="machine-title">
+        <div class="machine-header">
+          <div>
+            <p class="eyebrow">Neural Slot Core</p>
+            <h2 id="machine-title">Reinforcement Vibes Engine</h2>
+          </div>
+          <button id="reset-button" class="secondary-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <div class="reels" role="group" aria-label="slot machine reels">
+          <div class="reel-window"><span id="reel-1" class="reel-symbol">🤖</span></div>
+          <div class="reel-window"><span id="reel-2" class="reel-symbol">💸</span></div>
+          <div class="reel-window"><span id="reel-3" class="reel-symbol">🧠</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend Tokens
+          </button>
+          <p id="status-message" class="status-message" aria-live="polite">
+            Ready to convert your budget into "AI strategy."
+          </p>
+        </div>
+
+        <section class="payouts" aria-labelledby="payout-title">
+          <div class="payouts-header">
+            <h3 id="payout-title">Payout Logic</h3>
+            <p>The machine rewards the same behavior AI startups do: confidence, nonsense, and dumb luck.</p>
+          </div>
+          <ul class="payout-list">
+            <li><span>Three matching symbols</span><strong>Win 180 tokens</strong></li>
+            <li><span>Two matching symbols</span><strong>Win 40 tokens</strong></li>
+            <li><span>At least one 💸</span><strong>Win 10 tokens</strong></li>
+            <li><span>No matches</span><strong>Lose your spin cost</strong></li>
+          </ul>
+        </section>
+
+        <section class="feed" aria-labelledby="feed-title">
+          <div class="payouts-header">
+            <h3 id="feed-title">Recent AI Commentary</h3>
+            <p>The machine documents every terrible investment decision for posterity.</p>
+          </div>
+          <ul id="history-list" class="history-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

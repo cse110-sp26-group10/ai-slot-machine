@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burn Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's favorite arcade cabinet</p>
+        <h1>Token Burn Casino</h1>
+        <p class="hero-copy">
+          You brought 120 prompt tokens to the AI hype machine. Spin the reels,
+          win synthetic jackpots, and watch your budget disappear into “premium
+          reasoning.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI slot machine">
+        <div class="machine-top">
+          <div class="bank">
+            <span class="bank-label">Prompt Tokens</span>
+            <strong id="token-balance" class="bank-value">120</strong>
+          </div>
+          <div class="bank">
+            <span class="bank-label">Spin Cost</span>
+            <strong class="bank-value">15</strong>
+          </div>
+          <div class="bank">
+            <span class="bank-label">Mood</span>
+            <strong id="machine-mood" class="bank-value">Confidently Wrong</strong>
+          </div>
+        </div>
+
+        <div class="reels-frame">
+          <div class="payline" aria-hidden="true"></div>
+          <div class="reels" role="img" aria-label="Slot machine reels">
+            <div class="reel" id="reel-1">🤖</div>
+            <div class="reel" id="reel-2">🔥</div>
+            <div class="reel" id="reel-3">💸</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="message-box">
+            <p class="message-label">Machine Commentary</p>
+            <p id="status-message" class="status-message">
+              Insert optimism. Receive monetized autocomplete.
+            </p>
+          </div>
+
+          <div class="controls">
+            <button id="spin-button" class="spin-button" type="button">
+              Spin For “Productivity”
+            </button>
+            <button id="reset-button" class="secondary-button" type="button">
+              Reboot Startup
+            </button>
+            <button
+              id="sound-button"
+              class="secondary-button"
+              type="button"
+              aria-pressed="true"
+            >
+              Sound: On
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="payouts">
+        <div>
+          <p class="eyebrow">Totally serious payout table</p>
+          <h2>What the machine pretends to optimize</h2>
+        </div>
+        <div class="payout-grid">
+          <article class="payout-card">
+            <h3>🤖 🤖 🤖</h3>
+            <p>Model supremacy bonus: +80 tokens</p>
+          </article>
+          <article class="payout-card">
+            <h3>🔥 🔥 🔥</h3>
+            <p>Burn rate acceleration grant: +60 tokens</p>
+          </article>
+          <article class="payout-card">
+            <h3>💎 💎 💎</h3>
+            <p>VC hallucination round: +50 tokens</p>
+          </article>
+          <article class="payout-card">
+            <h3>Any pair</h3>
+            <p>Moderate synergy narrative: +20 tokens</p>
+          </article>
+          <article class="payout-card">
+            <h3>💀 anywhere</h3>
+            <p>Catastrophic benchmark theater: -10 extra tokens</p>
+          </article>
+          <article class="payout-card">
+            <h3>Three different</h3>
+            <p>Classic AI demo energy: no payout, lots of jargon</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

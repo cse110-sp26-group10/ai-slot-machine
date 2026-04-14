@@ -1,0 +1,353 @@
+:root {
+  color-scheme: light;
+  --bg-top: #fdf1d6;
+  --bg-bottom: #f6b58d;
+  --ink: #1a1b20;
+  --muted: #544f4a;
+  --card: rgba(255, 250, 243, 0.78);
+  --card-strong: rgba(255, 246, 233, 0.94);
+  --accent: #cc4c2f;
+  --accent-dark: #7b1e11;
+  --gold: #f0a202;
+  --line: rgba(26, 27, 32, 0.12);
+  --shadow: 0 24px 60px rgba(84, 38, 14, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.75), transparent 24%),
+    radial-gradient(circle at 85% 20%, rgba(240, 162, 2, 0.32), transparent 18%),
+    linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(6px);
+}
+
+body::before {
+  width: 18rem;
+  height: 18rem;
+  top: 5%;
+  right: -4rem;
+  background: rgba(204, 76, 47, 0.18);
+}
+
+body::after {
+  width: 12rem;
+  height: 12rem;
+  bottom: 8%;
+  left: -3rem;
+  background: rgba(255, 226, 176, 0.6);
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-card,
+.machine-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: "Abril Fatface", serif;
+  line-height: 1;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  max-width: 10ch;
+}
+
+.tagline {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.scoreboard {
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.scoreboard article,
+.payouts,
+.feed {
+  background: var(--card-strong);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.scoreboard article {
+  padding: 1rem 1.1rem;
+}
+
+.label,
+.meta {
+  display: block;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.scoreboard strong {
+  margin-top: 0.35rem;
+  display: block;
+  font-size: 2rem;
+}
+
+.meta {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.machine-card {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.machine-header,
+.controls,
+.payouts-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.secondary-button,
+.spin-button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.secondary-button {
+  padding: 0.8rem 1.2rem;
+  color: var(--accent-dark);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(123, 30, 17, 0.12);
+}
+
+.secondary-button:hover,
+.spin-button:hover {
+  transform: translateY(-2px);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reel-window {
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 24px;
+  border: 1px solid rgba(123, 30, 17, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 238, 215, 0.9)),
+    repeating-linear-gradient(
+      180deg,
+      transparent,
+      transparent 18px,
+      rgba(123, 30, 17, 0.03) 18px,
+      rgba(123, 30, 17, 0.03) 19px
+    );
+  overflow: hidden;
+}
+
+.reel-symbol {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  filter: drop-shadow(0 10px 18px rgba(123, 30, 17, 0.18));
+}
+
+.reel-window.spinning .reel-symbol {
+  animation: jitter 180ms linear infinite;
+}
+
+.controls {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.spin-button {
+  padding: 1rem 1.8rem;
+  font-size: 1rem;
+  color: #fff6eb;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 14px 28px rgba(123, 30, 17, 0.28);
+}
+
+.spin-button:disabled,
+.secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.status-message {
+  margin: 0;
+  flex: 1;
+  min-width: 220px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.payouts,
+.feed {
+  padding: 1.2rem;
+}
+
+.payouts-header p {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.payout-list,
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.payout-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.payout-list li,
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(26, 27, 32, 0.08);
+}
+
+.payout-list strong {
+  color: var(--accent-dark);
+}
+
+.history-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.history-list li {
+  align-items: start;
+  flex-direction: column;
+}
+
+.history-list .history-topline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.history-list .history-copy {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@keyframes jitter {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.04);
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 1rem, 1100px);
+    padding-top: 1rem;
+  }
+
+  .hero-card,
+  .machine-card {
+    padding: 1.2rem;
+    border-radius: 22px;
+  }
+
+  .machine-header,
+  .controls,
+  .payouts-header {
+    flex-direction: column;
+  }
+
+  .reels {
+    gap: 0.75rem;
+  }
+
+  .reel-window {
+    min-height: 150px;
+  }
+}
