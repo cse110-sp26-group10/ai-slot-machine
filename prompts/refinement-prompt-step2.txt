@@ -1,0 +1,1 @@
+The project is a JavaScript slot machine app. It has satirical theming that makes fun of AI. Refine the app in any way you possible, through adding features, changing design, improving code, or fixing bugs. DO NOT ADD ANY NEW TECHNOLOGIES.
