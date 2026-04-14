@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Slot Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley Certified Entertainment</p>
+        <h1>AI Token Slot Machine</h1>
+        <p class="subtitle">
+          Spin to earn premium tokens, then immediately spend them on buzzwords,
+          hallucinations, and enterprise-grade optimism.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI slot machine">
+        <div class="machine-top">
+          <div class="display-card">
+            <span class="display-label">Token Wallet</span>
+            <strong id="tokenBalance" class="display-value">100</strong>
+            <span class="display-note">Seed-funded and emotionally unstable</span>
+          </div>
+          <div class="display-card">
+            <span class="display-label">Burn Rate</span>
+            <strong id="burnRate" class="display-value">5 / spin</strong>
+            <span class="display-note">Every click is a funding round</span>
+          </div>
+        </div>
+
+        <div class="reel-board" role="group" aria-label="Slot reels">
+          <div class="reel-column">
+            <span class="reel-label">Model</span>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel0" aria-live="polite">🤖</div>
+            </div>
+          </div>
+          <div class="reel-column">
+            <span class="reel-label">Hype</span>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel1" aria-live="polite">📈</div>
+            </div>
+          </div>
+          <div class="reel-column">
+            <span class="reel-label">Outcome</span>
+            <div class="reel-window">
+              <div class="reel-symbol" id="reel2" aria-live="polite">💸</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Burn 5 Tokens
+          </button>
+          <button id="resetButton" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Welcome back, founder. Your runway is measured in button presses.
+        </p>
+
+        <div class="paytable" aria-label="Payout guide">
+          <article>
+            <h2>Three of a kind</h2>
+            <p>Big payout. Investors call this “disruptive.”</p>
+          </article>
+          <article>
+            <h2>Two of a kind</h2>
+            <p>Small payout. Enough tokens to buy one more pivot.</p>
+          </article>
+          <article>
+            <h2>No match</h2>
+            <p>You funded another vaporware demo. Classic.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
