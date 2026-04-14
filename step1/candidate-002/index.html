@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Platform API Powered Vanity Casino</p>
+        <h1>Token Tugger 3000</h1>
+        <p class="tagline">
+          Feed the machine your precious AI tokens and pray it returns something more useful
+          than “As an AI, I can’t guarantee jackpots.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI satire slot machine">
+        <div class="status-bar">
+          <div class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="tokenCount">120</strong>
+            <span class="stat-note">tokens remaining</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+            <span class="stat-note">tokens per prompt</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Best Win</span>
+            <strong id="bestWin">0</strong>
+            <span class="stat-note">tokens extracted</span>
+          </div>
+        </div>
+
+        <div class="reels-frame">
+          <div class="reels" role="group" aria-label="Slot results">
+            <div class="reel" id="reel0" aria-live="polite">prompt</div>
+            <div class="reel" id="reel1" aria-live="polite">tokens</div>
+            <div class="reel" id="reel2" aria-live="polite">vibes</div>
+          </div>
+          <div class="payline" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spend Tokens</button>
+          <button id="resetButton" class="ghost-button" type="button">Reset Wallet</button>
+        </div>
+
+        <div class="meter-wrap" aria-label="Model confidence">
+          <label for="confidenceMeter">Model Confidence</label>
+          <progress id="confidenceMeter" max="100" value="12"></progress>
+        </div>
+
+        <section class="announcer">
+          <p class="result-line" id="message">
+            Insert optimism. Click <span>Spend Tokens</span> to begin the benchmarking ritual.
+          </p>
+          <ul class="payouts">
+            <li>3 matching symbols: payout 90 tokens</li>
+            <li>2 matching symbols: payout 30 tokens</li>
+            <li>Lucky <code>hallucination</code>: payout 45 tokens</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <template id="toastTemplate">
+      <div class="toast" role="status" aria-live="polite"></div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

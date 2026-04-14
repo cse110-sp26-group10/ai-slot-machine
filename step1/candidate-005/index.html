@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Extractor 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">VANILLA HTML + CSS + JS</p>
+        <h1>AI Token Extractor 3000</h1>
+        <p class="tagline">
+          Spin the reels, farm synthetic hype, and convert delusion into tokens before the model bills you for
+          “reasoning.”
+        </p>
+      </section>
+
+      <section class="machine" aria-label="Slot machine">
+        <div class="machine-top">
+          <div class="meter">
+            <span class="meter-label">Wallet</span>
+            <strong id="tokenBalance" class="meter-value">120</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Spin Cost</span>
+            <strong class="meter-value">15</strong>
+            <span class="meter-unit">tokens</span>
+          </div>
+          <div class="meter">
+            <span class="meter-label">Mood</span>
+            <strong id="systemMood" class="meter-value">Smug</strong>
+            <span class="meter-unit">AI core</span>
+          </div>
+        </div>
+
+        <div class="reel-frame">
+          <div class="payline" aria-hidden="true"></div>
+          <div class="reels" role="group" aria-label="Slot reels">
+            <article class="reel">
+              <span id="reel0" class="symbol" aria-live="polite">🤖</span>
+            </article>
+            <article class="reel">
+              <span id="reel1" class="symbol" aria-live="polite">💸</span>
+            </article>
+            <article class="reel">
+              <span id="reel2" class="symbol" aria-live="polite">🪙</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spin For 15 Tokens</button>
+          <button id="resetButton" class="reset-button" type="button">Reboot The Hype Machine</button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Welcome, valued benchmark. Please deposit your dignity and begin.
+        </p>
+
+        <section class="paytable" aria-label="Payout table">
+          <h2>Payout Logic</h2>
+          <div class="paytable-grid">
+            <div class="pay-item">
+              <span class="pay-symbol">🪙🪙🪙</span>
+              <span class="pay-copy">Triple tokens: +120</span>
+            </div>
+            <div class="pay-item">
+              <span class="pay-symbol">🤖🤖🤖</span>
+              <span class="pay-copy">Full automation panic: +90</span>
+            </div>
+            <div class="pay-item">
+              <span class="pay-symbol">💥💥💥</span>
+              <span class="pay-copy">Hallucination jackpot: +75</span>
+            </div>
+            <div class="pay-item">
+              <span class="pay-symbol">Any pair</span>
+              <span class="pay-copy">Enough pattern matching: +25</span>
+            </div>
+            <div class="pay-item">
+              <span class="pay-symbol">No match</span>
+              <span class="pay-copy">The AI consumed your credits</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="event-log-panel" aria-label="Recent outcomes">
+          <div class="panel-header">
+            <h2>Abuse Log</h2>
+            <span class="panel-chip">last 5 spins</span>
+          </div>
+          <ul id="eventLog" class="event-log">
+            <li>System booted. Confidence level: 104%.</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

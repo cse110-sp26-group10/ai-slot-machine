@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tycoon 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-left"></div>
+    <div class="background-glow glow-right"></div>
+
+    <main class="app-shell">
+      <section class="hero-panel">
+        <p class="eyebrow">LLM casino division</p>
+        <h1>Token Tycoon 3000</h1>
+        <p class="hero-copy">
+          Pull the lever, win imaginary tokens, then spend them instantly on
+          premium AI nonsense like “enterprise vibes” and “context window
+          expansion.”
+        </p>
+
+        <div class="bank-row">
+          <article class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="tokenBalance">120</strong>
+            <span class="stat-caption">tokens left to burn</span>
+          </article>
+
+          <article class="stat-card accent">
+            <span class="stat-label">Last spin</span>
+            <strong id="lastDelta">+0</strong>
+            <span class="stat-caption">market sentiment pending</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-panel">
+        <div class="machine-header">
+          <div>
+            <p class="eyebrow">casino-grade inference</p>
+            <h2>Prompt Slot Engine</h2>
+          </div>
+          <div class="cost-pill">Spin cost: <span id="spinCost">10</span></div>
+        </div>
+
+        <div class="reels-frame" aria-live="polite">
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel0">404 Hype</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel1">Prompt Juice</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel2">GPU Tears</div>
+          </div>
+        </div>
+
+        <div class="controls-row">
+          <button id="spinButton" class="spin-button">Spin For Glory</button>
+          <button id="spendButton" class="ghost-button">Waste 25 Tokens</button>
+        </div>
+
+        <p id="message" class="message-banner">
+          Welcome, valued prompt gambler. Please invest irresponsibly.
+        </p>
+
+        <div class="payout-grid">
+          <article class="payout-card">
+            <span class="payout-title">Triple match</span>
+            <span class="payout-value">+90 tokens</span>
+          </article>
+          <article class="payout-card">
+            <span class="payout-title">Pair match</span>
+            <span class="payout-value">+28 tokens</span>
+          </article>
+          <article class="payout-card">
+            <span class="payout-title">Special symbol</span>
+            <span class="payout-value">bonus chaos</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="sidebar-panel">
+        <article class="shop-card">
+          <p class="eyebrow">official token sink</p>
+          <h2>AI Upsell Store</h2>
+          <p class="shop-copy">
+            Every bad platform idea needs a button that burns credits for
+            things nobody asked for.
+          </p>
+          <ul id="purchaseLog" class="purchase-log" aria-label="Spent tokens log"></ul>
+        </article>
+
+        <article class="history-card">
+          <p class="eyebrow">recent hallucinations</p>
+          <h2>Spin History</h2>
+          <ul id="historyList" class="history-list" aria-label="Spin history"></ul>
+        </article>
+      </section>
+    </main>
+
+    <template id="historyItemTemplate">
+      <li class="history-item">
+        <span class="history-symbols"></span>
+        <strong class="history-delta"></strong>
+      </li>
+    </template>
+
+    <template id="purchaseItemTemplate">
+      <li class="purchase-item"></li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
