@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Sink 3000</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Silicon Valley's favorite rigged casino</p>
+        <h1>Token Sink 3000</h1>
+        <p class="subhead">
+          Spin the reels, burn your prompt budget, and pray the machine blesses
+          you with enough compute crumbs for one more "quick prototype."
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="score-card">
+            <span class="label">Tokens Left</span>
+            <strong id="token-balance">100</strong>
+          </div>
+          <div class="score-card">
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+          </div>
+          <div class="score-card">
+            <span class="label">Jackpot</span>
+            <strong>250</strong>
+          </div>
+        </div>
+
+        <div class="reels" aria-live="polite">
+          <div class="reel-window">
+            <div class="reel" id="reel-1">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel-2">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel-3">GPU</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Burn 15 Tokens
+          </button>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reboot Startup
+          </button>
+        </div>
+
+        <div class="status-panel">
+          <p id="status-message">
+            Your seed funding has been converted into vibes. Pull the lever.
+          </p>
+        </div>
+      </section>
+
+      <section class="payouts" aria-label="Payout table">
+        <h2>Payout Lore</h2>
+        <div class="payout-grid">
+          <article>
+            <h3>Triple GPU</h3>
+            <p>Jackpot. Investors clap, servers overheat, your valuation doubles.</p>
+          </article>
+          <article>
+            <h3>Triple Prompt</h3>
+            <p>You discovered reusable context. Miracles still happen.</p>
+          </article>
+          <article>
+            <h3>Any Match</h3>
+            <p>A small refund arrives, disguised as "optimization."</p>
+          </article>
+          <article>
+            <h3>No Match</h3>
+            <p>The machine thanks you for training it on your despair.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
