@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tycoon 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Casino-grade inference laundering</p>
+      <h1>Token Tycoon 9000</h1>
+      <p class="subtitle">
+        Pull the lever, burn tokens, and pray the machine emits premium nonsense instead of another confidence-weighted hallucination.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="status-grid">
+        <article class="stat-card">
+          <span class="stat-label">Wallet</span>
+          <strong id="token-balance">600</strong>
+          <span class="stat-note">tokens remaining</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spin-cost">40</strong>
+          <span class="stat-note">prompt budget</span>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Best Run</span>
+          <strong id="best-balance">600</strong>
+          <span class="stat-note">stored locally</span>
+        </article>
+      </div>
+
+      <div class="machine-frame">
+        <div class="marquee">
+          <span id="jackpot-message">Jackpot pays out in suspicious benchmark numbers.</span>
+        </div>
+
+        <div class="reel-board" role="img" aria-label="Three slot reels showing AI themed outcomes">
+          <div class="reel-window"><div class="reel" id="reel-0"></div></div>
+          <div class="reel-window"><div class="reel" id="reel-1"></div></div>
+          <div class="reel-window"><div class="reel" id="reel-2"></div></div>
+        </div>
+
+        <div class="payline" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <label class="bet-control" for="bet-range">
+          <span>Token Burn Per Spin</span>
+          <input id="bet-range" type="range" min="20" max="120" step="10" value="40">
+        </label>
+
+        <div class="button-row">
+          <button id="spin-button" class="spin-button" type="button">Burn Tokens</button>
+          <button id="reset-button" class="ghost-button" type="button">Reset Wallet</button>
+        </div>
+      </div>
+
+      <section class="results-panel">
+        <p id="result-line" class="result-line" aria-live="polite">
+          The machine is warmed up and ready to monetize your curiosity.
+        </p>
+        <ul class="event-log" id="event-log" aria-label="Recent spin history"></ul>
+      </section>
+    </section>
+  </main>
+
+  <template id="reel-symbol-template">
+    <div class="symbol-chip"></div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

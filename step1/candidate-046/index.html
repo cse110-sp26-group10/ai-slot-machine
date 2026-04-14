@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Grinder 9000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Synthetic Finance Division</p>
+      <h1>Token Grinder 9000</h1>
+      <p class="tagline">
+        Spin the reels, harvest fake AI tokens, and immediately feed them back into the
+        infinite appetite of the machine.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="machine-top">
+        <div class="meter">
+          <span class="meter-label">Wallet</span>
+          <strong id="token-balance">120</strong>
+          <span class="meter-unit">tokens</span>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="meter-unit">tokens</span>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Jackpot</span>
+          <strong id="jackpot-value">250</strong>
+          <span class="meter-unit">tokens</span>
+        </div>
+      </div>
+
+      <div class="reel-frame" role="group" aria-label="Slot machine reels">
+        <div class="reel-window">
+          <div class="reel" id="reel-0" aria-live="polite">🤖</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" id="reel-1" aria-live="polite">🪙</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" id="reel-2" aria-live="polite">🔥</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spend Tokens</button>
+        <button id="bonus-button" class="bonus-button" type="button">Claim Venture Funding</button>
+      </div>
+
+      <p id="status-line" class="status-line" aria-live="polite">
+        Your model is pre-seeded with 120 tokens and unreasonable confidence.
+      </p>
+
+      <ul class="payouts" aria-label="Payout table">
+        <li><span>🤖 🤖 🤖</span><strong>250 tokens</strong></li>
+        <li><span>🪙 🪙 🪙</span><strong>120 tokens</strong></li>
+        <li><span>🔥 🔥 🔥</span><strong>90 tokens</strong></li>
+        <li><span>Any 2 match</span><strong>35 tokens</strong></li>
+        <li><span>No match</span><strong>Thought leadership only</strong></li>
+      </ul>
+    </section>
+
+    <section class="ledger" aria-label="Recent token events">
+      <div class="ledger-header">
+        <h2>Burn Rate</h2>
+        <p>Every spin converts investor optimism into heat.</p>
+      </div>
+      <ol id="event-log" class="event-log">
+        <li>System boot: 120 tokens materialized from a pitch deck.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

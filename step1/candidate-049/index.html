@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Slot Machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=IBM+Plex+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="machine-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML, CSS, JavaScript, and bad AI economics</p>
+        <h1>Prompt Palace</h1>
+        <p class="tagline">
+          Spin the reels, burn tokens, and pray the model does not hallucinate your bankroll.
+        </p>
+      </section>
+
+      <section class="status-panel">
+        <article class="stat-card">
+          <span class="stat-label">Tokens</span>
+          <strong class="stat-value" id="tokenCount">120</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Last Result</span>
+          <strong class="stat-value stat-result" id="lastResult">Idle</strong>
+        </article>
+      </section>
+
+      <section class="slot-machine" aria-label="AI satire token slot machine">
+        <div class="marquee">
+          <span>WIN TOKENS</span>
+          <span>LOSE TOKENS</span>
+          <span>RETRAIN THE MODEL</span>
+        </div>
+
+        <div class="reels" role="img" aria-label="Three slot machine reels">
+          <div class="reel-frame">
+            <div class="reel-symbol" id="reel0">🤖</div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel-symbol" id="reel1">🔥</div>
+          </div>
+          <div class="reel-frame">
+            <div class="reel-symbol" id="reel2">🪙</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spin For 15 Tokens</button>
+          <button id="resetButton" class="secondary-button" type="button">Reset Wallet</button>
+        </div>
+
+        <div class="message-board">
+          <p id="headline">The model is warmed up and ready to waste your context window.</p>
+          <p id="subline">
+            Match three symbols to win. Two matching symbols returns a pity payout from the VC treasury.
+          </p>
+        </div>
+      </section>
+
+      <section class="payouts">
+        <h2>Payout Table</h2>
+        <ul>
+          <li><span>🪙 🪙 🪙</span><strong>+90 tokens</strong></li>
+          <li><span>📉 📉 📉</span><strong>+45 tokens</strong></li>
+          <li><span>🤖 🤖 🤖</span><strong>+30 tokens</strong></li>
+          <li><span>🔥 🔥 🔥</span><strong>+12 tokens</strong></li>
+          <li><span>Any pair</span><strong>+10 tokens</strong></li>
+          <li><span>No match</span><strong>Enjoy your inference bill</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

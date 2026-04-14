@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Slot Machine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Synthetic Casino Division</p>
+        <h1>Prompt &amp; Circumstance</h1>
+        <p class="tagline">
+          Win fake tokens. Lose fake tokens. Experience the authentic AI business
+          model.
+        </p>
+
+        <div class="status-grid">
+          <article class="status-panel">
+            <span class="label">Wallet</span>
+            <strong id="token-balance">1200</strong>
+            <small>tokens left after “inference overhead”</small>
+          </article>
+          <article class="status-panel">
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">75</strong>
+            <small>priced by a dynamic hallucination engine</small>
+          </article>
+          <article class="status-panel">
+            <span class="label">Mood</span>
+            <strong id="ai-mood">Guardedly bullish</strong>
+            <small>confidence interval: vibes only</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card">
+        <div class="machine-top">
+          <div>
+            <p class="machine-kicker">Enterprise-grade slotting</p>
+            <h2>Three Reels, Zero Moat</h2>
+          </div>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <div class="reels-frame" aria-live="polite" aria-atomic="true">
+          <div class="reel-window"><span id="reel-1" class="reel-symbol">🤖</span></div>
+          <div class="reel-window"><span id="reel-2" class="reel-symbol">🪙</span></div>
+          <div class="reel-window"><span id="reel-3" class="reel-symbol">🔥</span></div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-control" for="bet-input">
+            Bet Size
+            <input id="bet-input" type="range" min="25" max="200" step="25" value="75" />
+          </label>
+          <output id="bet-output" class="bet-output" for="bet-input">75 tokens</output>
+          <button id="spin-button" class="spin-button" type="button">Spin For Clout</button>
+        </div>
+
+        <div id="result-banner" class="result-banner neutral">
+          The machine is calibrated to extract optimism.
+        </div>
+
+        <section class="payouts">
+          <h3>Payout Table</h3>
+          <ul>
+            <li><span>🤖 🤖 🤖</span> Full AGI, until the demo ends: <strong>12x</strong></li>
+            <li><span>🪙 🪙 🪙</span> Raw token emission: <strong>8x</strong></li>
+            <li><span>🔥 🔥 🔥</span> Viral launch thread: <strong>6x</strong></li>
+            <li><span>📉 📉 📉</span> Down round chic: <strong>5x</strong></li>
+            <li><span>Any 2 matching</span> Mild product-market fit: <strong>2x</strong></li>
+            <li><span>💸 appears</span> Surprise billing event: <strong>-1x bonus dignity</strong></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
