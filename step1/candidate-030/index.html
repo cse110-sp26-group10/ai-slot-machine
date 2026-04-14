@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>candidate-030 | Token Burn Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <p class="kicker">candidate-030</p>
+        <h1>Token Burn Arcade</h1>
+        <p class="tagline">
+          Spend imaginary tokens to power an AI slot machine that converts hype,
+          prompts, GPUs, and hallucinations into shareholder-grade nonsense.
+        </p>
+      </section>
+
+      <section class="machine-panel" aria-labelledby="machine-title">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">Live Product Demo</p>
+            <h2 id="machine-title">Stochastic Revenue Simulator</h2>
+          </div>
+          <button id="audioToggle" class="pill-button" type="button" aria-pressed="false">
+            Audio: Off
+          </button>
+        </div>
+
+        <div class="stats-grid" aria-live="polite">
+          <article class="stat-card">
+            <span class="section-label">Wallet</span>
+            <strong><span id="walletValue">120</span> tokens</strong>
+          </article>
+          <article class="stat-card">
+            <span class="section-label">Spin Cost</span>
+            <strong><span id="costValue">10</span> tokens</strong>
+          </article>
+          <article class="stat-card">
+            <span class="section-label">GPU Debt</span>
+            <strong><span id="gpuDebtValue">0</span> credits</strong>
+          </article>
+          <article class="stat-card">
+            <span class="section-label">Hype Index</span>
+            <strong><span id="hypeValue">50</span>%</strong>
+          </article>
+        </div>
+
+        <div id="ticker" class="ticker" aria-live="polite">
+          Model idle. Finance still thinks this is a feature, not a gambling problem.
+        </div>
+
+        <div class="reel-stage" aria-label="AI satire slot machine reels">
+          <div class="reel-shell"><div class="reel" id="reel0">PROMPT</div></div>
+          <div class="reel-shell"><div class="reel" id="reel1">GPU</div></div>
+          <div class="reel-shell"><div class="reel" id="reel2">HYPE</div></div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="primary-button" type="button">Burn 10 Tokens</button>
+          <button id="savePromptButton" class="secondary-button" type="button">Save Prompt</button>
+          <button id="copyButton" class="secondary-button" type="button">Copy Spin Report</button>
+          <button id="resetButton" class="ghost-button" type="button">Reset Startup</button>
+        </div>
+
+        <label class="input-label" for="promptInput">Lucky prompt for the model</label>
+        <textarea
+          id="promptInput"
+          rows="3"
+          placeholder="Generate defensible ARR from vibes, vector databases, and GPU smoke."
+        ></textarea>
+        <p id="promptStatus" class="prompt-status">
+          Prompt is stored locally, which is the same compliance standard as most demos.
+        </p>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <p class="section-label">Last Spin</p>
+            <p id="lastSpinText" class="card-copy">
+              No spins yet. Your runway remains theoretical.
+            </p>
+          </article>
+          <article class="dashboard-card">
+            <p class="section-label">Burn Ledger</p>
+            <p id="ledgerText" class="card-copy">
+              0 spins, 0 tokens burned, 0 tokens won, 0 hallucination incidents.
+            </p>
+          </article>
+          <article class="dashboard-card">
+            <p class="section-label">Board Summary</p>
+            <p id="boardText" class="card-copy">
+              The board suggests calling losses "inference investments."
+            </p>
+          </article>
+          <article class="dashboard-card">
+            <p class="section-label">Best Prompt</p>
+            <p id="promptPreview" class="card-copy">
+              Nothing saved. Leadership is freelancing strategy again.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="info-card">
+          <h3>Payout Table</h3>
+          <ul>
+            <li><strong>3 TOKEN</strong>: investor euphoria, +90 tokens</li>
+            <li><strong>3 GPU</strong>: scale theater, +50 tokens and +15 GPU debt</li>
+            <li><strong>3 PROMPT</strong>: consultant jackpot, +45 tokens</li>
+            <li><strong>3 HYPE</strong>: keynote surge, +35 tokens</li>
+            <li><strong>3 BUG</strong>: live outage, -30 extra tokens</li>
+            <li><strong>3 HALLUCINATION</strong>: visionary fiction, +10 tokens and +2 incidents</li>
+            <li><strong>Any pair</strong>: modest buzz, +12 tokens</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Symbol Lore</h3>
+          <ul>
+            <li><strong>TOKEN</strong>: the unit of account for optimism</li>
+            <li><strong>GPU</strong>: industrial heater with a valuation multiple</li>
+            <li><strong>PROMPT</strong>: sentence fragment now billed as expertise</li>
+            <li><strong>HYPE</strong>: vapor rebranded as product strategy</li>
+            <li><strong>BUG</strong>: production deciding to join the demo</li>
+            <li><strong>HALLUCINATION</strong>: fabricated confidence with premium margins</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

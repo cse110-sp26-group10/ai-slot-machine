@@ -6,14 +6,14 @@
 | **Run ID** | candidate-005 |
 | **Timestamp** | 2026-04-14T08:34:06 |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** | |
-| **Output Tokens** | |
+| **Input Tokens** | 22,400 |
+| **Output Tokens** | 6,541 |
 | **Total Tokens** | 28,941 |
 | **Wall-clock Time (s)** | 350 |
 | **Tool-reported Time (s)**| 337 |
 | **Files Produced** | (Count: 3) [index.html, script.js, styles.css] |
-| **Lines of Code** | |
-| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+| **Lines of Code** | 680 |
+| **Runs in Browser?** | [x] Yes / [ ] No / [ ] Partial |
 
 ---
 
