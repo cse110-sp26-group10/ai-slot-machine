@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Grinder 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee:wght@400&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Trusted by 0 serious labs</p>
+        <h1>Token Grinder 3000</h1>
+        <p class="tagline">
+          Spin for the glorious privilege of earning AI tokens, then spend them
+          on premium nonsense.
+        </p>
+
+        <div class="status-grid" aria-label="Game status">
+          <article class="status-box">
+            <span class="label">Your tokens</span>
+            <strong id="tokenCount">120</strong>
+          </article>
+          <article class="status-box">
+            <span class="label">Spin cost</span>
+            <strong id="spinCost">15</strong>
+          </article>
+          <article class="status-box">
+            <span class="label">Mood</span>
+            <strong id="aiMood">Mildly overfit</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="slotTitle">
+        <div class="machine-top">
+          <div>
+            <p class="machine-kicker">Synthetic Entertainment Device</p>
+            <h2 id="slotTitle">Prompt-and-Pray Slots</h2>
+          </div>
+          <button id="resetButton" class="ghost-button" type="button">
+            Reset empire
+          </button>
+        </div>
+
+        <div class="reel-frame" role="img" aria-label="Three slot machine reels">
+          <div class="reel-window">
+            <div class="reel" id="reel0">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel1">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" id="reel2">GPU</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Burn 15 tokens
+          </button>
+          <button id="cashoutButton" class="secondary-button" type="button">
+            Spend on premium slop
+          </button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Your model is warmed up and ready to convert confidence into comedy.
+        </p>
+
+        <div class="payouts">
+          <h3>Payout table</h3>
+          <ul>
+            <li><span>3x GPU</span><strong>+120 tokens</strong></li>
+            <li><span>3x PROMPT</span><strong>+90 tokens</strong></li>
+            <li><span>3x HYPE</span><strong>+70 tokens</strong></li>
+            <li><span>Any pair</span><strong>+25 tokens</strong></li>
+            <li><span>No match</span><strong>Just vibes</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="shop-card" aria-labelledby="shopTitle">
+        <div class="shop-header">
+          <div>
+            <p class="machine-kicker">Token Sink</p>
+            <h2 id="shopTitle">Premium Upgrades</h2>
+          </div>
+          <p class="shop-copy">
+            Because no AI economy is complete without absurd monetization.
+          </p>
+        </div>
+
+        <div class="shop-grid" id="shopGrid"></div>
+      </section>
+    </main>
+
+    <template id="shopItemTemplate">
+      <article class="shop-item">
+        <div>
+          <h3 class="shop-name"></h3>
+          <p class="shop-description"></p>
+        </div>
+        <div class="shop-footer">
+          <span class="shop-price"></span>
+          <button class="buy-button" type="button">Buy</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

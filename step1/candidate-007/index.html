@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burn Casino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="marquee-card">
+        <p class="eyebrow">Vanilla Web Slot Machine</p>
+        <h1>Token Burn Casino</h1>
+        <p class="tagline">
+          Win imaginary tokens. Spend them immediately on premium-grade AI nonsense.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI satire slot machine">
+        <div class="machine-top">
+          <div>
+            <p class="label">Wallet</p>
+            <p class="wallet" id="tokenBalance">120</p>
+          </div>
+          <div class="bet-wrap">
+            <label class="label" for="betInput">Prompt Budget</label>
+            <div class="bet-control">
+              <button type="button" class="bet-button" data-bet-step="-5">-5</button>
+              <input id="betInput" type="number" min="5" max="50" step="5" value="10" />
+              <button type="button" class="bet-button" data-bet-step="5">+5</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reels" id="reels" aria-live="polite">
+          <div class="reel-window"><div class="reel" id="reel0">404</div></div>
+          <div class="reel-window"><div class="reel" id="reel1">GPU</div></div>
+          <div class="reel-window"><div class="reel" id="reel2">LOL</div></div>
+        </div>
+
+        <div class="payline">Matching three symbols means the machine believes in your startup.</div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spin For Tokens</button>
+          <button id="resetButton" class="secondary-button" type="button">Reset Wallet</button>
+        </div>
+
+        <div class="status-card">
+          <p class="label">Machine Output</p>
+          <p id="resultMessage" class="result-message">
+            Insert confidence. Pull lever. Ignore the carbon footprint.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <article>
+            <p class="label">Last Payout</p>
+            <p id="lastPayout">0 tokens</p>
+          </article>
+          <article>
+            <p class="label">Spent On</p>
+            <p id="aiPurchase">nothing yet</p>
+          </article>
+          <article>
+            <p class="label">Jackpots</p>
+            <p id="jackpotCount">0</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
