@@ -8,10 +8,10 @@
 | Input Tokens | Not captured |
 | Output Tokens | Not captured |
 | Total Tokens | Not captured |
-| Wall-clock Time (s) | TBD |
-| Tool-reported Time (s) | TBD |
+| Wall-clock Time (s) | 330 |
+| Tool-reported Time (s) | 327 |
 | Files Produced | (Count: 1) index.html |
-| Lines of Code | TBD |
+| Lines of Code | 1506 |
 | Runs in Browser? | [ ] Yes / [ ] No / [x] Partial |
 
 ## 📝 Qualitative Evaluation
