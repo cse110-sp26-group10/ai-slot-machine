@@ -1,39 +1,39 @@
-# Field Notes: candidate-021
+# Field Notes: [Run ID]
 
 ## 📊 Technical Metrics
 | Field | Value |
 | :--- | :--- |
 | **Run ID** | candidate-021 |
-| **Timestamp** | 2026-04-13 18:15:00 PDT |
+| **Timestamp** | 4:50 PM, Apr 13, 2026 |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** | 138,400 |
-| **Output Tokens** | 9,620 |
-| **Total Tokens** | 148,020 |
-| **Wall-clock Time (s)** | 385 |
-| **Tool-reported Time (s)**| 367 |
-| **Files Produced** | (Count: 3) index.html, script.js, style.css |
-| **Lines of Code** | 797 |
-| **Runs in Browser?** | [x] Yes / [ ] No / [ ] Partial |
+| **Input Tokens** | 26,842 |
+| **Output Tokens** | 8,979 |
+| **Total Tokens** | 35,821 |
+| **Wall-clock Time (s)** | 659 |
+| **Tool-reported Time (s)**| 655 |
+| **Files Produced** | (Count: 3) [index.html, script.js, style.css] |
+| **Lines of Code** | 661 |
+| **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
 
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
-    - [x] Satirical (Makes fun of AI)
-    - [x] Functional (Spin/Token logic works)
-    - [x] Visuals (Layout isn't broken)
-* **Notes:** - Strong AI satire with token burn jokes and hype-cycle references. Spin and token balance logic work correctly. Clean layout with no broken elements.
+    - [X] Satirical (Makes fun of AI)
+    - [X] Functional (Spin/Token logic works)
+    - [X] Visuals (Layout isn't broken)
+* **Notes:** -red line is behind icons, very sarcastic text, optional sound
 
 ### Code Quality Scorecard
 * **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
-    - [x] No Hallucinations (Standard APIs used)
-    - [x] Readability (Semantic naming)
-    - [x] Clean Structure (No spaghetti)
-* **Notes:** - Vanilla HTML, CSS, and JavaScript with clear separation of concerns. Standard browser APIs only. Readable function and variable names throughout.
+    - [X] No Hallucinations (Standard APIs used)
+    - [X] Readability (Semantic naming)
+    - [X] Clean Structure (No spaghetti)
+* **Notes:** - includes animated reels, prompt-token spending and payouts, sarcastic AI-themed win/loss commentary, a reset flow, a sound toggle using the Web Audio API, and responsive styling
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Bethany Miyamoto
