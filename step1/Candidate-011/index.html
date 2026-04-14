@@ -1,1 +1,156 @@
+html
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler</title>
+  <title>Token Trough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Synthetic Probability Engine</p>
+      <h1>Token Tumbler</h1>
+      <p class="tagline">
+        Feed the machine your precious tokens, then celebrate when it generously returns a fraction
+        of what it extracted from your soul.
+      </p>
+      <div class="hero-copy">
+        <p class="eyebrow">Venture-Funded Probability Theater</p>
+        <h1>Token Trough</h1>
+        <p class="tagline">
+          Spin the machine, win some tokens, lose more tokens, and enjoy a premium AI experience
+          where the business model is "please keep feeding it."
+        </p>
+      </div>
 
+      <div class="scoreboard" aria-label="Token dashboard">
+        <article class="stat">
+          <span class="stat-label">Wallet</span>
+          <strong id="balance">120</strong>
+          <span class="stat-note">prompt bucks</span>
+          <strong id="balance">150</strong>
+          <span class="stat-note">surviving tokens</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="cost">15</strong>
+          <span class="stat-note">tokens burned</span>
+          <strong id="cost">20</strong>
+          <span class="stat-note">instantly vaporized</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Last Payout</span>
+          <strong id="last-win">0</strong>
+          <span class="stat-note">reimbursed by AI</span>
+          <span class="stat-note">begrudging rebate</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Net Gain</span>
+          <strong id="net-total">0</strong>
+          <span class="stat-note">against all odds</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="machine-header">
+        <div>
+          <p class="eyebrow">Model Alignment Casino</p>
+          <h2 id="machine-title">Spin for miraculous token efficiency</h2>
+          <p class="eyebrow">AI Monetization Cabinet</p>
+          <h2 id="machine-title">Pull the lever and negotiate with nonsense</h2>
+        </div>
+        <div class="streak-wrap" aria-live="polite">
+          <span class="streak-label">Hot Streak</span>
+          <span class="streak-label">Win Streak</span>
+          <strong id="streak">0</strong>
+        </div>
+      </div>
+
+      <div class="machine-frame">
+        <div class="reel-window" aria-label="Slot machine reels">
+          <div class="reel" id="reel-0">404</div>
+          <div class="reel" id="reel-1">GPU</div>
+          <div class="reel" id="reel-2">LOL</div>
+      <div class="machine-grid">
+        <div class="machine-frame">
+          <div class="reel-window" aria-label="Slot machine reels">
+            <div class="reel" id="reel-0">GPU</div>
+            <div class="reel" id="reel-1">HYPE</div>
+            <div class="reel" id="reel-2">404</div>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="meter-card" aria-label="Hallucination meter">
+            <div class="meter-label-row">
+              <span class="stat-label">Hallucination Meter</span>
+              <strong id="chaos-label">Calm-ish</strong>
+            </div>
+            <div class="meter-track" aria-hidden="true">
+              <div id="chaos-bar" class="meter-bar"></div>
+            </div>
+            <p class="meter-note">Every bad spin proves the machine is definitely learning.</p>
+          </div>
+
+          <div class="stats-mini">
+            <article>
+              <span class="stat-label">Spins</span>
+              <strong id="spin-count">0</strong>
+            </article>
+            <article>
+              <span class="stat-label">Best Win</span>
+              <strong id="best-win">0</strong>
+            </article>
+          </div>
+        </aside>
+      </div>
+
+      <div class="actions">
+        <button id="spin-button" class="spin-button" type="button">
+          Spend tokens to impress the machine
+          Spend tokens for "premium inference"
+        </button>
+        <button id="share-button" class="ghost-button" type="button">
+          Brag about your token burn
+        </button>
+        <button id="reset-button" class="ghost-button" type="button">
+          Restore investor confidence
+          Reboot the hype cycle
+        </button>
+      </div>
+
+      <div class="message-panel">
+        <p id="message" class="message" aria-live="polite">
+          The reels are idle, judging your token management strategy.
+          The machine is idle and already invoicing you for future disappointment.
+        </p>
+      </div>
+
+      <section class="feed-panel" aria-labelledby="feed-title">
+        <div class="feed-header">
+          <h3 id="feed-title">Recent Corporate Spin</h3>
+          <p>Live updates from the machine's internal PR department.</p>
+        </div>
+        <ul id="event-feed" class="event-feed">
+          <li>The casino booted successfully and immediately requested more GPU budget.</li>
+        </ul>
+      </section>
+
+      <div class="payout-panel">
+        <h3>Payout Logic</h3>
+        <ul>
+          <li>Three matching symbols: the machine briefly respects you.</li>
+          <li>Two matching symbols: partial refund for your optimism.</li>
+          <li>No match: the AI calls it "inference overhead."</li>
+          <li>Three matching symbols: the AI briefly stops lying and gives you a real payout.</li>
+          <li>Two matching symbols: partial refund for believing the demo.</li>
+          <li>No match: your tokens are reclassified as "model improvement."</li>
+        </ul>
+      </div>
+    </section>
