@@ -39,7 +39,7 @@
 * **Notes:** - 
   - The JavaScript uses standard browser APIs only, including DOM APIs, localStorage, clipboard/share, Blob download/export, vibration, Web Audio, and keyboard events. :contentReference[oaicite:2]{index=2}
   - The code is organized into clear functions such as render, spin, score, buildSpendPlan, renderLedger, addLedgerEntry, exportLedger, and handleKeydown. :contentReference[oaicite:3]{index=3}
-  - This version is more complete than earlier candidates while still staying readable and self-contained. :contentReference[oaicite:4]{index=4}
+  - This version is more complete than earlier candidates while still staying readable.
 
 ---
 **Data Entry by:**  Benedict Luis
