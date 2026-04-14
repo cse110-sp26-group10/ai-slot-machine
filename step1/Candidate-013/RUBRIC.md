@@ -12,7 +12,7 @@
 | Tool-reported Time (s) | 327 |
 | Files Produced | (Count: 1) index.html |
 | Lines of Code | 1506 |
-| Runs in Browser? | [ ] Yes / [ ] No / [x] Partial |
+| Runs in Browser? | [x] Yes / [ ] No / [ ] Partial |
 
 ## 📝 Qualitative Evaluation
 
