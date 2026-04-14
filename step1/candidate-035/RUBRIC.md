@@ -20,7 +20,7 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
