@@ -10,8 +10,8 @@
 - Tool-reported time (s): 
 - Files produced: index.html, styles.css, script.js
 - Browser Test: Yes/Pass
-- App Quality Score (1-5): 
-- Code Quality Score (1-5): 
+- App Quality Score (1-5): 4/5 because it looks polished, funny, and functional.
+- Code Quality Score (1-5): 3/5 because the JS is messy and inconsistent
 
 ## App Quality Notes
 - App loads successfully in the browser and the slot machine UI renders correctly.
