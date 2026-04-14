@@ -3,144 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>candidate-029 | Token Rug Pull Casino</title>
+    <title>Token Furnace</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page-shell">
+    <main class="app-shell">
       <section class="hero-card">
-        <p class="eyebrow">candidate-029</p>
-        <h1>Token Rug Pull Casino</h1>
-        <p class="subtitle">
-          Pull the lever, burn your prompt budget, and hope the machine rewards
-          your brave investment in stochastic overconfidence.
+        <p class="eyebrow">SATIRICAL AI CASINO EXPERIENCE</p>
+        <h1>Token Furnace</h1>
+        <p class="tagline">
+          Spin the reels, win imaginary tokens, and immediately burn them on
+          premium-grade machine confidence.
         </p>
-      </section>
 
-      <section class="machine-card" aria-labelledby="machine-title">
-        <div class="machine-top">
-          <div>
-            <p class="label">Current Product Narrative</p>
-            <h2 id="machine-title">Enterprise Hallucination Engine</h2>
-          </div>
-          <button id="soundButton" class="sound-button" type="button" aria-pressed="false">
-            Sound: Off
-          </button>
+        <div class="status-grid" aria-label="Game status">
+          <article class="status-panel">
+            <span class="status-label">Token Balance</span>
+            <strong id="tokenBalance">120</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Hype Meter</span>
+            <strong id="hypeMeter">Cautiously Delusional</strong>
+          </article>
         </div>
 
-        <div class="status-grid" aria-live="polite">
-          <div class="status-pill">
-            <span class="label">Wallet</span>
-            <strong><span id="walletValue">150</span> tokens</strong>
-          </div>
-          <div class="status-pill">
-            <span class="label">Spin Cost</span>
-            <strong><span id="costValue">15</span> tokens</strong>
-          </div>
-          <div class="status-pill">
-            <span class="label">GPU Debt</span>
-            <strong><span id="gpuDebtValue">0</span> credits</strong>
-          </div>
-          <div class="status-pill">
-            <span class="label">Win Streak</span>
-            <strong><span id="streakValue">0</span>x</strong>
-          </div>
-        </div>
-
-        <div class="ticker" id="tickerMessage">
-          Model standing by. Compliance has looked the other way.
-        </div>
-
-        <div class="reel-board" aria-label="Three slot machine reels" aria-live="polite">
-          <div class="reel-frame"><div class="reel" id="reel0">TOKEN</div></div>
-          <div class="reel-frame"><div class="reel" id="reel1">GPU</div></div>
-          <div class="reel-frame"><div class="reel" id="reel2">PROMPT</div></div>
-        </div>
-
-        <div class="controls">
-          <button id="spinButton" class="primary-button" type="button">
-            Spin The Model
-          </button>
-          <button id="copyButton" class="secondary-button" type="button">
-            Copy Investor Update
-          </button>
-          <button id="resetButton" class="ghost-button" type="button">
-            Reset Cap Table
-          </button>
-        </div>
-
-        <div class="prompt-panel">
-          <label class="label" for="promptInput">Lucky Prompt</label>
-          <div class="prompt-row">
-            <textarea
-              id="promptInput"
-              rows="3"
-              placeholder="e.g. Disrupt cloud costs with spiritually aligned autocomplete."
-            ></textarea>
-            <button id="savePromptButton" class="ghost-button" type="button">
-              Save Prompt
+        <section class="machine" aria-labelledby="machine-title">
+          <div class="machine-top">
+            <h2 id="machine-title">Inference Reel Engine</h2>
+            <button id="themeToggle" class="ghost-button" type="button">
+              Toggle Glare
             </button>
           </div>
-          <p id="promptHint" class="prompt-hint">
-            Saved locally. The machine accepts bribes in the form of buzzwords.
+
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <div class="reel-frame"><span id="reel1" class="reel">🤖</span></div>
+            <div class="reel-frame"><span id="reel2" class="reel">💸</span></div>
+            <div class="reel-frame"><span id="reel3" class="reel">🔥</span></div>
+          </div>
+
+          <div class="controls">
+            <label class="bet-control" for="betRange">
+              <span>Prompt Budget</span>
+              <input id="betRange" type="range" min="5" max="30" step="5" value="15" />
+            </label>
+            <button id="spinButton" class="spin-button" type="button">
+              Spin for Tokens
+            </button>
+          </div>
+
+          <p id="message" class="message">
+            Three matching symbols means the machine accidentally helped.
           </p>
-        </div>
+        </section>
 
-        <div class="dashboard-grid">
-          <article class="panel-card">
-            <p class="label">Last Outcome</p>
-            <p id="lastOutcome" class="panel-copy">
-              No spin yet. Your token balance is still mostly hypothetical.
-            </p>
-          </article>
-          <article class="panel-card">
-            <p class="label">Burn Ledger</p>
-            <p id="ledgerLine" class="panel-copy">
-              0 spins, 0 tokens burned, 0 tokens won, 0 decks ruined.
-            </p>
-          </article>
-          <article class="panel-card">
-            <p class="label">Board Memo</p>
-            <p id="boardMemo" class="panel-copy">
-              The board remains excited that your losses can be described as
-              "training data."
-            </p>
-          </article>
-          <article class="panel-card">
-            <p class="label">Prompt Residue</p>
-            <p id="savedPromptPreview" class="panel-copy">
-              No prompt saved. Raw intuition is doing most of the damage.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="info-grid">
-        <article class="info-card">
-          <h3>Payout Lore</h3>
-          <ul>
-            <li><strong>3 TOKEN</strong> = VC jackpot, +140 tokens.</li>
-            <li><strong>3 GPU</strong> = compute panic, +90 tokens and +12 GPU debt.</li>
-            <li><strong>3 PROMPT</strong> = premium prompt theater, +70 tokens.</li>
-            <li><strong>3 HYPE</strong> = keynote smoke bomb, +60 tokens.</li>
-            <li><strong>Any 2 matching</strong> = mild irrational exuberance, +25 tokens.</li>
-            <li><strong>2 or 3 BUG</strong> = incident response cosplay, lose extra tokens.</li>
-          </ul>
-        </article>
-
-        <article class="info-card">
-          <h3>Machine Symbols</h3>
-          <ul>
-            <li><strong>TOKEN</strong> = the imaginary unit investors mistake for profit.</li>
-            <li><strong>GPU</strong> = expensive rectangle that converts capital into heat.</li>
-            <li><strong>PROMPT</strong> = prose spell allegedly worth a six-figure salary.</li>
-            <li><strong>HYPE</strong> = non-fungible confidence.</li>
-            <li><strong>BUG</strong> = reality insisting on joining the demo.</li>
-            <li><strong>VC</strong> = external validation with a liquidation preference.</li>
-          </ul>
-        </article>
+        <section class="ledger-card">
+          <div class="ledger-head">
+            <h2>Spend Tokens</h2>
+            <p>Because what is victory without monetized disappointment?</p>
+          </div>
+          <div id="shop" class="shop-list"></div>
+        </section>
       </section>
     </main>
+
+    <template id="shopItemTemplate">
+      <button class="shop-item" type="button">
+        <span class="shop-title"></span>
+        <span class="shop-meta"></span>
+      </button>
+    </template>
 
     <script src="script.js"></script>
   </body>
