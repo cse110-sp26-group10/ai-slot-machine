@@ -12,7 +12,7 @@
 | **Wall-clock Time (s)** | 334 |
 | **Tool-reported Time (s)**| 330 |
 | **Files Produced** | (Count: 3) ai-slot.html, ai-slot.css, ai-slot.js |
-| **Lines of Code** | TBD |
+| **Lines of Code** | 959 |
 | **Runs in Browser?** | [ ] Yes / [ ] No / [x] Partial |
 
 ---
