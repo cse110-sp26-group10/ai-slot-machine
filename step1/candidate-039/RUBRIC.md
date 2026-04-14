@@ -1,4 +1,4 @@
-# Field Notes: [Run ID]
+# Field Notes: candidate-039
 
 ## 📊 Technical Metrics
 | Field | Value |
@@ -20,20 +20,20 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - there is no option to reset the token balance
+* **Notes:** - Uses words instead of emojis for the slot machine. There is no option to reset the token balance.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - The code looks fine.
 
 ---
 **Data Entry by:** Han Yang-Lin

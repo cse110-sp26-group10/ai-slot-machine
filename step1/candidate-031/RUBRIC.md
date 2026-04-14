@@ -1,4 +1,4 @@
-# Field Notes: [Run ID]
+# Field Notes: candidate-031
 
 ## 📊 Technical Metrics
 | Field | Value |
@@ -20,20 +20,20 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - 
+* **Notes:** - Clean and responsive UI, but data is not saved and provides no reset option.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - The code looks fine.
 
 ---
 **Data Entry by:** Han Yang-Lin

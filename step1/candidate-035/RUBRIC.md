@@ -1,4 +1,4 @@
-# Field Notes: [Run ID]
+# Field Notes: candidate-035
 
 ## 📊 Technical Metrics
 | Field | Value |
@@ -25,15 +25,15 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - "Auto-burn 5 Spins" does 6 spins
+* **Notes:** - Clean UI, pleasant color theme, and suitable sound effects. Uses words instead of emojis for the slot machine and data is not saved. "Auto-burn 5 Spins" does 6 spins.
 
 ### Code Quality Scorecard
-* **Score:** ___ / 10 (Using Rubric)
+* **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
-    - [ ] No Hallucinations (Standard APIs used)
-    - [ ] Readability (Semantic naming)
-    - [ ] Clean Structure (No spaghetti)
-* **Notes:** - 
+    - [x] No Hallucinations (Standard APIs used)
+    - [x] Readability (Semantic naming)
+    - [x] Clean Structure (No spaghetti)
+* **Notes:** - One logical error behind the "Auto-burn 5 Spins" as described in the App Quality notes.
 
 ---
 **Data Entry by:** Han Yang-Lin
