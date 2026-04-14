@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Burn Casino</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Generative Gambling for the Disillusioned</p>
+        <h1>Token Burn Casino</h1>
+        <p class="tagline">
+          Spin the reels, win synthetic clout, and immediately spend your hard-earned
+          tokens on completely unnecessary AI upgrades.
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="machine-title">
+        <div class="machine-header">
+          <div>
+            <p class="label">Balance</p>
+            <p class="metric"><span id="token-count">30</span> tokens</p>
+          </div>
+          <div>
+            <p class="label">Spin Cost</p>
+            <p class="metric">3 tokens</p>
+          </div>
+          <div>
+            <p class="label">Mood</p>
+            <p class="metric" id="ai-mood">Smugly optimistic</p>
+          </div>
+        </div>
+
+        <h2 id="machine-title" class="sr-only">AI slot machine</h2>
+
+        <div class="reels" aria-live="polite" aria-atomic="true">
+          <div class="reel" id="reel-0">404</div>
+          <div class="reel" id="reel-1">GPU</div>
+          <div class="reel" id="reel-2">NFT</div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">Spin the Hype Cycle</button>
+          <button id="cashout-button" class="ghost-button" type="button">Buy Dubious Upgrade</button>
+          <button id="reset-button" class="ghost-button" type="button">Reset Wallet</button>
+        </div>
+
+        <p class="status" id="status-message">
+          Welcome, founder. Your seed round is now denominated in tokens.
+        </p>
+      </section>
+
+      <section class="panels">
+        <article class="panel">
+          <h2>Joke Economy</h2>
+          <ul id="event-log" class="event-log" aria-live="polite">
+            <li>Three tokens per spin. Just like a real AI startup, but cheaper.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Payout Lore</h2>
+          <ul class="payouts">
+            <li>3 matching symbols: +18 tokens and unbearable confidence</li>
+            <li>2 matching symbols: +7 tokens and a LinkedIn post draft</li>
+            <li>No match: the market calls this "learning"</li>
+            <li>Upgrade button: spend 10 tokens on satirical nonsense</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
