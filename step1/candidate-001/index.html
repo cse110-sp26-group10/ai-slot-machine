@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Silicon Valley's least ethical arcade</p>
+        <h1>Token Tugger 3000</h1>
+        <p class="subhead">
+          Pull the lever, win imaginary tokens, and feed the machine that keeps
+          promising it is "almost generally intelligent."
+        </p>
+
+        <div class="status-bar" aria-label="Game status">
+          <div class="status-chip">
+            <span class="label">Wallet</span>
+            <strong id="token-count">120</strong>
+          </div>
+          <div class="status-chip">
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+          </div>
+          <div class="status-chip">
+            <span class="label">Jackpot</span>
+            <strong id="jackpot-value">250</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="machine-card" aria-labelledby="slot-title">
+        <div class="machine-topper">
+          <h2 id="slot-title">LLM Slot Array</h2>
+          <button id="reset-button" class="ghost-button" type="button">
+            Reset Wallet
+          </button>
+        </div>
+
+        <div class="marquee" aria-live="polite" id="message-board">
+          Press spin to convert optimism into platform credits.
+        </div>
+
+        <div class="slot-machine" aria-label="Slot machine">
+          <button
+            id="lever-button"
+            class="lever-button"
+            type="button"
+            aria-label="Pull the lever"
+          >
+            <span class="lever-stem"></span>
+            <span class="lever-knob"></span>
+          </button>
+
+          <div class="reels-frame">
+            <div class="reels" id="reels">
+              <article class="reel" data-reel="0">
+                <div class="symbol" id="reel-0">404</div>
+              </article>
+              <article class="reel" data-reel="1">
+                <div class="symbol" id="reel-1">GPU</div>
+              </article>
+              <article class="reel" data-reel="2">
+                <div class="symbol" id="reel-2">HYPE</div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spin For Tokens
+          </button>
+
+          <label class="bet-picker" for="bet-range">
+            <span>Token Burn</span>
+            <input id="bet-range" type="range" min="5" max="30" step="5" value="15" />
+          </label>
+        </div>
+
+        <div class="payouts">
+          <div class="payout">
+            <span class="combo">3x TOKEN</span>
+            <span class="reward">Jackpot: +250</span>
+          </div>
+          <div class="payout">
+            <span class="combo">Any 3 match</span>
+            <span class="reward">+90</span>
+          </div>
+          <div class="payout">
+            <span class="combo">2x TOKEN</span>
+            <span class="reward">+45</span>
+          </div>
+          <div class="payout">
+            <span class="combo">3 different disasters</span>
+            <span class="reward">+10 pity rebate</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="feed-card" aria-labelledby="feed-title">
+        <div class="feed-head">
+          <h2 id="feed-title">Model Behavior Log</h2>
+          <span class="pill" id="streak-pill">Cold streak</span>
+        </div>
+        <ul class="event-feed" id="event-feed" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <template id="feed-item-template">
+      <li class="feed-item">
+        <span class="feed-time"></span>
+        <p class="feed-text"></p>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

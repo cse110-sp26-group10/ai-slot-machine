@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Token Tugger 5000</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Reward model not found</p>
+        <h1>Token Tugger 5000</h1>
+        <p class="tagline">
+          Feed the machine your precious prompt tokens and pray the reels align into a
+          convincing simulation of intelligence.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="machine-top">
+          <div class="display-card">
+            <span class="display-label">Wallet</span>
+            <strong id="token-balance" class="display-value">1200</strong>
+            <span class="display-hint">tokens left to impress a chatbot</span>
+          </div>
+
+          <div class="display-card">
+            <span class="display-label">Spin Cost</span>
+            <strong id="spin-cost" class="display-value">40</strong>
+            <span class="display-hint">per synthetic act of hope</span>
+          </div>
+
+          <div class="display-card">
+            <span class="display-label">Jackpot</span>
+            <strong class="display-value">900</strong>
+            <span class="display-hint">three unicorn outcomes in a row</span>
+          </div>
+        </div>
+
+        <div class="reel-frame" aria-live="polite">
+          <div class="reel-window">
+            <div class="reel" data-reel="0">404</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" data-reel="1">GPU</div>
+          </div>
+          <div class="reel-window">
+            <div class="reel" data-reel="2">COPE</div>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <button id="spin-button" class="spin-button" type="button">Burn 40 Tokens</button>
+          <button id="reset-button" class="ghost-button" type="button">Reset Wallet</button>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-panel">
+            <span class="stat-label">Session yield</span>
+            <strong id="session-yield" class="stat-value">0</strong>
+          </article>
+          <article class="stat-panel">
+            <span class="stat-label">Spin count</span>
+            <strong id="spin-count" class="stat-value">0</strong>
+          </article>
+          <article class="stat-panel">
+            <span class="stat-label">Best hit</span>
+            <strong id="best-hit" class="stat-value">none</strong>
+          </article>
+        </div>
+
+        <section class="result-panel">
+          <h2>Inference Log</h2>
+          <p id="result-message">
+            The house model is warmed up. Insert tokens and let the benchmark theater begin.
+          </p>
+        </section>
+      </section>
+
+      <section class="paytable">
+        <h2>Paytable of Dubious Merit</h2>
+        <div class="paytable-grid">
+          <article>
+            <h3>UNI UNI UNI</h3>
+            <p>+900 tokens. Congratulations, you invented artificial destiny.</p>
+          </article>
+          <article>
+            <h3>GPU GPU GPU</h3>
+            <p>+420 tokens. The cluster noticed you and immediately sent a bill.</p>
+          </article>
+          <article>
+            <h3>404 404 404</h3>
+            <p>+250 tokens. Total failure loops back into product-market fit.</p>
+          </article>
+          <article>
+            <h3>Any pair</h3>
+            <p>+110 tokens. Two matching buzzwords count as strategic alignment.</p>
+          </article>
+          <article>
+            <h3>No match</h3>
+            <p>-40 tokens. Your wallet has been fine-tuned for disappointment.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

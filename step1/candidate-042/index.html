@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Drain Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <p class="kicker">Synthetic entertainment for the post-product era</p>
+        <h1>Token Drain Casino</h1>
+        <p class="lede">
+          Pull the lever, win imaginary AI tokens, then spend them on premium
+          features like "faster nonsense" and "enterprise confidence mode."
+        </p>
+      </section>
+
+      <section class="machine-panel" aria-label="AI satire slot machine">
+        <div class="topline">
+          <div class="meter">
+            <span class="label">Wallet</span>
+            <strong id="token-balance">900</strong>
+            <span class="caption">tokens of pure delusion</span>
+          </div>
+          <div class="meter">
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">75</strong>
+            <span class="caption">paid directly to the cloud</span>
+          </div>
+          <div class="meter">
+            <span class="label">Best Streak</span>
+            <strong id="best-streak">0</strong>
+            <span class="caption">saved in your browser forever</span>
+          </div>
+        </div>
+
+        <div class="machine-body">
+          <div class="reel-stage" aria-live="polite" aria-atomic="true">
+            <div class="payline"></div>
+            <div class="reel" id="reel-1">GPU</div>
+            <div class="reel" id="reel-2">GPU</div>
+            <div class="reel" id="reel-3">GPU</div>
+          </div>
+
+          <aside class="scoreboard">
+            <p class="board-title">Latest damage report</p>
+            <p id="result-message" class="result-message">
+              System idle. Burn rate nominal. Hubris elevated.
+            </p>
+            <p id="expense-message" class="expense-message">
+              No hidden fees yet, which suggests the hidden fees are enormous.
+            </p>
+          </aside>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="primary-button" type="button">
+            Spend Tokens
+          </button>
+          <button id="airdrop-button" class="secondary-button" type="button">
+            Summon VC Airdrop
+          </button>
+          <button id="share-button" class="secondary-button" type="button">
+            Share Fake Win
+          </button>
+        </div>
+      </section>
+
+      <section class="upgrades-panel">
+        <div class="section-heading">
+          <p class="kicker">Monetization layer</p>
+          <h2>Spend your winnings on AI upgrades nobody approved</h2>
+        </div>
+        <div id="upgrade-list" class="upgrade-list"></div>
+      </section>
+    </main>
+
+    <template id="upgrade-template">
+      <article class="upgrade-card">
+        <div class="upgrade-copy">
+          <h3 class="upgrade-name"></h3>
+          <p class="upgrade-description"></p>
+        </div>
+        <div class="upgrade-footer">
+          <span class="upgrade-price"></span>
+          <button class="buy-button" type="button"></button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tugger 3000</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Vanilla HTML + CSS + JS</p>
+        <h1>Token Tugger 3000</h1>
+        <p class="tagline">
+          Spin the reels, win fake AI tokens, and immediately burn them on
+          deeply unnecessary machine learning upgrades.
+        </p>
+      </section>
+
+      <section class="machine" aria-labelledby="machine-title">
+        <div class="machine-top">
+          <div>
+            <p class="panel-label">Player Wallet</p>
+            <p class="token-count">
+              <span id="tokens">120</span>
+              <span class="token-unit">tokens</span>
+            </p>
+          </div>
+          <div>
+            <p class="panel-label">Hype Meter</p>
+            <p id="streak" class="streak-copy">Baseline buzzword density</p>
+          </div>
+        </div>
+
+        <div class="reel-frame" role="group" aria-labelledby="machine-title">
+          <h2 id="machine-title" class="sr-only">Slot machine reels</h2>
+          <div class="reels">
+            <div class="reel" id="reel-0" aria-live="polite">Prompt</div>
+            <div class="reel" id="reel-1" aria-live="polite">Token</div>
+            <div class="reel" id="reel-2" aria-live="polite">Hallucination</div>
+          </div>
+          <div class="payline" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="action-button primary" type="button">
+            Spin for 15 tokens
+          </button>
+          <button id="upgrade-button" class="action-button" type="button">
+            Buy dubious upgrade
+          </button>
+        </div>
+
+        <p id="message" class="message" aria-live="polite">
+          Welcome to the economy of vibes.
+        </p>
+      </section>
+
+      <section class="shop" aria-labelledby="shop-title">
+        <div class="shop-header">
+          <div>
+            <p class="eyebrow">Token Sink</p>
+            <h2 id="shop-title">Premium AI Purchases</h2>
+          </div>
+          <p class="shop-note">
+            Every upgrade is absolutely essential if your goal is to impress a
+            CFO for seven seconds.
+          </p>
+        </div>
+        <div id="upgrade-list" class="upgrade-list"></div>
+      </section>
+    </main>
+
+    <template id="upgrade-template">
+      <article class="upgrade-card">
+        <div class="upgrade-copy">
+          <p class="upgrade-name"></p>
+          <p class="upgrade-description"></p>
+        </div>
+        <div class="upgrade-meta">
+          <p class="upgrade-price"></p>
+          <p class="upgrade-status"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

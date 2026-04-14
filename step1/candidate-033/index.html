@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Sink 3000</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Synthetic Fortune Engine</p>
+        <h1>Token Sink 3000</h1>
+        <p class="hero-copy">
+          Pull the lever, burn compute credits, and pray the machine rewards your
+          brave investment in predictive nonsense.
+        </p>
+      </header>
+
+      <main class="machine-layout">
+        <section class="machine-card" aria-labelledby="slot-title">
+          <div class="machine-top">
+            <div>
+              <p class="label">Current Vibe</p>
+              <h2 id="slot-title">Prompt Engineering Casino</h2>
+            </div>
+            <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
+              Sound: Off
+            </button>
+          </div>
+
+          <div class="status-strip" aria-live="polite">
+            <div class="status-pill">
+              <span class="status-label">Wallet</span>
+              <strong id="token-balance">120</strong>
+              <span>tokens</span>
+            </div>
+            <div class="status-pill">
+              <span class="status-label">Cost Per Spin</span>
+              <strong id="spin-cost">15</strong>
+              <span>tokens</span>
+            </div>
+            <div class="status-pill">
+              <span class="status-label">Jackpots</span>
+              <strong id="jackpot-count">0</strong>
+              <span>miracles</span>
+            </div>
+          </div>
+
+          <div class="reel-board" role="img" aria-label="Three slot machine reels filled with AI-themed symbols">
+            <div class="reel-window"><div class="reel-symbol" id="reel-0">🤖</div></div>
+            <div class="reel-window"><div class="reel-symbol" id="reel-1">🪙</div></div>
+            <div class="reel-window"><div class="reel-symbol" id="reel-2">🔥</div></div>
+          </div>
+
+          <div class="controls">
+            <button class="spin-button" id="spin-button" type="button">Spin For Questionable Value</button>
+            <button class="secondary-button" id="reset-button" type="button">Reset Wallet</button>
+          </div>
+
+          <p class="message" id="message">
+            You're up 120 tokens. The board believes in your next terrible idea.
+          </p>
+        </section>
+
+        <aside class="side-panel">
+          <section class="panel-card">
+            <p class="label">Payout Lore</p>
+            <ul class="payout-list">
+              <li><span>3x 🪙</span><strong>+120 tokens</strong></li>
+              <li><span>3x 🤖</span><strong>+90 tokens</strong></li>
+              <li><span>3x 🔥</span><strong>+60 tokens</strong></li>
+              <li><span>Any pair</span><strong>+25 tokens</strong></li>
+              <li><span>Nothing useful</span><strong>AI roast</strong></li>
+            </ul>
+          </section>
+
+          <section class="panel-card">
+            <p class="label">Market Commentary</p>
+            <div class="fact-box" id="fact-box">
+              Investors remain bullish on apps that convert your rent money into
+              "engagement."
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Furnace Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">SILICON VALLEY'S MOST HONEST CASINO</p>
+        <h1>Token Furnace</h1>
+        <p class="tagline">
+          Feed the machine tokens. Receive premium hallucinations, synergy, and
+          occasional line items marked "value."
+        </p>
+
+        <div class="status-grid">
+          <article class="stat">
+            <span class="label">Wallet</span>
+            <strong id="token-balance">120</strong>
+            <span class="meta">prompt tokens remaining</span>
+          </article>
+          <article class="stat">
+            <span class="label">Spin Cost</span>
+            <strong id="spin-cost">15</strong>
+            <span class="meta">per inference event</span>
+          </article>
+          <article class="stat">
+            <span class="label">Jackpot</span>
+            <strong id="jackpot">0</strong>
+            <span class="meta">total tokens won</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="machine-card">
+        <div class="machine-top">
+          <div>
+            <p class="eyebrow">MODEL OUTPUT REFINERY</p>
+            <h2>Pull for questionable intelligence</h2>
+          </div>
+          <button id="reset-button" class="secondary-button" type="button">
+            Reset wallet
+          </button>
+        </div>
+
+        <div class="reels-frame" id="machine">
+          <div class="reels" aria-live="polite">
+            <div class="reel-window"><span id="reel-0">404</span></div>
+            <div class="reel-window"><span id="reel-1">404</span></div>
+            <div class="reel-window"><span id="reel-2">404</span></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Burn 15 tokens
+          </button>
+          <label class="bet-control">
+            <span>Inference depth</span>
+            <input id="bet-slider" type="range" min="5" max="30" step="5" value="15" />
+          </label>
+        </div>
+
+        <p id="result-message" class="result-message">
+          Welcome back. The machine is warmed up and fully unregulated.
+        </p>
+
+        <ul class="paytable">
+          <li><strong>3x TOKEN</strong><span>+90 tokens. Venture capital cries.</span></li>
+          <li><strong>3x GPU</strong><span>+60 tokens. Compute briefly becomes affordable.</span></li>
+          <li><strong>3x AGENT</strong><span>+45 tokens. Middle management replaced.</span></li>
+          <li><strong>2 matching</strong><span>+20 tokens. The demo still dazzles investors.</span></li>
+          <li><strong>No match</strong><span>-Your bet. Please clap for artificial efficiency.</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <template id="messages-template">
+      <span data-key="jackpot">Three TOKEN reels. You extracted value from the hype cycle.</span>
+      <span data-key="gpu">Triple GPU. The cluster gods grant temporary abundance.</span>
+      <span data-key="agent">Triple AGENT. Congratulations on automating another status meeting.</span>
+      <span data-key="double">Two reels matched. The deck is still convincing.</span>
+      <span data-key="miss">Miss. The model confidently invented your profit margin.</span>
+      <span data-key="broke">Wallet empty. Even satire has a token limit.</span>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

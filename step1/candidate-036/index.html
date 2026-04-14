@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Furnace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Neural Nectar Casino</p>
+      <h1>Token Furnace</h1>
+      <p class="hero-copy">
+        Convert your dignity into credits, then feed them directly into the model.
+        Every spin is a fresh opportunity to win tokens, burn tokens, and receive
+        a completely unhelpful confidence score.
+      </p>
+    </section>
+
+    <section class="machine-panel" aria-label="AI token slot machine">
+      <div class="scoreboard" aria-live="polite">
+        <div class="score-card">
+          <span class="label">Token Balance</span>
+          <strong id="balance">120</strong>
+        </div>
+        <div class="score-card">
+          <span class="label">Spin Cost</span>
+          <strong id="cost">15</strong>
+        </div>
+        <div class="score-card">
+          <span class="label">Hype Level</span>
+          <strong id="hype">Seed Stage</strong>
+        </div>
+      </div>
+
+      <div class="reel-stage">
+        <div class="reel" data-reel="0">
+          <span class="icon" id="reel-0-icon">🤖</span>
+          <span class="name" id="reel-0-name">Hallucination</span>
+        </div>
+        <div class="reel" data-reel="1">
+          <span class="icon" id="reel-1-icon">🔥</span>
+          <span class="name" id="reel-1-name">GPU Fire</span>
+        </div>
+        <div class="reel" data-reel="2">
+          <span class="icon" id="reel-2-icon">🪙</span>
+          <span class="name" id="reel-2-name">Token Rain</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spin The Model</button>
+        <button id="demo-button" class="ghost-button" type="button">Beg VC For Bailout</button>
+      </div>
+
+      <div class="message-board">
+        <p class="message" id="message">
+          The benchmark says you are definitely so back.
+        </p>
+        <p class="sub-message" id="sub-message">
+          Match symbols to win tokens. Miss and the cloud bill eats the difference.
+        </p>
+      </div>
+
+      <div class="paytable">
+        <h2>Tokenomics</h2>
+        <ul>
+          <li>3 matching symbols: win 60 tokens and a fresh burst of AI optimism.</li>
+          <li>2 matching symbols: win 25 tokens and a polite investor nod.</li>
+          <li>3 GPUs: jackpot for 150 tokens because heat equals scale.</li>
+          <li>Token balance below spin cost: beg for a bailout and blame inference costs.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

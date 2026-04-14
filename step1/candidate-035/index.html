@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+      <h1>Token Tumbler</h1>
+      <p class="tagline">Win fake AI tokens. Spend them instantly on premium autocomplete and emotionally expensive buzzwords.</p>
+    </section>
+
+    <section class="machine" aria-label="AI satire slot machine">
+      <div class="machine-top">
+        <div class="display-card balance-card">
+          <span class="label">Token Balance</span>
+          <strong id="balance" class="value">120</strong>
+          <span class="subtext">Enough for 3.4 enterprise prompts</span>
+        </div>
+
+        <div class="display-card spend-card">
+          <span class="label">Spin Cost</span>
+          <strong id="spin-cost" class="value">15</strong>
+          <span class="subtext">Dynamic surge pricing for innovation</span>
+        </div>
+
+        <div class="display-card streak-card">
+          <span class="label">Hype Multiplier</span>
+          <strong id="multiplier" class="value">x1</strong>
+          <span class="subtext">Raised by synergy, reduced by reality</span>
+        </div>
+      </div>
+
+      <div class="reel-frame">
+        <div class="reel-window">
+          <div class="reel" data-reel="0" aria-live="polite">GPU</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" data-reel="1" aria-live="polite">PROMPT</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" data-reel="2" aria-live="polite">TOKEN</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="spin-button" type="button">Spin For Productivity</button>
+        <button id="autospin-button" class="ghost-button" type="button">Auto-burn 5 Spins</button>
+        <button id="reset-button" class="ghost-button" type="button">Reset Startup</button>
+      </div>
+
+      <div class="ticker-wrap">
+        <p id="message" class="message" aria-live="polite">Welcome, founder. Pull the lever and convert vibes into tokens.</p>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <article class="panel">
+        <h2>Prize Logic</h2>
+        <ul>
+          <li>3 matching reels: big token payout and public bragging rights.</li>
+          <li>2 matching reels: small token refund, enough for one more hallucination.</li>
+          <li>JACKPOT + GPU + TOKEN: moonshot bonus with maximum executive confidence.</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>What You're Buying</h2>
+        <ul id="purchase-feed" class="purchase-feed">
+          <li>Reserved 8 tokens for "strategic prompt enhancement."</li>
+          <li>Spent 13 tokens on low-latency jargon streaming.</li>
+          <li>Allocated 21 tokens to "agentic roadmap alignment."</li>
+        </ul>
+      </article>
+
+      <article class="panel stats-panel">
+        <h2>Session Telemetry</h2>
+        <dl class="stats-grid">
+          <div>
+            <dt>Spins</dt>
+            <dd id="spins-count">0</dd>
+          </div>
+          <div>
+            <dt>Tokens Won</dt>
+            <dd id="won-count">0</dd>
+          </div>
+          <div>
+            <dt>Tokens Spent</dt>
+            <dd id="spent-count">0</dd>
+          </div>
+          <div>
+            <dt>Best Combo</dt>
+            <dd id="best-combo">None Yet</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

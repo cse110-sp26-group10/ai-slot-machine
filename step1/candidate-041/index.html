@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Inferno Slots</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Autonomous Gambling Interface v1.0</p>
+        <h1>Token Inferno Slots</h1>
+        <p class="tagline">
+          Pull the lever. Win fake tokens. Immediately spend them on premium AI
+          nonsense.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI-themed slot machine">
+        <div class="status-bar">
+          <div class="stat-card">
+            <span class="stat-label">Wallet</span>
+            <strong id="token-balance">1200</strong>
+            <span class="stat-meta">tokens</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Spin Cost</span>
+            <strong id="spin-cost">60</strong>
+            <span class="stat-meta">tokens per hallucination</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Jackpot</span>
+            <strong>900</strong>
+            <span class="stat-meta">tokens plus smugness</span>
+          </div>
+        </div>
+
+        <div class="reel-frame">
+          <div class="reel-grid" aria-live="polite">
+            <div class="reel" id="reel-1">GPU</div>
+            <div class="reel" id="reel-2">GPU</div>
+            <div class="reel" id="reel-3">GPU</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spin-button" class="spin-button" type="button">
+            Spend Tokens
+          </button>
+          <button id="airdrop-button" class="ghost-button" type="button">
+            Beg For VC Airdrop
+          </button>
+        </div>
+
+        <div class="message-panel">
+          <p id="result-message" class="result-message">
+            Your model is warmed up and ready to burn investor money.
+          </p>
+          <p id="expense-message" class="expense-message">
+            No add-on fees yet. Suspicious.
+          </p>
+        </div>
+      </section>
+
+      <section class="shop">
+        <div class="shop-heading">
+          <p class="eyebrow">Mandatory Post-Win Monetization</p>
+          <h2>Spend Your Tokens On AI Features Nobody Asked For</h2>
+        </div>
+
+        <div id="upgrade-list" class="upgrade-list"></div>
+      </section>
+    </main>
+
+    <template id="upgrade-template">
+      <article class="upgrade-card">
+        <div>
+          <h3 class="upgrade-name"></h3>
+          <p class="upgrade-description"></p>
+        </div>
+        <div class="upgrade-footer">
+          <span class="upgrade-price"></span>
+          <button class="buy-button" type="button">Waste Tokens</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

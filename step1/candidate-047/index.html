@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Extraction Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Autonomous Revenue Alignment Lab</p>
+      <h1>Spin the AI Token Furnace</h1>
+      <p class="tagline">
+        Win synthetic hype tokens, spend them on premium nonsense, and attempt to
+        outrun the inevitable investor deck.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="slot machine">
+      <div class="machine-top">
+        <div class="meter">
+          <span class="meter-label">Wallet</span>
+          <strong id="token-balance">120</strong>
+          <span class="meter-unit">tokens</span>
+        </div>
+        <div class="meter">
+          <span class="meter-label">Spin Cost</span>
+          <strong>15</strong>
+          <span class="meter-unit">tokens</span>
+        </div>
+      </div>
+
+      <div class="reels" role="img" aria-label="three slot reels">
+        <div class="reel" id="reel-0">GPU</div>
+        <div class="reel" id="reel-1">PIVOT</div>
+        <div class="reel" id="reel-2">GPU</div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" type="button">Spin for Synergy</button>
+        <button id="cashout-button" type="button" class="secondary">Buy More Buzzwords</button>
+      </div>
+
+      <div class="status-panel">
+        <p id="message" class="message" aria-live="polite">
+          Boot complete. The machine is ready to convert hope into usage-based billing.
+        </p>
+        <p class="payouts-title">Payout Board</p>
+        <ul class="payouts">
+          <li>3x GPU = +90 tokens and temporary market confidence</li>
+          <li>3x AGENT = +65 tokens and one mandatory keynote</li>
+          <li>3x TOKEN = +50 tokens and a fresh seed round</li>
+          <li>Any 2 matching reels = +20 tokens and a vague LinkedIn post</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <template id="history-item-template">
+    <li class="history-item"></li>
+  </template>
+
+  <aside class="feed">
+    <div class="feed-card">
+      <h2>Recent Extractions</h2>
+      <ul id="history" class="history" aria-live="polite"></ul>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

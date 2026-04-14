@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Tug Casino</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Algorithmic Entertainment Division</p>
+        <h1>Token Tug Casino</h1>
+        <p class="tagline">
+          Win fake AI tokens. Spend fake AI tokens. Experience the full modern
+          product cycle in under 30 seconds.
+        </p>
+      </section>
+
+      <section class="machine" aria-label="AI token slot machine">
+        <div class="status-bar">
+          <article class="status-card">
+            <span class="status-label">Wallet</span>
+            <strong id="tokenBalance">120</strong>
+            <span class="status-note">prompt credits</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Spin Cost</span>
+            <strong>15</strong>
+            <span class="status-note">tokens per hallucination</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Mood</span>
+            <strong id="aiMood">Overconfident</strong>
+            <span class="status-note">certainty not included</span>
+          </article>
+        </div>
+
+        <div class="reels-frame">
+          <div class="marquee-lights" aria-hidden="true"></div>
+          <div class="reels" role="group" aria-label="Slot reels">
+            <div class="reel-window">
+              <div class="reel" id="reel0">🤖</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel1">💸</div>
+            </div>
+            <div class="reel-window">
+              <div class="reel" id="reel2">🧠</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">
+            Pull Lever
+          </button>
+          <button id="resetButton" class="ghost-button" type="button">
+            Reboot Economy
+          </button>
+        </div>
+
+        <section class="results-panel" aria-live="polite">
+          <p id="message" class="message">
+            Welcome, valued user. The machine is ready to monetize your curiosity.
+          </p>
+          <div class="payouts">
+            <h2>Payout table</h2>
+            <ul>
+              <li><span>💸 💸 💸</span><strong>+150 tokens</strong></li>
+              <li><span>🤖 🤖 🤖</span><strong>+90 tokens</strong></li>
+              <li><span>🔥 🔥 🔥</span><strong>+80 tokens</strong></li>
+              <li><span>🧠 🧠 🧠</span><strong>+70 tokens</strong></li>
+              <li><span>Any pair</span><strong>+20 tokens</strong></li>
+              <li><span>No match</span><strong>-15 tokens</strong></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="feed" aria-labelledby="feedTitle">
+          <div class="feed-header">
+            <h2 id="feedTitle">Live Product Updates</h2>
+            <span class="feed-pill">beta forever</span>
+          </div>
+          <ul id="eventFeed" class="feed-list"></ul>
+        </section>
+      </section>
+    </main>
+
+    <template id="feedItemTemplate">
+      <li class="feed-item"></li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

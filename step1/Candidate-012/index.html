@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tugger 9000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Silicon Valley's least ethical arcade cabinet</p>
+      <h1>Token Tugger 9000</h1>
+      <p class="lede">
+        Win prompt tokens, spend prompt tokens, and discover that the real jackpot
+        was monetizing autocomplete all along.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-label="AI parody slot machine">
+      <div class="top-bar">
+        <div class="stat">
+          <span class="stat-label">Token Balance</span>
+          <strong id="balance" class="stat-value">120</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong class="stat-value">15</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Mood</span>
+          <strong id="mood" class="stat-value">Confidently wrong</strong>
+        </div>
+      </div>
+
+      <div class="machine-frame">
+        <div class="marquee">
+          <span class="marquee-label">Live Monetization Feed</span>
+          <span id="headline">Your startup now accepts applause as payment.</span>
+        </div>
+
+        <div class="reels" role="img" aria-label="Slot reels showing AI satire symbols">
+          <div class="reel-window"><div id="reel-0" class="reel-symbol">🤖</div></div>
+          <div class="reel-window"><div id="reel-1" class="reel-symbol">🪙</div></div>
+          <div class="reel-window"><div id="reel-2" class="reel-symbol">🔥</div></div>
+        </div>
+
+        <div class="payline-note">
+          Match symbols to earn more tokens before the machine spends them on "inference."
+        </div>
+
+        <div class="controls">
+          <button id="spinButton" class="spin-button" type="button">Spin For 15 Tokens</button>
+          <button id="resetButton" class="ghost-button" type="button">Reboot the hype cycle</button>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <article class="result-card">
+          <h2>Last Outcome</h2>
+          <p id="resultText">Three founders enter, one GPU bill leaves.</p>
+        </article>
+        <article class="result-card">
+          <h2>Current Multiplier</h2>
+          <p id="multiplierText">1x due to investor optimism</p>
+        </article>
+        <article class="result-card">
+          <h2>Machine Excuse</h2>
+          <p id="excuseText">Latency is just suspense with venture funding.</p>
+        </article>
+      </div>
+
+      <section class="payouts" aria-label="Payout table">
+        <h2>Payout Table</h2>
+        <ul>
+          <li><span>Three matching symbols</span><strong>+90 tokens</strong></li>
+          <li><span>Two matching symbols</span><strong>+30 tokens</strong></li>
+          <li><span>Three GPUs</span><strong>+150 tokens</strong></li>
+          <li><span>Three outages</span><strong>Refunded with attitude</strong></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

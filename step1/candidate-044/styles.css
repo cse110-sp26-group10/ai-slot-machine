@@ -1,0 +1,327 @@
+:root {
+  --bg: #08151f;
+  --bg-accent: #173042;
+  --panel: rgba(7, 17, 24, 0.88);
+  --panel-strong: #102635;
+  --line: rgba(250, 240, 214, 0.14);
+  --text: #f7f0da;
+  --muted: #cfbf9f;
+  --danger: #ff7657;
+  --gold: #ffcb57;
+  --mint: #68f0b4;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Courier Prime", "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(245, 162, 84, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(104, 240, 180, 0.1), transparent 28%),
+    linear-gradient(160deg, #091019, var(--bg) 35%, #102231 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at center, black, transparent 82%);
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.eyebrow,
+.display-label,
+.stat-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.hero h1,
+.paytable h2,
+.result-panel h2 {
+  font-family: "Rockwell", "Clarendon", "Bookman Old Style", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  margin: 0.2rem 0 0.8rem;
+  line-height: 0.95;
+}
+
+.tagline {
+  width: min(60ch, 100%);
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.machine,
+.paytable {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(19, 37, 50, 0.96), rgba(8, 20, 28, 0.96));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.machine {
+  padding: 1.25rem;
+}
+
+.machine-top,
+.stats-grid,
+.paytable-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.machine-top {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.display-card,
+.stat-panel,
+.result-panel,
+.paytable article {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.12));
+}
+
+.display-card,
+.stat-panel {
+  padding: 1rem 1.1rem;
+}
+
+.display-value,
+.stat-value {
+  display: block;
+  margin: 0.45rem 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.display-hint {
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.reel-frame {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 203, 87, 0.08), transparent 20%),
+    var(--panel);
+  border: 1px solid rgba(255, 203, 87, 0.22);
+  overflow: hidden;
+}
+
+.reel-frame::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 203, 87, 0.8), transparent);
+  opacity: 0.9;
+}
+
+.reel-window {
+  position: relative;
+  min-height: 160px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), transparent 20%),
+    linear-gradient(180deg, #183347, #0d202d);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.reel {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(255, 203, 87, 0.35);
+}
+
+.reel.spinning {
+  animation: reel-blur 180ms linear infinite;
+}
+
+.control-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spin-button {
+  padding: 1rem 1.6rem;
+  background: linear-gradient(135deg, #ffcb57, #ff8b5c);
+  color: #291306;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(255, 139, 92, 0.3);
+}
+
+.ghost-button {
+  padding: 1rem 1.4rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-grid,
+.paytable-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stats-grid {
+  margin: 1.2rem 0;
+}
+
+.stat-value {
+  text-transform: uppercase;
+}
+
+.result-panel {
+  padding: 1.2rem;
+}
+
+.result-panel h2,
+.paytable h2,
+.paytable article h3 {
+  margin-top: 0;
+}
+
+.result-panel p,
+.paytable p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.paytable {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+}
+
+.paytable-grid article {
+  padding: 1rem;
+}
+
+.machine.is-winning {
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(104, 240, 180, 0.38),
+    0 0 48px rgba(104, 240, 180, 0.24);
+}
+
+.machine.is-losing {
+  box-shadow:
+    var(--shadow),
+    0 0 0 1px rgba(255, 118, 87, 0.34),
+    0 0 42px rgba(255, 118, 87, 0.18);
+}
+
+@keyframes reel-blur {
+  0% {
+    transform: translateY(-6px) scaleY(1.03);
+    filter: blur(1px);
+  }
+
+  50% {
+    transform: translateY(6px) scaleY(0.97);
+    filter: blur(2px);
+  }
+
+  100% {
+    transform: translateY(-6px) scaleY(1.03);
+    filter: blur(1px);
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 1rem, 1100px);
+    padding-top: 1.25rem;
+  }
+
+  .machine-top,
+  .stats-grid,
+  .paytable-grid,
+  .reel-frame {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-window {
+    min-height: 110px;
+  }
+
+  .reel-frame::after {
+    inset: auto 0 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
