@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tycoon 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="confetti" id="confettiCanvas" aria-hidden="true"></canvas>
+
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Vanilla HTML + CSS + JavaScript</p>
+      <h1>Token Tycoon 9000</h1>
+      <p class="subtitle">
+        The only slot machine where every jackpot is immediately reinvested into "premium AI inference."
+      </p>
+
+      <div class="token-strip" aria-label="Token status">
+        <div>
+          <span class="label">Wallet</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="unit">tokens</span>
+        </div>
+        <div>
+          <span class="label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="unit">tokens</span>
+        </div>
+        <div>
+          <span class="label">Model Mood</span>
+          <strong id="modelMood">Cautiously Overfit</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machineTitle">
+      <div class="machine-header">
+        <div>
+          <p class="machine-kicker">Silicon satire simulator</p>
+          <h2 id="machineTitle">Pull the lever, fund the hype cycle</h2>
+        </div>
+        <button id="roastButton" class="secondary-button" type="button">Generate investor update</button>
+      </div>
+
+      <div class="reel-frame" role="group" aria-label="Slot machine reels">
+        <div class="reel-window">
+          <div class="reel" id="reel0" aria-live="polite">Prompt</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" id="reel1" aria-live="polite">GPU</div>
+        </div>
+        <div class="reel-window">
+          <div class="reel" id="reel2" aria-live="polite">Token</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="primary-button" type="button">Spin the model</button>
+        <button id="upgradeButton" class="secondary-button" type="button">Waste 25 tokens on "alignment"</button>
+      </div>
+
+      <div class="status-grid">
+        <article class="status-card">
+          <span class="label">Last outcome</span>
+          <p id="resultMessage">Ready to exchange capital for optimism.</p>
+        </article>
+        <article class="status-card">
+          <span class="label">Token telemetry</span>
+          <p id="tokenDelta">No gains yet. No losses yet. Very enterprise.</p>
+        </article>
+        <article class="status-card quote-card">
+          <span class="label">AI executive quote</span>
+          <p id="roastMessage">"We are pre-revenue, post-shame, and aggressively synergistic."</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

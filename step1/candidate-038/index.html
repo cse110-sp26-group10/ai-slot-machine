@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Burn Casino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Guaranteed disruption, never guaranteed profit</p>
+      <h1>Token Burn Casino</h1>
+      <p class="subtitle">
+        Spin the reels, win imaginary AI tokens, and immediately spend them on premium nonsense.
+      </p>
+
+      <div class="status-grid" aria-label="Game status">
+        <article class="status-tile">
+          <span class="status-label">Balance</span>
+          <strong id="balance">120</strong>
+          <span class="status-unit">tokens</span>
+        </article>
+        <article class="status-tile">
+          <span class="status-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="status-unit">tokens</span>
+        </article>
+        <article class="status-tile">
+          <span class="status-label">Mood</span>
+          <strong id="mood">Cautiously hype</strong>
+          <span class="status-unit">founder energy</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="machine-header">
+        <div>
+          <p class="section-tag">Series A arcade cabinet</p>
+          <h2 id="machine-title">Spin for clout</h2>
+        </div>
+        <button id="sound-toggle" class="ghost-button" type="button" aria-pressed="false">
+          Sound: Off
+        </button>
+      </div>
+
+      <div class="machine-frame">
+        <div class="reels" role="img" aria-label="Slot machine reels showing startup-themed icons">
+          <div class="reel" data-reel="0">
+            <div class="reel-symbol" id="reel-0">🤖</div>
+          </div>
+          <div class="reel" data-reel="1">
+            <div class="reel-symbol" id="reel-1">💸</div>
+          </div>
+          <div class="reel" data-reel="2">
+            <div class="reel-symbol" id="reel-2">🔥</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label class="bet-control" for="bet">
+            <span>Bet size</span>
+            <input id="bet" name="bet" type="range" min="5" max="30" step="5" value="15">
+            <output id="bet-output" for="bet">15 tokens</output>
+          </label>
+
+          <div class="button-row">
+            <button id="spin-button" class="primary-button" type="button">
+              Spin the model
+            </button>
+            <button id="reset-button" class="secondary-button" type="button">
+              New funding round
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="message-panel" aria-live="polite">
+        <p id="result-message">The machine is idling, polishing your pitch deck.</p>
+        <ul class="recent-events" id="event-log" aria-label="Recent events"></ul>
+      </section>
+    </section>
+
+    <aside class="side-panel">
+      <section class="perk-card">
+        <p class="section-tag">Auto-generated rewards</p>
+        <h2>Prize table</h2>
+        <ul class="paytable">
+          <li><span>🤖 🤖 🤖</span><strong>+120</strong><em>Investor believes the benchmark</em></li>
+          <li><span>💸 💸 💸</span><strong>+90</strong><em>Enterprise plan accidentally renews</em></li>
+          <li><span>🔥 🔥 🔥</span><strong>+75</strong><em>Cloud credits somehow survive</em></li>
+          <li><span>🧠 🧠 🧠</span><strong>+65</strong><em>Prompt engineer promoted to oracle</em></li>
+          <li><span>✨ ✨ ✨</span><strong>+50</strong><em>Deck gains one suspicious chart</em></li>
+          <li><span>Any pair</span><strong>+20</strong><em>Enough confidence to ship a demo</em></li>
+        </ul>
+      </section>
+
+      <section class="perk-card">
+        <p class="section-tag">Token sink</p>
+        <h2>What your winnings buy</h2>
+        <ul class="spending-list" id="spending-list">
+          <li>1 token: one more dashboard with no users</li>
+          <li>12 tokens: an "AI-first" sticker for your roadmap</li>
+          <li>28 tokens: premium GPU smoke</li>
+          <li>64 tokens: a keynote full of synthetic confidence</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <template id="log-item-template">
+    <li class="event-item"></li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

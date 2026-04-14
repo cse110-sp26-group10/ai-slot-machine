@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Drain 3000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">A satirical micro-casino for the AI boom</p>
+      <h1>Token Drain 3000</h1>
+      <p class="subtitle">
+        Win tokens, spend tokens, and watch a fake AI economy eat itself in real time.
+      </p>
+    </section>
+
+    <section class="machine" aria-label="AI token slot machine">
+      <div class="machine-top">
+        <div class="display-card">
+          <span class="label">Balance</span>
+          <strong id="tokenBalance">120</strong>
+          <span class="unit">tokens</span>
+        </div>
+        <div class="display-card">
+          <span class="label">Spin Cost</span>
+          <strong id="spinCost">15</strong>
+          <span class="unit">tokens</span>
+        </div>
+        <div class="display-card">
+          <span class="label">Total Spins</span>
+          <strong id="spinCount">0</strong>
+          <span class="unit">regrets</span>
+        </div>
+      </div>
+
+      <div class="reel-stage" role="img" aria-label="Three spinning slot reels full of AI jokes">
+        <div class="reel-frame">
+          <div class="reel-window" id="reel1">🤖</div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel-window" id="reel2">🔥</div>
+        </div>
+        <div class="reel-frame">
+          <div class="reel-window" id="reel3">🪙</div>
+        </div>
+      </div>
+
+      <div class="payline" aria-hidden="true"></div>
+
+      <div class="controls">
+        <button id="spinButton" class="spin-button" type="button">Generate Value</button>
+        <button id="resetButton" class="secondary-button" type="button">Reset Hype Cycle</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite">
+        Seed funding loaded. The machine is ready to convert buzzwords into tokenized disappointment.
+      </p>
+    </section>
+
+    <section class="panels">
+      <article class="panel">
+        <h2>Symbol Lore</h2>
+        <ul class="symbol-list">
+          <li><span>🤖</span> AI assistant promises synergy.</li>
+          <li><span>🪙</span> Freshly minted tokens for no reason.</li>
+          <li><span>🔥</span> GPU cluster currently overheating.</li>
+          <li><span>🧠</span> Model says it is “thinking harder.”</li>
+          <li><span>📉</span> Unit economics quietly collapsing.</li>
+          <li><span>💸</span> Enterprise budget leaves the chat.</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>Economy Feed</h2>
+        <dl class="stats">
+          <div>
+            <dt>Tokens Won</dt>
+            <dd id="totalWon">0</dd>
+          </div>
+          <div>
+            <dt>Tokens Spent</dt>
+            <dd id="totalSpent">0</dd>
+          </div>
+          <div>
+            <dt>Best Hit</dt>
+            <dd id="bestPayout">0</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

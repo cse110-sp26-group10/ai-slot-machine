@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Mirage Casino</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Prompt-positive entertainment</p>
+        <h1>Token Mirage Casino</h1>
+        <p class="tagline">
+          Spin for synthetic glory, hoard imaginary tokens, and immediately spend
+          them on suspiciously premium AI upgrades.
+        </p>
+      </header>
+
+      <main class="machine-layout">
+        <section class="machine-card" aria-labelledby="slot-title">
+          <div class="machine-topper">
+            <div>
+              <p class="machine-label">MODEL COMPATIBLE</p>
+              <h2 id="slot-title">Hallucination Slots</h2>
+            </div>
+            <div class="status-pill" id="mood-pill">System feeling lucky</div>
+          </div>
+
+          <div class="scoreboard" aria-label="Token balances">
+            <article class="score-panel">
+              <span class="score-label">Wallet</span>
+              <strong id="token-balance">120</strong>
+              <span class="score-footnote">Tokens left to burn</span>
+            </article>
+            <article class="score-panel">
+              <span class="score-label">Spin Cost</span>
+              <strong id="spin-cost">15</strong>
+              <span class="score-footnote">Inference not included</span>
+            </article>
+            <article class="score-panel">
+              <span class="score-label">Jackpot</span>
+              <strong id="jackpot-value">250</strong>
+              <span class="score-footnote">Enterprise-grade delusion</span>
+            </article>
+          </div>
+
+          <div class="reels-frame" aria-live="polite">
+            <div class="reels" id="reels">
+              <div class="reel" data-reel="0">
+                <span class="symbol">404</span>
+              </div>
+              <div class="reel" data-reel="1">
+                <span class="symbol">GPU</span>
+              </div>
+              <div class="reel" data-reel="2">
+                <span class="symbol">LOL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <label class="bet-control" for="bet-range">
+              <span>Burn rate</span>
+              <input
+                id="bet-range"
+                type="range"
+                min="5"
+                max="30"
+                step="5"
+                value="15"
+              />
+              <strong id="bet-display">15 tokens</strong>
+            </label>
+            <button class="spin-button" id="spin-button" type="button">
+              Spin The Model
+            </button>
+          </div>
+
+          <section class="marketplace" aria-labelledby="shop-title">
+            <div class="section-heading">
+              <h3 id="shop-title">Token Sink Marketplace</h3>
+              <p>Spend your winnings on features nobody requested.</p>
+            </div>
+            <div class="shop-grid" id="shop-grid"></div>
+          </section>
+        </section>
+
+        <aside class="sidebar">
+          <section class="panel announcer">
+            <h3>Console Commentary</h3>
+            <p id="result-message">
+              Welcome, founder. Please pretend these tokens are venture-backed.
+            </p>
+          </section>
+
+          <section class="panel payout-panel">
+            <h3>Payout Table</h3>
+            <ul class="payout-list">
+              <li><span>3 x GPU</span><strong>Jackpot</strong></li>
+              <li><span>3 matching anything else</span><strong>2.5x bet</strong></li>
+              <li><span>2 matching symbols</span><strong>1.3x bet</strong></li>
+              <li><span>3 x 404</span><strong>Bug bounty bonus</strong></li>
+            </ul>
+          </section>
+
+          <section class="panel log-panel">
+            <h3>Spend Log</h3>
+            <ul id="activity-log" class="activity-log">
+              <li>Your CFO approved one reckless prototype.</li>
+            </ul>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <template id="shop-item-template">
+      <button class="shop-item" type="button">
+        <span class="shop-name"></span>
+        <span class="shop-price"></span>
+        <span class="shop-blurb"></span>
+      </button>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
