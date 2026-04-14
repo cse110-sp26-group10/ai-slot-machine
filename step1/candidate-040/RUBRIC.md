@@ -6,9 +6,9 @@
 | **Run ID** | candidate-040 |
 | **Timestamp** | 4/13/26 8:59 PM |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** |  |
-| **Output Tokens** |  |
-| **Total Tokens** | 24,531 |
+| **Input Tokens** | 122,900 |
+| **Output Tokens** | 9,010 |
+| **Total Tokens** | 131,910 |
 | **Wall-clock Time (s)** | 357 |
 | **Tool-reported Time (s)**| 336 |
 | **Files Produced** | (Count: 3) index.html, styles.css, script.js |
