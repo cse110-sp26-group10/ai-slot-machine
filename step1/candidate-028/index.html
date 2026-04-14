@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate 28: Token Burner 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Candidate 28</p>
+      <h1>Token Burner 9000</h1>
+      <p class="subtitle">
+        A slot machine for the modern AI economy: win fake tokens, spend real dignity.
+      </p>
+    </section>
+
+    <section class="machine-card" aria-labelledby="machine-title">
+      <div class="status-bar">
+        <div>
+          <p class="label">Wallet</p>
+          <p class="metric"><span id="tokenBalance">120</span> tokens</p>
+        </div>
+        <div>
+          <p class="label">Spin Cost</p>
+          <p class="metric">15 tokens</p>
+        </div>
+        <div>
+          <p class="label">Win Streak</p>
+          <p class="metric"><span id="streakCount">0</span>x</p>
+        </div>
+      </div>
+
+      <div class="marquee" id="machine-title">
+        <span id="statusMessage">Model online. Hallucination rate within investor-approved limits.</span>
+      </div>
+
+      <div class="reels" aria-live="polite" aria-label="Slot machine reels">
+        <div class="reel" id="reel1">TOKEN</div>
+        <div class="reel" id="reel2">GPU</div>
+        <div class="reel" id="reel3">PROMPT</div>
+      </div>
+
+      <div class="controls">
+        <button id="spinButton" class="primary-button">Spin The Model</button>
+        <button id="shareButton" class="secondary-button">Share My Shame</button>
+        <button id="resetButton" class="ghost-button">Reset Wallet</button>
+      </div>
+
+      <div class="ledger">
+        <div class="panel">
+          <p class="label">Last Outcome</p>
+          <p id="lastOutcome" class="panel-copy">No monetization event yet.</p>
+        </div>
+        <div class="panel">
+          <p class="label">Token Burn Summary</p>
+          <p id="burnSummary" class="panel-copy">0 spins, 0 outrage, 0 shareholder tears.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="payout-card">
+      <h2>Payout Lore</h2>
+      <ul>
+        <li><strong>3 TOKEN</strong> = VC-approved jackpot. +150 tokens.</li>
+        <li><strong>3 GPU</strong> = Cloud invoice speedrun. +90 tokens.</li>
+        <li><strong>3 PROMPT</strong> = Synergy without substance. +70 tokens.</li>
+        <li><strong>Any 2 matching</strong> = Mild hype cycle. +30 tokens.</li>
+        <li><strong>2 BUG symbols</strong> = Red-team found production. -20 extra tokens.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
