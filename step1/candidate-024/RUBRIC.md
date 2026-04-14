@@ -25,15 +25,15 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Satirical framing with token win/spend theme. Core spin logic works. Simpler visual design compared to higher-scoring runs; lacks extra polish on UI feedback.
+* **Notes:** - Lacks more advanced features. It does however implement a "beg for credits" button instead of reset. Overall look is less impressive subjectively.
 
 ### Code Quality Scorecard
-* **Score:** 9 / 10 (Using Rubric)
+* **Score:** 8 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Clean vanilla JavaScript with standard DOM and timer APIs. Well-organized and easy to follow despite the lower line count.
+* **Notes:** - Readable at a high level. Uses only stadard JS items. Visually, the JS code is quite simple and easy to parse.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Hudson Gehrke

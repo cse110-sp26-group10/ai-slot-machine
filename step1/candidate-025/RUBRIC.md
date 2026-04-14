@@ -20,12 +20,12 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Clear AI satire through token economy and hallucination jokes. Spin and payout logic work as expected. Balanced UI with no layout breaks.
+* **Notes:** - Has the required functions. The visuals are bland though, and there is a red line through the spinners. Visually not as good as stronger candidates.
 
 ### Code Quality Scorecard
 * **Score:** 8 / 10 (Using Rubric)
@@ -33,7 +33,7 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Standard browser APIs used throughout. Code is readable and decently structured, though some functions could be further broken down. No hallucinated APIs detected.
+* **Notes:** - Mostly clean overall. It does use a google API for fonts. Similar to other candidates.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Hudson Gehrke

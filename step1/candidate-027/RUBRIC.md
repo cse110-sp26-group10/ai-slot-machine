@@ -25,7 +25,7 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - AI token satire present with spending and winning framing. Core spin and balance mechanics work. Simpler output than higher-scoring candidates; fewer extra features.
+* **Notes:** - The interface is functional but basic. There is no log, and no other features. The visual design is clean and neat.
 
 ### Code Quality Scorecard
 * **Score:** 8 / 10 (Using Rubric)
@@ -33,7 +33,7 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Clean vanilla JavaScript. Standard APIs only. Code is readable but somewhat compact; fewer helper functions than more structured candidates.
+* **Notes:** - The overall code is still very similar to other candidates. Nothing looks terrible. It uses a Google font API, and the JS looks standard.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** [Team Member Name]

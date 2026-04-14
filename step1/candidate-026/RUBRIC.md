@@ -20,20 +20,20 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 6 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Solid AI satire with token burn and hype references. Spin logic and token balance update correctly. UI is clean and visually consistent.
+* **Notes:** - Everything is functional, but a few things are lacking. The layout is functional, but unclear. Stronger candidates have the wallet closer to the spinners for easier readability, and there is a lot of wasted space.
 
 ### Code Quality Scorecard
-* **Score:** 9 / 10 (Using Rubric)
+* **Score:** 8 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Well-structured vanilla JavaScript. Uses only standard browser APIs including DOM, localStorage, and timers. Readable naming conventions throughout.
+* **Notes:** - Quite similar to other outputs. Nothing looks out of the ordinary. Standard JS throughout the file.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Hudson Gehrke
