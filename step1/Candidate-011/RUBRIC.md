@@ -9,7 +9,7 @@
 | Output Tokens | Not captured |
 | Total Tokens | Not captured |
 | Wall-clock Time (s) | 511 |
-| Tool-reported Time (s) | TBD |
+| Tool-reported Time (s) | 502 |
 | Files Produced | (Count: 3) index.html, styles.css, script.js |
 | Lines of Code | TBD |
 | Runs in Browser? | [x] Yes / [ ] No / [ ] Partial |
