@@ -42,4 +42,4 @@
 - There are malformed/merged parts in the JS, so the source code is not clean even though the app appears to run.
 - Browser behavior is stronger than the underlying code quality.
 
-**Data Entry by:** Your Name
+**Data Entry by:** Benedict Luis
