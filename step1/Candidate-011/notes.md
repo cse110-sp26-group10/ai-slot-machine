@@ -9,7 +9,7 @@
 - Wall-clock time (s): 511
 - Tool-reported time (s): 
 - Files produced: index.html, styles.css, script.js
-- Browser Test: 
+- Browser Test: Yes/Pass
 - App Quality Score (1-5): 
 - Code Quality Score (1-5): 
 
