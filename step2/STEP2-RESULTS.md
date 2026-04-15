@@ -6,7 +6,7 @@ After running the Step 2 refinement round on our five Step 1 finalists (see `ste
 | Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
 |:---:|:---:|:---:|:---:|:---|
 | 1 | [031](candidate-031-refinement-1/) | 909,200 | 1,108 | Already the strongest baseline; refinement added persistent state, a clean reset flow, and richer per-spin telemetry without breaking the polished UI. |
-| 2 | [034](candidate-034-refinement-1/) | 785,500 | 1,054 | Refinement tightened the layout into a compact results area and added a richer event feed plus local session persistence, while keeping the cheeky mood-meter personality intact. |
+| 2 | [044](candidate-034-refinement-1/) | 785,500 | 1,054 | Refinement tightened the layout into a compact results area and added a richer event feed plus local session persistence, while keeping the cheeky mood-meter personality intact. |
 | 3 | [009](candidate-009-refinement-1/) | 465,000 | 1,198 | The sharpest satire of the bunch ("Hallucination", "Benchmark Theater", "GPU Throttle"). Refinement added auto-spin, a telemetry strip, and a ledger section, all built on a single shared state object. |
 
 ## 🔍 Key Observations
