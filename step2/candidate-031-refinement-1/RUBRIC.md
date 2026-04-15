@@ -4,15 +4,15 @@
 | Field | Value |
 | :--- | :--- |
 | **Run ID** | candidate-031 |
-| **Timestamp** | 4/13/26 5:03 PM |
+| **Timestamp** | 4/14/26 6:35 PM |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** | 118,700 |
-| **Output Tokens** | 8,510 |
-| **Total Tokens** | 127,210 |
-| **Wall-clock Time (s)** | 342 |
-| **Tool-reported Time (s)**| 333 |
+| **Input Tokens** | 895,000 |
+| **Output Tokens** | 14,200 |
+| **Total Tokens** | 909,200 |
+| **Wall-clock Time (s)** | 115 |
+| **Tool-reported Time (s)**| 80 |
 | **Files Produced** | (Count: 3) index.html, styles.css, app.js |
-| **Lines of Code** | 587 |
+| **Lines of Code** | 1,108 |
 | **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
@@ -20,12 +20,12 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 9 / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Clean and responsive UI, but data is not saved and provides no reset option.
+* **Notes:** - Clean and responsive UI with persistent state, a reset flow, and richer telemetry/history around each spin.
 
 ### Code Quality Scorecard
 * **Score:** 10 / 10 (Using Rubric)
@@ -33,7 +33,7 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - The code looks fine.
+* **Notes:** - The code is structured cleanly, with centralized state management and clear DOM update paths.
 
 ---
-**Data Entry by:** Han Yang-Lin
+**Data Entry by:** Evan Marriott
