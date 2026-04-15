@@ -12,7 +12,7 @@
 | **Wall-clock Time (s)** | 496 |
 | **Tool-reported Time (s)**| 492 |
 | **Files Produced** | (Count: 2) index.html, app.js |
-| **Lines of Code** | TBD |
+| **Lines of Code** | 1336 |
 | **Runs in Browser?** | [x] Yes / [ ] No / [] Partial |
 
 ---
