@@ -12,10 +12,11 @@ After running the Step 4 refinement, we selected the winner.
 
 ## 🔍 Key Observations
 
-### 1. Better Code Quality: After the refinement rounds, the overall code quality improved, especially if the initial implementation is already strong. However, improvement does not mean code is the most readable or clean. 
+### 1. Better Code Quality
+After the refinement rounds, the overall code quality improved, especially if the initial implementation is already strong. However, improvement does not mean code is the most readable or clean. 
 
-
-### 2. No Predictive Factors: Codex has a lot of variability in its responses. It often produces different code and approaches to the same prompt. Metrics such as token count or lines of code do not reliably correlate to code quality, indicating some degree of unpredictability and unreliability.  
+### 2. No Predictive Factors
+Codex has a lot of variability in its responses. It often produces different code and approaches to the same prompt. Metrics such as token count or lines of code do not reliably correlate to code quality, indicating some degree of unpredictability and unreliability.  
 
 ## What We Learned
 
