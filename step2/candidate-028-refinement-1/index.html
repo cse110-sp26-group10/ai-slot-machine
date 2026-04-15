@@ -16,9 +16,27 @@
           win synthetic jackpots, and watch your budget disappear into “premium
           reasoning.”
         </p>
+        <div class="ticker" aria-hidden="true">
+          <span>live demo</span>
+          <span>benchmark laundering</span>
+          <span>alignment theater</span>
+          <span>tasteful token combustion</span>
+          <span>enterprise-grade bluffing</span>
+        </div>
       </section>
 
       <section class="machine" aria-label="AI slot machine">
+        <div class="cabinet-lights" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <div class="machine-top">
           <div class="bank">
             <span class="bank-label">Prompt Tokens</span>
@@ -26,7 +44,7 @@
           </div>
           <div class="bank">
             <span class="bank-label">Spin Cost</span>
-            <strong class="bank-value">15</strong>
+            <strong id="spin-cost" class="bank-value">15</strong>
           </div>
           <div class="bank">
             <span class="bank-label">Mood</span>
@@ -34,8 +52,31 @@
           </div>
         </div>
 
+        <div class="subpanel">
+          <div class="bank">
+            <span class="bank-label">Session Profit</span>
+            <strong id="profit-value" class="bank-value">0</strong>
+          </div>
+          <div class="bank">
+            <span class="bank-label">Jackpot Count</span>
+            <strong id="jackpot-count" class="bank-value">0</strong>
+          </div>
+          <div class="bank bank-toggle">
+            <span class="bank-label">Inference Mode</span>
+            <button
+              id="overclock-button"
+              class="toggle-button"
+              type="button"
+              aria-pressed="false"
+            >
+              Overclock Off
+            </button>
+          </div>
+        </div>
+
         <div class="reels-frame">
           <div class="payline" aria-hidden="true"></div>
+          <div class="scanline" aria-hidden="true"></div>
           <div class="reels" role="img" aria-label="Slot machine reels">
             <div class="reel" id="reel-1">🤖</div>
             <div class="reel" id="reel-2">🔥</div>
@@ -46,7 +87,7 @@
         <div class="panel">
           <div class="message-box">
             <p class="message-label">Machine Commentary</p>
-            <p id="status-message" class="status-message">
+            <p id="status-message" class="status-message" aria-live="polite">
               Insert optimism. Receive monetized autocomplete.
             </p>
           </div>
@@ -67,6 +108,27 @@
               Sound: On
             </button>
           </div>
+        </div>
+
+        <div class="dashboard" aria-label="Session dashboard">
+          <article class="metric-card">
+            <p class="message-label">Spin Count</p>
+            <p id="spin-count" class="metric-value">0</p>
+          </article>
+          <article class="metric-card">
+            <p class="message-label">Win Rate</p>
+            <p id="win-rate" class="metric-value">0%</p>
+          </article>
+          <article class="metric-card">
+            <p class="message-label">Last Net</p>
+            <p id="last-delta" class="metric-value">0</p>
+          </article>
+          <article class="metric-card metric-card--wide">
+            <p class="message-label">Recent Spins</p>
+            <ul id="history-list" class="history-list" aria-live="polite">
+              <li>Boot sequence complete. No embarrassing outcomes yet.</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -99,6 +161,13 @@
           <article class="payout-card">
             <h3>Three different</h3>
             <p>Classic AI demo energy: no payout, lots of jargon</p>
+          </article>
+          <article class="payout-card">
+            <h3>Overclock mode</h3>
+            <p>
+              Double spin cost, double payouts, and a louder commitment to bad
+              judgment
+            </p>
           </article>
         </div>
       </section>

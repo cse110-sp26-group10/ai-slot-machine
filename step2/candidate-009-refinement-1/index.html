@@ -9,10 +9,27 @@
 <body>
   <main class="app-shell">
     <section class="hero-card">
-      <p class="eyebrow">Casino-grade inference extraction</p>
+      <div class="hero-topline">
+        <p class="eyebrow">Casino-grade inference extraction</p>
+        <p class="hero-chip">Satire mode: fully funded</p>
+      </div>
       <div class="hero-copy">
-        <h1>Token Tumbler 9000</h1>
-        <p>Pull the lever, win synthetic bragging rights, and immediately spend your earnings on premium AI nonsense.</p>
+        <div>
+          <h1>Token Tumbler 9000</h1>
+          <p>Pull the lever, win synthetic bragging rights, and immediately spend your earnings on premium AI nonsense.</p>
+        </div>
+        <div class="telemetry-strip" aria-label="Session telemetry">
+          <article>
+            <span class="stat-label">Win Rate</span>
+            <strong id="win-rate">0%</strong>
+            <span class="stat-unit">historically dubious</span>
+          </article>
+          <article>
+            <span class="stat-label">Best Hit</span>
+            <strong id="best-payout">0</strong>
+            <span class="stat-unit">tokens</span>
+          </article>
+        </div>
       </div>
       <div class="hero-stats" aria-label="Game stats">
         <article>
@@ -67,6 +84,11 @@
         <button id="spin-button" class="primary-button" type="button">Spend 120 Tokens</button>
         <button id="autospin-button" class="secondary-button" type="button">Auto-Burn x5</button>
       </div>
+      <div class="control-meta" aria-label="Machine telemetry">
+        <span id="streak-badge" class="meta-pill">Streak: 0</span>
+        <span id="spins-badge" class="meta-pill">Spins: 0</span>
+        <span class="meta-pill meta-hint">Shortcuts: Space spin, A auto, M mute</span>
+      </div>
 
       <section class="result-panel" aria-live="polite">
         <p id="status-line" class="status-line">System ready. Please gamble responsibly with fictional compute credits.</p>
@@ -95,7 +117,36 @@
         </div>
         <span class="ledger-total">Lifetime burned: <strong id="lifetime-spent">0</strong></span>
       </div>
-      <div class="expense-grid" id="expense-grid" aria-live="polite"></div>
+      <div class="ledger-summary" aria-label="Performance summary">
+        <article class="summary-card">
+          <span class="reward-label">Winning spins</span>
+          <strong id="winning-spins">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="reward-label">Longest streak</span>
+          <strong id="best-streak">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="reward-label">Latest net</span>
+          <strong id="latest-net">0</strong>
+        </article>
+      </div>
+      <div class="ledger-grid">
+        <section class="catalog-panel" aria-labelledby="catalog-title">
+          <div class="subsection-header">
+            <p class="eyebrow">Marketplace</p>
+            <h3 id="catalog-title">Suggested nonsense purchases</h3>
+          </div>
+          <div class="expense-grid" id="expense-grid" aria-live="polite"></div>
+        </section>
+        <section class="history-panel" aria-labelledby="history-title">
+          <div class="subsection-header">
+            <p class="eyebrow">Live ledger</p>
+            <h3 id="history-title">Recent burns and rebounds</h3>
+          </div>
+          <div class="history-list" id="history-list" aria-live="polite"></div>
+        </section>
+      </div>
     </section>
   </main>
 
@@ -106,6 +157,19 @@
         <span class="expense-tag"></span>
       </div>
       <strong class="expense-cost"></strong>
+    </article>
+  </template>
+
+  <template id="history-template">
+    <article class="history-card">
+      <div class="history-copy">
+        <p class="history-headline"></p>
+        <p class="history-symbols"></p>
+      </div>
+      <div class="history-values">
+        <strong class="history-net"></strong>
+        <span class="history-outcome"></span>
+      </div>
     </article>
   </template>
 

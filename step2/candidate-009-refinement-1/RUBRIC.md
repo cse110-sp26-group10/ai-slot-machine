@@ -1,18 +1,19 @@
-# candidate-009
+# Field Notes: candidate-009
 
+## 📊 Technical Metrics
 | Field | Value |
-|---|---|
-| Run ID | candidate-009 |
-| Timestamp | 2026-04-14 14:33:00 PDT |
-| Model + Version | GPT-5.4 medium |
-| Input Tokens | 275K |
-| Output Tokens | 8.88K |
-| Total Tokens | 283K |
-| Wall-clock Time (s) | 2m 37s |
-| Tool-reported Time (s) | 2m 05s |
-| Files Produced | (Count: 3) index.html, styles.css, script.js |
-| Lines of Code | 730 |
-| Runs in Browser? | [x] Yes / [ ] No / [ ] Partial |
+| :--- | :--- |
+| **Run ID** | candidate-009 |
+| **Timestamp** | 2026-04-14 18:41:36 PDT |
+| **Model + Version** | OpenAI Codex (GPT-5.4) |
+| **Input Tokens** | 452K |
+| **Output Tokens** | 12.8K |
+| **Total Tokens** | 465K |
+| **Wall-clock Time (s)** | 4m 11s |
+| **Tool-reported Time (s)**| 2m 28s |
+| **Files Produced** | (Count: 3) index.html, app.js, styles.css |
+| **Lines of Code** | 1198 |
+| **Runs in Browser?** | [x] Yes / [ ] No / [ ] Partial |
 
 ---
 
@@ -24,7 +25,7 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Strong AI satire with token burn, hype-cycle references, and monetization jokes. Spin and payout logic work correctly. Polished visual layout with no broken elements.
+* **Notes:** Sharp AI satire throughout (symbols like "Hallucination", "Benchmark Theater", "GPU Throttle"), full spin/auto-spin/persist loop works correctly, and the three-panel layout with telemetry strip and ledger section is polished and well-structured.
 
 ### Code Quality Scorecard
 * **Score:** 9 / 10 (Using Rubric)
@@ -32,7 +33,7 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Clean vanilla JavaScript with standard DOM, localStorage, and timer APIs. Well-structured with clear function names and consistent coding style.
+* **Notes:** Uses only standard Web APIs (AudioContext, localStorage, DOM), all identifiers are meaningfully named, and logic is cleanly separated into distinct functions with a single shared state object and localStorage persistence.
 
 ---
-**Data Entry by:** Aron Wu
+**Data Entry by:** Kevin
