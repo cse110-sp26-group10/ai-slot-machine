@@ -1,0 +1,1 @@
+Look at this code for a vanilla HTML, JS, CSS slot machine app that focuses on satirizing AI and improve it in any way possible. Focus on specifically reducing redundancy and simplification in code logic while preserving their current features. You can also improve upon the parts of the UI and the features of the UI. Do not add any external libraries, frameworks or tools. 
