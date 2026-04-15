@@ -36,4 +36,4 @@
 * **Notes:** - Clean vanilla stack with standard browser APIs. Well-structured across HTML, CSS, and JavaScript with readable variable and function naming.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

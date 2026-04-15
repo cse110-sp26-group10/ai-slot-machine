@@ -36,4 +36,4 @@
 * **Notes:** - Standard browser APIs throughout. Code is readable and logically organized across the three files with no spaghetti patterns.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

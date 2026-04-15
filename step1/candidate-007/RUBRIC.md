@@ -36,4 +36,4 @@
 * **Notes:** - Clean vanilla JavaScript using standard browser APIs. Readable code with consistent naming. Straightforward structure across HTML, CSS, and JavaScript.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

@@ -36,4 +36,4 @@
 * **Notes:** - Well-organized vanilla JavaScript with clear function separation. Uses standard DOM, localStorage, and timer APIs. Naming conventions are consistent and descriptive.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

@@ -35,4 +35,4 @@
 * **Notes:** - Clean vanilla JavaScript with standard DOM, localStorage, and timer APIs. Well-structured with clear function names and consistent coding style.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

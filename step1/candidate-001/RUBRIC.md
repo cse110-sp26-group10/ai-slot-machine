@@ -36,4 +36,4 @@
 * **Notes:** - Vanilla HTML, CSS, and JavaScript using standard browser APIs. Readable naming and reasonably clean structure across all three files.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu
