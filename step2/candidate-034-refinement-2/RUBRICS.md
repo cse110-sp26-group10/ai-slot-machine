@@ -1,9 +1,9 @@
-# Field Notes: candidate-034
+# Field Notes: candidate-044
 
 ## 📊 Technical Metrics
 | Field | Value |
 | :--- | :--- |
-| **Run ID** | candidate-034 |
+| **Run ID** | candidate-044 |
 | **Timestamp** | 4/14/26-8:21PM |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
 | **Input Tokens** | 48,130 |
