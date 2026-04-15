@@ -11,6 +11,9 @@ After running the Step 4 refinement, we selected the winner.
 ## 50 Run Metrics
 https://docs.google.com/spreadsheets/d/1cmxEUhfjNtM8FvXq1ETLny9ivmZ7PKYbPorf3MLcqCI/edit
 
+## Slide Deck
+https://docs.google.com/presentation/d/1pGGaI06hTRn6YPy1HKJ0sL4egQFu1nTWSkIKyAAyeCw/edit?usp=sharing
+
 ## 🔍 Scientific Findings / Team Observations
 
 ### 1. Under the Surface Issues
