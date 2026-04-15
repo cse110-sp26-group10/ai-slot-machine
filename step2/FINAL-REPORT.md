@@ -14,7 +14,7 @@ https://docs.google.com/spreadsheets/d/1cmxEUhfjNtM8FvXq1ETLny9ivmZ7PKYbPorf3MLc
 ## 🔍 Scientific Findings / Team Observations
 
 ### 1. Under the Surface Issues
-At first glance, the code appears to work well. However, after multiple runs and testing, several issues became apparent. In Candidate 31, long words would get truncated. Additionally, refinement-prompt-4 caused formatting problems in Candidate 31. It would replace emojis with text, failling to align and size properly. 
+At first glance, the code appears to work well. However, after multiple runs and testing, a couple of issues became apparent. In Candidate 31, long words would get truncated. Additionally, refinement-prompt-4 caused formatting problems in Candidate 31. It would replace emojis with text, failling to align and size properly. 
 
 ### 2. Better Code Quality
 After the refinement rounds, the overall code quality improved, especially if the initial implementation is already strong. However, improvement does not mean code is the most readable or clean. 
