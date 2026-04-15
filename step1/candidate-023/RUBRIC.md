@@ -20,20 +20,20 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Good satirical framing around token spending and AI hype. Spin and balance logic function correctly. Clean UI with no broken layout elements.
+* **Notes:** - Simple but very functional layout. Everything is functional. There are limited features compared to some others.
 
 ### Code Quality Scorecard
-* **Score:** 9 / 10 (Using Rubric)
+* **Score:** 8 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Vanilla JavaScript using standard browser APIs. Well-structured with clear function separation. Semantic naming throughout the codebase.
+* **Notes:** - Overall clear code. Standard JS used throughout the code. Nothing looks terribly out of place.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Hudson Gehrke
