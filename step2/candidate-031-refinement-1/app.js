@@ -1,16 +1,48 @@
-const symbols = [
-  { icon: "🤖", label: "Model", payout: 18 },
-  { icon: "🪙", label: "Token", payout: 22 },
-  { icon: "🔥", label: "GPU Fire", payout: 12 },
-  { icon: "🧠", label: "Synthetic Insight", payout: 30 },
-  { icon: "💸", label: "Burn Rate", payout: 10 },
-  { icon: "📉", label: "Valuation Reset", payout: 16 },
+﻿const SYMBOLS = [
+  {
+    icon: "\u{1F916}",
+    label: "Model Hype",
+    caption: "Narrative engine",
+    payout: 18,
+  },
+  {
+    icon: "\u{1FA99}",
+    label: "Token Printer",
+    caption: "Treasury expansion",
+    payout: 22,
+  },
+  {
+    icon: "\u{1F525}",
+    label: "GPU Fire",
+    caption: "Compute furnace",
+    payout: 12,
+  },
+  {
+    icon: "\u{1F9E0}",
+    label: "Synthetic Insight",
+    caption: "Thought leadership",
+    payout: 30,
+  },
+  {
+    icon: "\u{1F4B8}",
+    label: "Burn Rate",
+    caption: "Cash furnace",
+    payout: 10,
+  },
+  {
+    icon: "\u{1F4C9}",
+    label: "Valuation Reset",
+    caption: "Down-round detector",
+    payout: 16,
+  },
 ];
 
-const spinCost = 15;
-const maxHistoryItems = 6;
-const storageKey = "token-burn-casino-state-v2";
-const defaultAnnouncement = "The machine is ready to monetize your curiosity.";
+const SPIN_COST = 15;
+const PAIR_PAYOUT = 12;
+const MAX_HISTORY_ITEMS = 6;
+const STORAGE_KEY = "token-burn-casino-state-v3";
+const DEFAULT_RESULT = "Welcome back, visionary. The machine is ready to monetize your curiosity.";
+const DEFAULT_SPEND = "No tokens wasted yet. A suspiciously efficient quarter.";
 
 function buildInitialState() {
   return {
@@ -23,39 +55,93 @@ function buildInitialState() {
     maxStreak: 0,
     bestPayout: 0,
     lastPayout: 0,
-    currentResult: "Welcome back, visionary. The machine is ready to monetize your curiosity.",
-    currentSpend: "No tokens wasted yet. A suspiciously efficient quarter.",
+    currentResult: DEFAULT_RESULT,
+    currentSpend: DEFAULT_SPEND,
     pillTone: "neutral",
     pillLabel: "Market Open",
-    lastAnnouncement: defaultAnnouncement,
+    lastAnnouncement: `${DEFAULT_RESULT} ${DEFAULT_SPEND}`,
+    pendingSpinCharge: false,
+    reelIndexes: [0, 4, 1],
     history: [
       {
         title: "Quarter opened",
         detail: "Fresh tokens issued. Governance remains weak and vibes remain strong.",
         tone: "neutral",
+        meta: "Forecast engine online",
       },
     ],
   };
 }
 
+function clampNumber(value, fallback) {
+  return Number.isFinite(value) ? value : fallback;
+}
+
+function sanitizeReelIndexes(reelIndexes) {
+  if (!Array.isArray(reelIndexes) || reelIndexes.length !== 3) {
+    return buildInitialState().reelIndexes.slice();
+  }
+
+  return reelIndexes.map((index, reelPosition) => {
+    if (!Number.isInteger(index) || index < 0 || index >= SYMBOLS.length) {
+      return buildInitialState().reelIndexes[reelPosition];
+    }
+
+    return index;
+  });
+}
+
 function loadState() {
+  const initialState = buildInitialState();
+
   try {
-    const savedState = window.localStorage.getItem(storageKey);
+    const savedState = window.localStorage.getItem(STORAGE_KEY);
 
     if (!savedState) {
-      return buildInitialState();
+      return initialState;
     }
 
     const parsedState = JSON.parse(savedState);
-    return {
-      ...buildInitialState(),
+    const restoredState = {
+      ...initialState,
       ...parsedState,
+      tokens: clampNumber(parsedState.tokens, initialState.tokens),
+      totalSpent: Math.max(0, clampNumber(parsedState.totalSpent, initialState.totalSpent)),
+      totalWon: Math.max(0, clampNumber(parsedState.totalWon, initialState.totalWon)),
+      spinCount: Math.max(0, clampNumber(parsedState.spinCount, initialState.spinCount)),
+      winCount: Math.max(0, clampNumber(parsedState.winCount, initialState.winCount)),
+      streak: Math.max(0, clampNumber(parsedState.streak, initialState.streak)),
+      maxStreak: Math.max(0, clampNumber(parsedState.maxStreak, initialState.maxStreak)),
+      bestPayout: Math.max(0, clampNumber(parsedState.bestPayout, initialState.bestPayout)),
+      lastPayout: Math.max(0, clampNumber(parsedState.lastPayout, initialState.lastPayout)),
+      pendingSpinCharge: Boolean(parsedState.pendingSpinCharge),
+      reelIndexes: sanitizeReelIndexes(parsedState.reelIndexes),
       history: Array.isArray(parsedState.history) && parsedState.history.length > 0
-        ? parsedState.history.slice(0, maxHistoryItems)
-        : buildInitialState().history,
+        ? parsedState.history.slice(0, MAX_HISTORY_ITEMS)
+        : initialState.history,
     };
+
+    if (restoredState.pendingSpinCharge) {
+      restoredState.tokens += SPIN_COST;
+      restoredState.totalSpent = Math.max(0, restoredState.totalSpent - SPIN_COST);
+      restoredState.pendingSpinCharge = false;
+      restoredState.currentResult = "Interrupted forecast recovered. The machine refunded your unfinished spin.";
+      restoredState.currentSpend = "No outcome was recorded, so the quarter quietly rewound the expense entry.";
+      restoredState.pillTone = "neutral";
+      restoredState.pillLabel = "Recovered";
+      restoredState.lastAnnouncement = `${restoredState.currentResult} ${restoredState.currentSpend}`;
+      restoredState.history.unshift({
+        title: "Spin recovered",
+        detail: "A page refresh interrupted the reels, so the ledger reversed the charge before finance noticed.",
+        tone: "neutral",
+        meta: "Reliability patch applied",
+      });
+      restoredState.history = restoredState.history.slice(0, MAX_HISTORY_ITEMS);
+    }
+
+    return restoredState;
   } catch {
-    return buildInitialState();
+    return initialState;
   }
 }
 
@@ -68,8 +154,16 @@ const reels = [
   document.getElementById("reel-2"),
 ];
 
+const reelLabels = [
+  document.getElementById("reel-0-label"),
+  document.getElementById("reel-1-label"),
+  document.getElementById("reel-2-label"),
+];
+
 const tokenCount = document.getElementById("token-count");
 const spinCostNode = document.getElementById("spin-cost");
+const ruleSpinCost = document.getElementById("rule-spin-cost");
+const pairPayoutNode = document.getElementById("pair-payout");
 const moodNode = document.getElementById("mood");
 const winRateNode = document.getElementById("win-rate");
 const trendLine = document.getElementById("trend-line");
@@ -87,69 +181,85 @@ const resetButton = document.getElementById("reset-button");
 const machineCard = document.querySelector(".machine-card");
 const burstTemplate = document.getElementById("burst-template");
 
-spinCostNode.textContent = String(spinCost);
+spinCostNode.textContent = String(SPIN_COST);
+ruleSpinCost.textContent = `${SPIN_COST} tokens`;
+pairPayoutNode.textContent = `${PAIR_PAYOUT}-token rebate`;
 
 function saveState() {
   try {
-    window.localStorage.setItem(storageKey, JSON.stringify(state));
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
     // Ignore storage failures so the machine still works in restricted contexts.
   }
 }
 
-function randomSymbol() {
-  return symbols[Math.floor(Math.random() * symbols.length)];
+function randomSymbolIndex() {
+  return Math.floor(Math.random() * SYMBOLS.length);
 }
 
-function addHistoryEntry(title, detail, tone) {
-  state.history.unshift({ title, detail, tone });
-  state.history = state.history.slice(0, maxHistoryItems);
+function addHistoryEntry(title, detail, tone, meta) {
+  state.history.unshift({ title, detail, tone, meta });
+  state.history = state.history.slice(0, MAX_HISTORY_ITEMS);
 }
 
 function formatPercent(value) {
   return `${Math.round(value)}%`;
 }
 
-function getMood() {
-  const net = state.totalWon - state.totalSpent;
+function getNetTokens() {
+  return state.totalWon - state.totalSpent;
+}
 
-  if (state.tokens < spinCost) {
-    return "Seeking emergency seed round";
+function getMood() {
+  const netTokens = getNetTokens();
+
+  if (state.tokens < SPIN_COST) {
+    return "Seeking emergency bridge round";
   }
 
-  if (state.streak >= 3 || net >= 45) {
+  if (state.streak >= 3 || netTokens >= 45) {
     return "Delusionally liquid";
   }
 
-  if (state.winCount > 0 && net >= 0) {
+  if (state.winCount > 0 && netTokens >= 0) {
     return "Cautiously bullish";
   }
 
   if (state.spinCount >= 4 && state.winCount === 0) {
-    return "Rebranding the deck";
+    return "Rewriting the pitch deck";
   }
 
-  return "Pivoting to B2B";
+  if (netTokens <= -45) {
+    return "Pre-revenue but loud";
+  }
+
+  return "Pivoting to enterprise";
 }
 
 function getTrendLine() {
+  const netTokens = getNetTokens();
+
   if (state.spinCount === 0) {
     return "No spins yet. Analysts remain blissfully uninformed.";
   }
 
   if (state.streak >= 2) {
-    return `Heat check: ${state.streak} straight wins. Compliance has stopped answering email.`;
+    return `Heat check: ${state.streak} straight payouts. Compliance has stopped answering email.`;
   }
 
   if (state.bestPayout >= 60) {
-    return `Best quarter event: ${state.bestPayout} tokens from one highly theatrical outcome.`;
+    return `Best quarter event: ${state.bestPayout} tokens from one aggressively monetized coincidence.`;
   }
 
-  if (state.totalSpent > state.totalWon) {
-    return `Burn exceeds output by ${state.totalSpent - state.totalWon} tokens. The board calls this investment.`;
+  if (netTokens < 0) {
+    return `Treasury is down ${Math.abs(netTokens)} tokens. Leadership is calling it a data acquisition phase.`;
   }
 
-  return `Treasury is up ${state.totalWon - state.totalSpent} tokens. Expect an unnecessary keynote soon.`;
+  if (netTokens > 0) {
+    return `Treasury is up ${netTokens} tokens. Expect an unnecessary keynote before close of business.`;
+  }
+
+  return "The quarter is exactly flat, which somehow makes the dashboard more suspicious.";
 }
 
 function updateResultPill(tone, label) {
@@ -164,6 +274,13 @@ function renderHistory() {
     const item = document.createElement("li");
     item.className = `history-item ${entry.tone}`;
 
+    if (entry.meta) {
+      const meta = document.createElement("span");
+      meta.className = "history-meta";
+      meta.textContent = entry.meta;
+      item.append(meta);
+    }
+
     const title = document.createElement("strong");
     title.className = "history-title";
     title.textContent = entry.title;
@@ -177,8 +294,16 @@ function renderHistory() {
   });
 }
 
+function renderReels(reelIndexes) {
+  reelIndexes.forEach((symbolIndex, reelIndex) => {
+    const symbol = SYMBOLS[symbolIndex];
+    reels[reelIndex].textContent = symbol.icon;
+    reelLabels[reelIndex].textContent = `${symbol.caption} · ${symbol.payout} token symbol`;
+  });
+}
+
 function updateHud() {
-  const roi = state.totalSpent > 0 ? ((state.totalWon - state.totalSpent) / state.totalSpent) * 100 : 0;
+  const roi = state.totalSpent > 0 ? (getNetTokens() / state.totalSpent) * 100 : 0;
   const winRate = state.spinCount > 0 ? (state.winCount / state.spinCount) * 100 : 0;
 
   tokenCount.textContent = String(state.tokens);
@@ -190,13 +315,14 @@ function updateHud() {
   bestPayoutNode.textContent = String(state.bestPayout);
   roiNode.textContent = formatPercent(roi);
 
-  spinButton.disabled = spinning || state.tokens < spinCost;
+  spinButton.disabled = spinning || state.tokens < SPIN_COST;
   spinButton.textContent = spinning
-    ? "Consulting the probability engine..."
-    : state.tokens >= spinCost
-      ? `Spend ${spinCost} tokens to spin`
-      : "Out of tokens. Please monetize harder.";
+    ? "Running the forecast engine..."
+    : state.tokens >= SPIN_COST
+      ? `Spend ${SPIN_COST} tokens to spin`
+      : "Wallet empty. Please invent fresh demand.";
 
+  renderReels(state.reelIndexes);
   renderHistory();
 }
 
@@ -205,15 +331,17 @@ function setMessage(resultText, spendText, tone, pillLabel) {
   state.currentSpend = spendText;
   state.pillTone = tone;
   state.pillLabel = pillLabel;
-  resultLine.textContent = resultText;
-  spendLine.textContent = spendText;
   state.lastAnnouncement = `${resultText} ${spendText}`;
 
+  resultLine.textContent = resultText;
+  spendLine.textContent = spendText;
   updateResultPill(tone, pillLabel);
 
   machineCard.classList.remove("win", "loss");
   void machineCard.offsetWidth;
-  machineCard.classList.add(tone);
+  if (tone === "win" || tone === "loss") {
+    machineCard.classList.add(tone);
+  }
 }
 
 function burstCoins(count) {
@@ -231,19 +359,20 @@ function burstCoins(count) {
 function speakLatestResult() {
   if (!("speechSynthesis" in window)) {
     setMessage(
-      "Your browser declined the voice pack upsell.",
-      "Even the platform APIs are protecting you from AI hype.",
+      "Your browser declined the executive narration package.",
+      "Even the platform APIs are drawing a line under the AI upsell.",
       "loss",
       "Muted"
     );
     saveState();
+    updateHud();
     return;
   }
 
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(state.lastAnnouncement);
   utterance.rate = 1.02;
-  utterance.pitch = 1.1;
+  utterance.pitch = 1.08;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -253,93 +382,122 @@ function maybeCelebrate(isBigWin) {
   }
 }
 
-function resolveSpin(results) {
-  const labels = results.map((entry) => entry.label);
-  const uniqueIcons = new Set(results.map((entry) => entry.icon)).size;
+function getTripleMatch(symbol) {
+  const payout = symbol.payout * 3;
+  return {
+    payout,
+    tone: "win",
+    pillLabel: "Jackpot",
+    resultText: `Jackpot: triple ${symbol.label}. The board marked ${payout} freshly minted tokens as product-market fit.`,
+    spendText: `Spin fee: ${SPIN_COST}. Payout: ${payout}. Net quarter delta: ${getNetTokens() + payout} tokens before anyone audits the deck.`,
+    historyTitle: "Triple-match liquidity event",
+    historyDetail: `${symbol.label} lined up three times and generated ${payout} tokens plus immediate founder confidence.`,
+    historyMeta: "Full payout approved",
+    burstCount: 10,
+    bigWin: true,
+  };
+}
+
+function getPairMatch(symbol) {
+  return {
+    payout: PAIR_PAYOUT,
+    tone: "win",
+    pillLabel: "Rebate",
+    resultText: `Two ${symbol.label} symbols aligned. Finance issued a ${PAIR_PAYOUT}-token rebate and called it AI synergy.`,
+    spendText: `Spin fee: ${SPIN_COST}. Rebate: ${PAIR_PAYOUT}. Net result: -${SPIN_COST - PAIR_PAYOUT} tokens for a very expensive lesson in optimism.`,
+    historyTitle: "Synergy rebate booked",
+    historyDetail: `A two-symbol match returned ${PAIR_PAYOUT} tokens, which the dashboard insists counts as momentum.`,
+    historyMeta: "Partial recovery only",
+    burstCount: 5,
+    bigWin: false,
+  };
+}
+
+function getMissResult() {
+  return {
+    payout: 0,
+    tone: "loss",
+    pillLabel: "Miss",
+    resultText: "No match. The forecast engine confidently delivered vibes instead of value.",
+    spendText: `Spin fee: ${SPIN_COST}. Payout: 0. Net quarter delta: ${getNetTokens()} tokens and falling with conviction.`,
+    historyTitle: "Forecast missed",
+    historyDetail: "The reels produced no usable alignment, but management remains deeply committed to the roadmap.",
+    historyMeta: "Full burn recognized",
+    burstCount: 0,
+    bigWin: false,
+  };
+}
+
+function resolveSpin(resultIndexes) {
+  const counts = new Map();
+
+  resultIndexes.forEach((symbolIndex) => {
+    counts.set(symbolIndex, (counts.get(symbolIndex) || 0) + 1);
+  });
+
   state.spinCount += 1;
-  state.totalSpent += spinCost;
+  state.pendingSpinCharge = false;
+  state.reelIndexes = resultIndexes.slice();
 
-  if (uniqueIcons === 1) {
-    const payout = results[0].payout * 3;
-    state.tokens += payout;
-    state.totalWon += payout;
-    state.lastPayout = payout;
+  let outcome = getMissResult();
+
+  const tripleMatchIndex = Array.from(counts.entries()).find(([, count]) => count === 3)?.[0];
+  const pairMatchIndex = Array.from(counts.entries()).find(([, count]) => count === 2)?.[0];
+
+  if (typeof tripleMatchIndex === "number") {
+    outcome = getTripleMatch(SYMBOLS[tripleMatchIndex]);
+  } else if (typeof pairMatchIndex === "number") {
+    outcome = getPairMatch(SYMBOLS[pairMatchIndex]);
+  }
+
+  if (outcome.payout > 0) {
+    state.tokens += outcome.payout;
+    state.totalWon += outcome.payout;
     state.winCount += 1;
     state.streak += 1;
     state.maxStreak = Math.max(state.maxStreak, state.streak);
-    state.bestPayout = Math.max(state.bestPayout, payout);
-    burstCoins(10);
-    maybeCelebrate(true);
-    setMessage(
-      `Jackpot: triple ${labels[0]}s. The machine minted ${payout} tokens out of pure investor theater.`,
-      `Gross burn is ${state.totalSpent} tokens. Net hype remains comfortably detached from reality.`,
-      "win",
-      "Jackpot"
-    );
-    addHistoryEntry(
-      "Triple-match liquidity event",
-      `${labels[0]}s lined up and produced ${payout} tokens. Nobody asked for audited math.`,
-      "win"
-    );
-    saveState();
-    return;
+    state.bestPayout = Math.max(state.bestPayout, outcome.payout);
+    state.lastPayout = outcome.payout;
+    burstCoins(outcome.burstCount);
+    maybeCelebrate(outcome.bigWin);
+  } else {
+    state.lastPayout = 0;
+    state.streak = 0;
   }
 
-  if (uniqueIcons === 2) {
-    const payout = 12;
-    state.tokens += payout;
-    state.totalWon += payout;
-    state.lastPayout = payout;
-    state.winCount += 1;
-    state.streak += 1;
-    state.maxStreak = Math.max(state.maxStreak, state.streak);
-    state.bestPayout = Math.max(state.bestPayout, payout);
-    burstCoins(5);
-    maybeCelebrate(false);
-    setMessage(
-      `Two reels aligned. The casino grants ${payout} consolation tokens and calls it AI synergy.`,
-      `Lifetime burn: ${state.totalSpent} tokens. This quarter is now being framed as a strategic near-win.`,
-      "win",
-      "Near Miss"
-    );
-    addHistoryEntry(
-      "Synergy bonus approved",
-      `A two-symbol alignment generated ${payout} tokens and a very aggressive internal memo.`,
-      "win"
-    );
-    saveState();
-    return;
-  }
-
-  state.lastPayout = 0;
-  state.streak = 0;
   setMessage(
-    "No match. The model confidently predicted vibes instead of value.",
-    `You are now ${state.totalSpent} tokens deep into the dream of frictionless automation.`,
-    "loss",
-    "Miss"
+    outcome.resultText,
+    outcome.spendText,
+    outcome.tone,
+    outcome.pillLabel
   );
+
   addHistoryEntry(
-    "Forecast missed",
-    "The reels produced no usable alignment, but management remains excited about the roadmap.",
-    "loss"
+    outcome.historyTitle,
+    outcome.historyDetail,
+    outcome.tone,
+    outcome.historyMeta
   );
+
   saveState();
 }
 
 function animateSpin() {
-  const finalResults = reels.map(() => randomSymbol());
+  const finalResults = reels.map(() => randomSymbolIndex());
 
   reels.forEach((reel, reelIndex) => {
     reel.classList.add("spinning");
+
     const interval = window.setInterval(() => {
-      reel.textContent = randomSymbol().icon;
+      const randomIndex = randomSymbolIndex();
+      const symbol = SYMBOLS[randomIndex];
+      reel.textContent = symbol.icon;
+      reelLabels[reelIndex].textContent = `${symbol.caption} · ${symbol.payout} token symbol`;
     }, 90 + reelIndex * 30);
 
     window.setTimeout(() => {
       window.clearInterval(interval);
       reel.classList.remove("spinning");
-      reel.textContent = finalResults[reelIndex].icon;
 
       if (reelIndex === reels.length - 1) {
         spinning = false;
@@ -351,61 +509,76 @@ function animateSpin() {
 }
 
 function handleSpin() {
-  if (spinning || state.tokens < spinCost) {
+  if (spinning || state.tokens < SPIN_COST) {
     return;
   }
 
-  state.tokens -= spinCost;
+  state.tokens -= SPIN_COST;
+  state.totalSpent += SPIN_COST;
+  state.pendingSpinCharge = true;
   spinning = true;
-  updateHud();
+
   setMessage(
-    "Spinning the reels. Please wait while the machine converts electricity into confidence.",
-    `A fresh ${spinCost}-token fee has been forwarded to the narrative layer.`,
-    "loss",
+    "Spinning the reels. Please wait while the machine converts cash burn into marketable confidence.",
+    `Spin fee recorded: ${SPIN_COST} tokens. The ledger is now committed even if the thesis is not.`,
+    "neutral",
     "Spinning"
   );
   saveState();
+  updateHud();
   animateSpin();
 }
 
 function resetGame() {
-  const confirmed = window.confirm(
-    "Reset the quarter and wipe all saved hype metrics?"
-  );
+  const confirmed = window.confirm("Reset the quarter and wipe all saved hype metrics?");
 
   if (!confirmed) {
     return;
   }
 
   Object.assign(state, buildInitialState());
-  reels.forEach((reel, index) => {
-    reel.textContent = symbols[index].icon;
-    reel.classList.remove("spinning");
-  });
-
   spinning = false;
+
   setMessage(
-    "Fresh quarter initialized. The board has approved another avoidable experiment.",
-    "Wallet restored, history cleared, and accountability gently postponed.",
-    "win",
+    "Fresh quarter initialized. The board approved another avoidable experiment.",
+    "Wallet restored, metrics cleared, and accountability gently postponed.",
+    "neutral",
     "Reset"
   );
   saveState();
   updateHud();
 }
 
+function handleKeydown(event) {
+  if (event.code !== "Space" || event.repeat) {
+    return;
+  }
+
+  const target = event.target;
+  const isTypingContext = target instanceof HTMLElement
+    && (target.isContentEditable
+      || ["INPUT", "TEXTAREA", "SELECT", "BUTTON"].includes(target.tagName));
+
+  if (isTypingContext) {
+    return;
+  }
+
+  event.preventDefault();
+  handleSpin();
+}
+
 spinButton.addEventListener("click", handleSpin);
 speakStatus.addEventListener("click", speakLatestResult);
 resetButton.addEventListener("click", resetGame);
+document.addEventListener("keydown", handleKeydown);
 
-document.addEventListener("keydown", (event) => {
-  if (event.code === "Space" && event.target === document.body) {
-    event.preventDefault();
-    handleSpin();
-  }
-});
+if (!("speechSynthesis" in window)) {
+  speakStatus.disabled = true;
+  speakStatus.textContent = "Voice pack unavailable";
+}
 
 updateResultPill(state.pillTone, state.pillLabel);
 resultLine.textContent = state.currentResult;
 spendLine.textContent = state.currentSpend;
 updateHud();
+saveState();

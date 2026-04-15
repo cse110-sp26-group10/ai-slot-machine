@@ -16,16 +16,16 @@
       <div class="hero-copy">
         <div>
           <h1>Token Tumbler 9000</h1>
-          <p>Pull the lever, win synthetic bragging rights, and immediately spend your earnings on premium AI nonsense.</p>
+          <p>Pay tokens for each spin, hope for a reimbursement from the algorithm, then watch finance recommend a fresh batch of premium AI nonsense.</p>
         </div>
         <div class="telemetry-strip" aria-label="Session telemetry">
           <article>
-            <span class="stat-label">Win Rate</span>
+            <span class="stat-label">Refund Rate</span>
             <strong id="win-rate">0%</strong>
             <span class="stat-unit">historically dubious</span>
           </article>
           <article>
-            <span class="stat-label">Best Hit</span>
+            <span class="stat-label">Best Rebate</span>
             <strong id="best-payout">0</strong>
             <span class="stat-unit">tokens</span>
           </article>
@@ -33,17 +33,17 @@
       </div>
       <div class="hero-stats" aria-label="Game stats">
         <article>
-          <span class="stat-label">Wallet</span>
+          <span class="stat-label">Budget Left</span>
           <strong id="token-balance">1200</strong>
           <span class="stat-unit">tokens</span>
         </article>
         <article>
-          <span class="stat-label">Spin Cost</span>
+          <span class="stat-label">Spin Burn</span>
           <strong id="spin-cost">120</strong>
           <span class="stat-unit">tokens</span>
         </article>
         <article>
-          <span class="stat-label">Jackpots</span>
+          <span class="stat-label">Full Refunds</span>
           <strong id="jackpot-count">0</strong>
           <span class="stat-unit">miracles</span>
         </article>
@@ -81,11 +81,11 @@
       </div>
 
       <div class="controls">
-        <button id="spin-button" class="primary-button" type="button">Spend 120 Tokens</button>
+        <button id="spin-button" class="primary-button" type="button">Burn 120 Tokens</button>
         <button id="autospin-button" class="secondary-button" type="button">Auto-Burn x5</button>
       </div>
       <div class="control-meta" aria-label="Machine telemetry">
-        <span id="streak-badge" class="meta-pill">Streak: 0</span>
+        <span id="streak-badge" class="meta-pill">Heater: 0</span>
         <span id="spins-badge" class="meta-pill">Spins: 0</span>
         <span class="meta-pill meta-hint">Shortcuts: Space spin, A auto, M mute</span>
       </div>
@@ -94,11 +94,11 @@
         <p id="status-line" class="status-line">System ready. Please gamble responsibly with fictional compute credits.</p>
         <div class="reward-strip">
           <div>
-            <span class="reward-label">Last payout</span>
-            <strong id="last-payout">0</strong>
+            <span class="reward-label">Last rebate</span>
+            <strong id="last-payout">0 tokens</strong>
           </div>
           <div>
-            <span class="reward-label">Spend target</span>
+            <span class="reward-label">Finance recommends</span>
             <strong id="spend-target">HyperScale Hallucination Cleanup</strong>
           </div>
           <div>
@@ -107,23 +107,52 @@
           </div>
         </div>
       </section>
+
+      <section class="rules-panel" aria-labelledby="rules-title">
+        <div class="subsection-header">
+          <p class="eyebrow">Pricing disclosure</p>
+          <h3 id="rules-title">What this machine actually does</h3>
+        </div>
+        <div class="rules-grid">
+          <article class="rule-card">
+            <span class="reward-label">Every spin</span>
+            <strong>Burns 120 tokens</strong>
+            <p>The machine always charges first. Accountability is not part of the demo.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Two matching reels</span>
+            <strong>Rebates 240 tokens</strong>
+            <p>A modest refund for accidentally aligning the roadmap with reality.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Three matching reels</span>
+            <strong>Rebates 960 tokens</strong>
+            <p>A miracle-grade overpayment caused by fully synchronized buzzwords.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Contains Infinite Tokens</span>
+            <strong>Rebates 160 tokens</strong>
+            <p>A tiny consolation prize for seeing abundance theater without any abundance.</p>
+          </article>
+        </div>
+      </section>
     </section>
 
     <section class="ledger-panel">
       <div class="ledger-header">
         <div>
           <p class="eyebrow">Expense report</p>
-          <h2>Where your tokens went</h2>
+          <h2>Where the budget allegedly went</h2>
         </div>
         <span class="ledger-total">Lifetime burned: <strong id="lifetime-spent">0</strong></span>
       </div>
       <div class="ledger-summary" aria-label="Performance summary">
         <article class="summary-card">
-          <span class="reward-label">Winning spins</span>
+          <span class="reward-label">Refunded spins</span>
           <strong id="winning-spins">0</strong>
         </article>
         <article class="summary-card">
-          <span class="reward-label">Longest streak</span>
+          <span class="reward-label">Longest heater</span>
           <strong id="best-streak">0</strong>
         </article>
         <article class="summary-card">
@@ -135,14 +164,14 @@
         <section class="catalog-panel" aria-labelledby="catalog-title">
           <div class="subsection-header">
             <p class="eyebrow">Marketplace</p>
-            <h3 id="catalog-title">Suggested nonsense purchases</h3>
+            <h3 id="catalog-title">Approved nonsense purchases</h3>
           </div>
           <div class="expense-grid" id="expense-grid" aria-live="polite"></div>
         </section>
         <section class="history-panel" aria-labelledby="history-title">
           <div class="subsection-header">
             <p class="eyebrow">Live ledger</p>
-            <h3 id="history-title">Recent burns and rebounds</h3>
+            <h3 id="history-title">Recent burns and reimbursements</h3>
           </div>
           <div class="history-list" id="history-list" aria-live="polite"></div>
         </section>

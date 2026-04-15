@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,14 +13,14 @@
         <p class="eyebrow">Generative gambling for the post-hype era</p>
         <h1>Token Burn Casino</h1>
         <p class="tagline">
-          Spin the reels, win more vapor tokens, and immediately spend them on premium AI nonsense.
+          Spend prompt chips on a fully unregulated AI forecast engine, then celebrate whatever the dashboard decides counts as revenue.
         </p>
       </div>
 
       <div class="hero-sidecar" aria-label="play instructions">
-        <p class="sidecar-label">Quarterly guidance</p>
+        <p class="sidecar-label">Board guidance</p>
         <p class="sidecar-copy">
-          Space spins. Voice playback reads the latest earnings call. Reset wipes the cap table and starts a fresh delusion cycle.
+          Each spin costs tokens up front. Match three symbols for a full payout, match two for a smaller rebate, and miss completely for a premium lesson in burn rate.
         </p>
       </div>
 
@@ -33,17 +33,17 @@
         <article class="stat">
           <span class="stat-label">Spin Cost</span>
           <strong id="spin-cost">15</strong>
-          <span class="stat-foot">Tokens per prophecy</span>
+          <span class="stat-foot">Tokens per forecast</span>
         </article>
         <article class="stat">
           <span class="stat-label">Mood</span>
           <strong id="mood">Cautiously bullish</strong>
-          <span class="stat-foot">Model confidence</span>
+          <span class="stat-foot">Board-approved sentiment</span>
         </article>
         <article class="stat">
           <span class="stat-label">Win Rate</span>
           <strong id="win-rate">0%</strong>
-          <span class="stat-foot">Deck-approved optimism</span>
+          <span class="stat-foot">Deck-safe storytelling</span>
         </article>
       </div>
     </section>
@@ -57,24 +57,39 @@
           </div>
 
           <div class="header-actions">
-            <button id="speak-status" class="ghost-button" type="button">Read latest result</button>
+            <button id="speak-status" class="ghost-button" type="button">Read latest briefing</button>
             <button id="reset-button" class="ghost-button danger-button" type="button">Reset quarter</button>
           </div>
         </div>
 
         <div class="machine-frame">
+          <section class="rules-strip" aria-label="payout rules">
+            <article class="rule-chip">
+              <span class="rule-label">Spin Fee</span>
+              <strong id="rule-spin-cost">15 tokens</strong>
+            </article>
+            <article class="rule-chip">
+              <span class="rule-label">Triple Match</span>
+              <strong>3x symbol payout</strong>
+            </article>
+            <article class="rule-chip">
+              <span class="rule-label">Double Match</span>
+              <strong id="pair-payout">12-token rebate</strong>
+            </article>
+          </section>
+
           <div class="reels" aria-live="polite" aria-atomic="true">
             <div class="reel-window">
-              <span id="reel-0" class="reel-symbol">🤖</span>
-              <span class="reel-caption">Narrative engine</span>
+              <span id="reel-0" class="reel-symbol">&#129302;</span>
+              <span id="reel-0-label" class="reel-caption">Narrative engine</span>
             </div>
             <div class="reel-window">
-              <span id="reel-1" class="reel-symbol">💸</span>
-              <span class="reel-caption">Cash furnace</span>
+              <span id="reel-1" class="reel-symbol">&#128176;</span>
+              <span id="reel-1-label" class="reel-caption">Cash furnace</span>
             </div>
             <div class="reel-window">
-              <span id="reel-2" class="reel-symbol">🪙</span>
-              <span class="reel-caption">Token printer</span>
+              <span id="reel-2" class="reel-symbol">&#129689;</span>
+              <span id="reel-2-label" class="reel-caption">Token printer</span>
             </div>
           </div>
 
@@ -109,7 +124,7 @@
           <article class="telemetry-stat">
             <span class="stat-label">Current Streak</span>
             <strong id="streak-count">0</strong>
-            <span class="stat-foot">Consecutive wins</span>
+            <span class="stat-foot">Consecutive payouts</span>
           </article>
           <article class="telemetry-stat">
             <span class="stat-label">Best Payout</span>
@@ -130,31 +145,31 @@
         <div class="panel-header">
           <div>
             <p class="eyebrow">Recent activity</p>
-            <h2 id="feed-title">Narrative Feed</h2>
+            <h2 id="feed-title">Board Minutes</h2>
           </div>
         </div>
         <ul id="history-list" class="history-list" aria-live="polite"></ul>
       </section>
 
-      <section class="perk-grid" aria-label="AI joke perks">
+      <section class="perk-grid" aria-label="AI satire notes">
         <article class="perk">
-          <h3>Hallucination Multiplier</h3>
-          <p>Matching three nonsense symbols unlocks a confidence bonus with no supporting evidence.</p>
+          <h3>Revenue Recognition</h3>
+          <p>Triple matches pay out based on symbol hype value, because the machine believes pricing is just storytelling with numbers.</p>
         </article>
         <article class="perk">
-          <h3>Prompt Tax</h3>
-          <p>Every spin costs tokens because your ideas deserve a recurring billing model.</p>
+          <h3>Usage-Based Billing</h3>
+          <p>Every spin charges tokens first, allowing the ledger to stay honest even when the product absolutely does not.</p>
         </article>
         <article class="perk">
-          <h3>Quarterly Amnesia</h3>
-          <p>Your numbers now persist between refreshes, just like an enterprise dashboard nobody wants audited.</p>
+          <h3>Quarterly Memory</h3>
+          <p>Your metrics persist between refreshes, just like a startup dashboard everyone trusts until due diligence begins.</p>
         </article>
       </section>
     </section>
   </main>
 
   <template id="burst-template">
-    <span class="burst-token">🪙</span>
+    <span class="burst-token">&#129689;</span>
   </template>
 
   <script src="app.js"></script>

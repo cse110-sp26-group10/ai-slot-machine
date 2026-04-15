@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg-top: #f6e9c9;
   --bg-bottom: #f18f5c;
   --panel: rgba(32, 27, 37, 0.9);
@@ -102,7 +102,8 @@ body::after {
 }
 
 .sidecar-label,
-.eyebrow {
+.eyebrow,
+.rule-label {
   margin: 0 0 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -112,7 +113,7 @@ body::after {
 
 .sidecar-copy {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text);
 }
 
@@ -138,11 +139,12 @@ h2 {
   margin: 1rem 0 0;
   color: var(--muted);
   font-size: 1.05rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .scoreboard,
-.telemetry-grid {
+.telemetry-grid,
+.rules-strip {
   display: grid;
   gap: 0.9rem;
 }
@@ -155,7 +157,8 @@ h2 {
 .stat,
 .telemetry-stat,
 .perk,
-.history-item {
+.history-item,
+.rule-chip {
   border-radius: 22px;
   padding: 1rem;
   background: var(--panel-soft);
@@ -167,6 +170,16 @@ h2 {
     var(--panel-soft);
 }
 
+.rule-chip {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rule-chip strong {
+  display: block;
+  font-size: 1rem;
+}
+
 .stat-label,
 .stat-foot {
   display: block;
@@ -176,7 +189,9 @@ h2 {
 .stat-foot,
 .spend-line,
 .trend-line,
-.shortcut-hint {
+.shortcut-hint,
+.history-meta,
+.reel-payout {
   color: var(--muted);
 }
 
@@ -274,6 +289,10 @@ h2 {
     rgba(0, 0, 0, 0.18);
 }
 
+.rules-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .reels {
   width: 100%;
   display: grid;
@@ -282,7 +301,7 @@ h2 {
 }
 
 .reel-window {
-  min-height: 170px;
+  min-height: 190px;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -290,6 +309,7 @@ h2 {
   border-radius: 24px;
   overflow: hidden;
   padding: 1rem;
+  text-align: center;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.15)),
     linear-gradient(180deg, #522546 0%, #311d3f 50%, #1a1a2e 100%);
@@ -298,6 +318,7 @@ h2 {
 
 .reel-symbol {
   font-size: clamp(3rem, 9vw, 5.4rem);
+  line-height: 1;
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.35));
 }
 
@@ -306,10 +327,17 @@ h2 {
 }
 
 .reel-caption {
-  color: var(--muted);
-  font-size: 0.82rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+}
+
+.reel-payout {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .control-strip {
@@ -368,10 +396,12 @@ kbd {
 .result-line {
   margin: 0 0 0.4rem;
   font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .spend-line {
   margin: 0;
+  line-height: 1.5;
 }
 
 .telemetry-card {
@@ -420,6 +450,14 @@ kbd {
 .perk p {
   margin: 0;
   line-height: 1.5;
+}
+
+.history-meta {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .perk-grid {
@@ -486,7 +524,8 @@ kbd {
     grid-template-columns: 1fr;
   }
 
-  .scoreboard {
+  .scoreboard,
+  .rules-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -507,7 +546,8 @@ kbd {
 
   .scoreboard,
   .telemetry-grid,
-  .reels {
+  .reels,
+  .rules-strip {
     grid-template-columns: 1fr;
   }
 
@@ -519,7 +559,7 @@ kbd {
   }
 
   .reel-window {
-    min-height: 130px;
+    min-height: 140px;
   }
 }
 

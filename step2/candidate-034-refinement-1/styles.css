@@ -123,6 +123,7 @@ body::after {
 .telemetry-item,
 .message-card,
 .telemetry-card,
+.guide-panel,
 .payouts,
 .feed {
   background: var(--panel-soft);
@@ -236,6 +237,7 @@ body::after {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  text-align: center;
 }
 
 .controls {
@@ -289,10 +291,17 @@ button:disabled {
   cursor: wait;
 }
 
+.round-explainer {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: center;
+}
+
+.economy-note,
 .shortcut-hint {
-  margin: -0.25rem 0 0;
+  margin: 0;
   text-align: center;
-  color: rgba(255, 247, 235, 0.76);
+  color: rgba(255, 247, 235, 0.82);
 }
 
 kbd {
@@ -347,13 +356,20 @@ kbd {
   line-height: 1.5;
 }
 
-.sub-message {
+.sub-message,
+.spin-summary {
   margin: 0;
   line-height: 1.5;
   color: rgba(255, 247, 235, 0.78);
 }
 
+.spin-summary {
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .telemetry-card h2,
+.guide-panel h2,
 .payouts h2,
 .feed-header h2 {
   margin: 0 0 0.8rem;
@@ -380,6 +396,7 @@ kbd {
   gap: 1rem;
 }
 
+.guide-list,
 .payouts ul,
 .feed-list {
   list-style: none;
@@ -387,19 +404,38 @@ kbd {
   padding: 0;
 }
 
+.guide-list {
+  display: grid;
+  gap: 0.75rem;
+  color: rgba(255, 247, 235, 0.84);
+  line-height: 1.5;
+}
+
+.guide-list li,
+.payouts li,
+.feed-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.75rem;
+}
+
+.guide-list li:first-child,
+.payouts li:first-child,
+.feed-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .payouts li,
 .feed-item {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.7rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.7rem;
 }
 
-.payouts li:first-child,
-.feed-item:first-child {
-  border-top: 0;
-  padding-top: 0;
+.payouts li:last-child,
+.feed-item:last-child {
+  padding-bottom: 0;
 }
 
 .feed-pill {
@@ -443,14 +479,28 @@ kbd {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 0.88; }
-  50% { opacity: 0.38; }
+  0%,
+  100% {
+    opacity: 0.88;
+  }
+
+  50% {
+    opacity: 0.38;
+  }
 }
 
 @keyframes wobble {
-  0% { transform: translateY(-5%) scale(0.98); }
-  50% { transform: translateY(5%) scale(1.02); }
-  100% { transform: translateY(-5%) scale(0.98); }
+  0% {
+    transform: translateY(-5%) scale(0.98);
+  }
+
+  50% {
+    transform: translateY(5%) scale(1.02);
+  }
+
+  100% {
+    transform: translateY(-5%) scale(0.98);
+  }
 }
 
 @keyframes rise-in {
@@ -458,6 +508,7 @@ kbd {
     opacity: 0;
     transform: translateY(12px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);

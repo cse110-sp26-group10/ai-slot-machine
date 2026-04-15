@@ -13,15 +13,16 @@
           <p class="eyebrow">Algorithmic Entertainment Division</p>
           <h1>Token Tug Casino</h1>
           <p class="tagline">
-            Win fake AI tokens. Spend fake AI tokens. Experience the full modern
-            product cycle in under 30 seconds.
+            The fastest way to simulate an AI business model: burn tokens, celebrate
+            variance, and call the result a roadmap.
           </p>
         </div>
         <aside class="hero-brief" aria-label="play instructions">
-          <p class="brief-label">Board guidance</p>
+          <p class="brief-label">Board memo</p>
           <p class="brief-copy">
-            Space spins the reels. Reboot wipes the quarter. Progress is saved locally,
-            which is more governance than most AI launches get.
+            Every pull costs 15 tokens. Any pair refunds 20. Triple matches pay the
+            table. Progress saves locally, which is more governance than the machine
+            deserves.
           </p>
         </aside>
       </section>
@@ -31,22 +32,22 @@
           <article class="status-card status-card-primary">
             <span class="status-label">Wallet</span>
             <strong id="tokenBalance">120</strong>
-            <span class="status-note">prompt credits</span>
+            <span class="status-note">prompt tokens on hand</span>
           </article>
           <article class="status-card">
             <span class="status-label">Spin Cost</span>
             <strong id="spinCost">15</strong>
-            <span class="status-note">tokens per hallucination</span>
+            <span class="status-note">burned per forecast</span>
           </article>
           <article class="status-card">
-            <span class="status-label">Mood</span>
+            <span class="status-label">Net Tokens</span>
+            <strong id="netTokens">0</strong>
+            <span class="status-note">won minus torched</span>
+          </article>
+          <article class="status-card">
+            <span class="status-label">Machine Mood</span>
             <strong id="aiMood">Overconfident</strong>
-            <span class="status-note">certainty not included</span>
-          </article>
-          <article class="status-card">
-            <span class="status-label">Win Rate</span>
-            <strong id="winRate">0%</strong>
-            <span class="status-note">investor safe metric</span>
+            <span class="status-note">confidence sold separately</span>
           </article>
         </div>
 
@@ -56,15 +57,15 @@
               <div class="marquee-lights" aria-hidden="true"></div>
               <div class="reels" role="group" aria-label="Slot reels">
                 <div class="reel-window">
-                  <div class="reel" id="reel0">🤖</div>
+                  <div class="reel" id="reel0">&#129302;</div>
                   <span class="reel-caption">Narrative engine</span>
                 </div>
                 <div class="reel-window">
-                  <div class="reel" id="reel1">💸</div>
-                  <span class="reel-caption">Spend funnel</span>
+                  <div class="reel" id="reel1">&#128176;</div>
+                  <span class="reel-caption">Monetization stack</span>
                 </div>
                 <div class="reel-window">
-                  <div class="reel" id="reel2">🧠</div>
+                  <div class="reel" id="reel2">&#129504;</div>
                   <span class="reel-caption">Vision layer</span>
                 </div>
               </div>
@@ -79,7 +80,13 @@
               </button>
             </div>
 
-            <p class="shortcut-hint">Keyboard shortcut: <kbd>Space</kbd></p>
+            <div class="round-explainer">
+              <p class="economy-note">
+                Each pull burns 15 tokens. Pairs return 20 tokens for a tiny net win.
+                Triples trigger premium nonsense.
+              </p>
+              <p class="shortcut-hint">Keyboard shortcut: <kbd>Space</kbd></p>
+            </div>
 
             <section class="results-panel" aria-live="polite">
               <div class="message-card">
@@ -88,7 +95,12 @@
                   Welcome, valued user. The machine is ready to monetize your curiosity.
                 </p>
                 <p id="subMessage" class="sub-message">
-                  No tokens have been torched yet. Finance is uneasy about the lack of momentum.
+                  No tokens have been torched yet. Finance is uneasy about the lack of
+                  momentum.
+                </p>
+                <p id="spinSummary" class="spin-summary">
+                  Last result: No pulls yet. The machine is still writing its launch
+                  thread.
                 </p>
               </div>
 
@@ -101,6 +113,11 @@
                     <span class="status-note">quarter to date</span>
                   </article>
                   <article class="telemetry-item">
+                    <span class="status-label">Win Rate</span>
+                    <strong id="winRate">0%</strong>
+                    <span class="status-note">board-approved metric</span>
+                  </article>
+                  <article class="telemetry-item">
                     <span class="status-label">Best Payout</span>
                     <strong id="bestPayout">0</strong>
                     <span class="status-note">largest miracle</span>
@@ -109,6 +126,11 @@
                     <span class="status-label">Streak</span>
                     <strong id="streakCount">0</strong>
                     <span class="status-note">consecutive wins</span>
+                  </article>
+                  <article class="telemetry-item">
+                    <span class="status-label">Tokens Burned</span>
+                    <strong id="totalSpent">0</strong>
+                    <span class="status-note">strategy spend</span>
                   </article>
                   <article class="telemetry-item">
                     <span class="status-label">ROI</span>
@@ -121,18 +143,30 @@
           </section>
 
           <aside class="sidebar">
+            <section class="guide-panel">
+              <div class="panel-heading">
+                <h2>Operating policy</h2>
+                <span class="feed-pill">compliance-ish</span>
+              </div>
+              <ul class="guide-list">
+                <li>Pulling the lever spends tokens immediately, because forecasting is expensive.</li>
+                <li>Any pair returns 20 tokens, so even a "near miss" becomes a memo about retention.</li>
+                <li>Triple matches pay more because concentrated hype tests well in demos.</li>
+              </ul>
+            </section>
+
             <section class="payouts">
               <div class="panel-heading">
                 <h2>Payout table</h2>
                 <span class="feed-pill">beta forever</span>
               </div>
               <ul>
-                <li><span>💸 💸 💸</span><strong>+150 tokens</strong></li>
-                <li><span>🤖 🤖 🤖</span><strong>+90 tokens</strong></li>
-                <li><span>🔥 🔥 🔥</span><strong>+80 tokens</strong></li>
-                <li><span>🧠 🧠 🧠</span><strong>+70 tokens</strong></li>
-                <li><span>📉 📉 📉</span><strong>+45 tokens</strong></li>
-                <li><span>🪙 🪙 🪙</span><strong>+60 tokens</strong></li>
+                <li><span>&#128176; &#128176; &#128176;</span><strong>+150 tokens</strong></li>
+                <li><span>&#129302; &#129302; &#129302;</span><strong>+90 tokens</strong></li>
+                <li><span>&#128293; &#128293; &#128293;</span><strong>+80 tokens</strong></li>
+                <li><span>&#129504; &#129504; &#129504;</span><strong>+70 tokens</strong></li>
+                <li><span>&#128200; &#128200; &#128200;</span><strong>+45 tokens</strong></li>
+                <li><span>&#129689; &#129689; &#129689;</span><strong>+60 tokens</strong></li>
                 <li><span>Any pair</span><strong>+20 tokens</strong></li>
               </ul>
             </section>

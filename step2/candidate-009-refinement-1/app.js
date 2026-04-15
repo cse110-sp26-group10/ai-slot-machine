@@ -1,5 +1,13 @@
 const STORAGE_KEY = "token-tumbler-9000-state";
 const MAX_HISTORY = 8;
+const AUTO_SPIN_BATCH = 5;
+const SPIN_COST = 120;
+
+const PAYOUTS = {
+  jackpot: 960,
+  matchTwo: 240,
+  infiniteTokens: 160,
+};
 
 const symbols = [
   "Prompt Leak",
@@ -29,7 +37,7 @@ const expenses = [
 
 const defaultState = {
   balance: 1200,
-  spinCost: 120,
+  spinCost: SPIN_COST,
   jackpots: 0,
   lifetimeSpent: 0,
   muted: false,
@@ -90,17 +98,58 @@ function formatSignedTokens(value) {
   return "0";
 }
 
+function clampNumber(value, fallback = 0) {
+  return Number.isFinite(value) ? value : fallback;
+}
+
+function sanitizeHistoryEntry(entry) {
+  if (!entry || !Array.isArray(entry.symbols)) {
+    return null;
+  }
+
+  return {
+    symbols: entry.symbols.slice(0, 3).map((symbol) => String(symbol)),
+    payout: Math.max(0, clampNumber(entry.payout)),
+    net: clampNumber(entry.net),
+    expense: typeof entry.expense === "string" ? entry.expense : expenses[0].name,
+    win: Boolean(entry.win),
+    jackpot: Boolean(entry.jackpot),
+    reason: typeof entry.reason === "string" ? entry.reason : "Budget volatility event",
+  };
+}
+
 function loadState() {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...defaultState };
+    if (!raw) {
+      return { ...defaultState };
+    }
+
     const parsed = JSON.parse(raw);
+    const recentSpins = Array.isArray(parsed.recentSpins)
+      ? parsed.recentSpins.map(sanitizeHistoryEntry).filter(Boolean).slice(0, MAX_HISTORY)
+      : [];
+
     return {
       ...defaultState,
       ...parsed,
+      balance: Math.max(0, clampNumber(parsed.balance, defaultState.balance)),
+      spinCost: SPIN_COST,
+      jackpots: Math.max(0, clampNumber(parsed.jackpots)),
+      lifetimeSpent: Math.max(0, clampNumber(parsed.lifetimeSpent)),
+      muted: Boolean(parsed.muted),
       spinning: false,
       autospinsRemaining: 0,
-      recentSpins: Array.isArray(parsed.recentSpins) ? parsed.recentSpins.slice(0, MAX_HISTORY) : [],
+      totalSpins: Math.max(0, clampNumber(parsed.totalSpins)),
+      winningSpins: Math.max(0, clampNumber(parsed.winningSpins)),
+      bestPayout: Math.max(0, clampNumber(parsed.bestPayout)),
+      winStreak: Math.max(0, clampNumber(parsed.winStreak)),
+      bestWinStreak: Math.max(0, clampNumber(parsed.bestWinStreak)),
+      featuredExpense: expenses.some((item) => item.name === parsed.featuredExpense)
+        ? parsed.featuredExpense
+        : defaultState.featuredExpense,
+      latestNet: clampNumber(parsed.latestNet),
+      recentSpins,
     };
   } catch {
     return { ...defaultState };
@@ -108,24 +157,67 @@ function loadState() {
 }
 
 function persistState() {
-  const snapshot = {
-    ...state,
-    spinning: false,
-  };
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+  try {
+    const snapshot = {
+      ...state,
+      spinCost: SPIN_COST,
+      spinning: false,
+      autospinsRemaining: 0,
+    };
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+  } catch {
+    statusLine.textContent = "Local storage declined the paperwork. Session continues in temporary memory.";
+  }
+}
+
+function getWinRate() {
+  if (!state.totalSpins) {
+    return 0;
+  }
+  return Math.round((state.winningSpins / state.totalSpins) * 100);
+}
+
+function deriveHeat(balance) {
+  if (balance >= 1600) return "Regrettably sentient";
+  if (balance >= 900) return "Mildly overfit";
+  if (balance >= 400) return "Thermally concerning";
+  return "Investor update imminent";
+}
+
+function describeFeaturedExpense(expense) {
+  if (expense.cost <= SPIN_COST * 1.5) {
+    return `${expense.name} is back on the budget because optimism remains unregulated.`;
+  }
+  if (expense.cost <= SPIN_COST * 2) {
+    return `${expense.name} just cleared procurement with zero follow-up questions.`;
+  }
+  return `${expense.name} is the latest executive priority despite obvious warning signs.`;
+}
+
+function getHeadline(entry) {
+  if (entry.jackpot) {
+    return `Full refund on ${entry.symbols[0]}`;
+  }
+  if (entry.win) {
+    return entry.reason;
+  }
+  return "The machine logged another strategic burn";
 }
 
 function renderExpenses() {
   expenseGrid.innerHTML = "";
+
   for (const item of expenses) {
     const fragment = expenseTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".expense-card");
     fragment.querySelector(".expense-name").textContent = item.name;
     fragment.querySelector(".expense-tag").textContent = item.tag;
-    fragment.querySelector(".expense-cost").textContent = `${item.cost} t`;
+    fragment.querySelector(".expense-cost").textContent = `${formatTokens(item.cost)} t`;
+
     if (item.name === state.featuredExpense) {
       card.classList.add("expense-card-featured");
     }
+
     expenseGrid.appendChild(fragment);
   }
 }
@@ -136,7 +228,7 @@ function renderHistory() {
   if (!state.recentSpins.length) {
     const emptyState = document.createElement("p");
     emptyState.className = "history-empty";
-    emptyState.textContent = "No spins logged yet. The ledger is clean, which is suspicious.";
+    emptyState.textContent = "No spins logged yet. Finance loves a blank ledger, which is why it cannot be trusted.";
     historyList.appendChild(emptyState);
     return;
   }
@@ -144,38 +236,28 @@ function renderHistory() {
   for (const entry of state.recentSpins) {
     const fragment = historyTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".history-card");
-    const outcomeClass = entry.win ? "is-win" : "is-loss";
-    const netLabel = formatSignedTokens(entry.net);
-    const headline = entry.jackpot
-      ? `Jackpot on ${entry.symbols[0]}`
+    const statusText = entry.jackpot
+      ? "full refund"
       : entry.win
-        ? `${entry.symbols[0]} almost paid the cloud bill`
-        : "Benchmark theater consumed another budget line";
+        ? "partial refund"
+        : "fully billed";
 
-    card.classList.add(outcomeClass);
-    fragment.querySelector(".history-headline").textContent = headline;
+    card.classList.add(entry.win ? "is-win" : "is-loss");
+    if (entry.jackpot) {
+      card.classList.add("is-jackpot");
+    }
+
+    fragment.querySelector(".history-headline").textContent = getHeadline(entry);
     fragment.querySelector(".history-symbols").textContent = entry.symbols.join(" / ");
-    fragment.querySelector(".history-net").textContent = `${netLabel} t`;
-    fragment.querySelector(".history-outcome").textContent = `${formatTokens(entry.payout)} payout • ${entry.expense}`;
+    fragment.querySelector(".history-net").textContent = `${formatSignedTokens(entry.net)} t`;
+    fragment.querySelector(".history-outcome").textContent = `${formatTokens(entry.payout)} rebate | ${statusText}`;
     historyList.appendChild(fragment);
   }
 }
 
-function deriveHeat(balance) {
-  if (balance > 1500) return "Regrettably sentient";
-  if (balance > 900) return "Mildly overfit";
-  if (balance > 450) return "Thermally concerning";
-  return "Investor update imminent";
-}
-
-function getWinRate() {
-  if (!state.totalSpins) return 0;
-  return Math.round((state.winningSpins / state.totalSpins) * 100);
-}
-
 function updateUi() {
   balanceNode.textContent = formatTokens(state.balance);
-  spinCostNode.textContent = formatTokens(state.spinCost);
+  spinCostNode.textContent = formatTokens(SPIN_COST);
   jackpotNode.textContent = formatTokens(state.jackpots);
   lifetimeSpentNode.textContent = `${formatTokens(state.lifetimeSpent)} tokens`;
   winRateNode.textContent = `${getWinRate()}%`;
@@ -184,13 +266,16 @@ function updateUi() {
   bestStreakNode.textContent = formatTokens(state.bestWinStreak);
   latestNetNode.textContent = `${formatSignedTokens(state.latestNet)} tokens`;
   heatLevelNode.textContent = deriveHeat(state.balance);
-  streakBadgeNode.textContent = `Streak: ${state.winStreak}`;
+  streakBadgeNode.textContent = `Heater: ${state.winStreak}`;
   spinsBadgeNode.textContent = `Spins: ${state.totalSpins}`;
 
-  spinButton.disabled = state.spinning || state.balance < state.spinCost;
-  autoSpinButton.disabled = state.spinning || state.balance < state.spinCost;
-  spinButton.textContent = state.balance < state.spinCost ? "Out of Tokens" : `Spend ${state.spinCost} Tokens`;
-  autoSpinButton.textContent = state.autospinsRemaining > 0 ? `Auto-Burn x${state.autospinsRemaining}` : "Auto-Burn x5";
+  const canAffordSpin = state.balance >= SPIN_COST;
+  spinButton.disabled = state.spinning || !canAffordSpin;
+  autoSpinButton.disabled = state.spinning || !canAffordSpin;
+  spinButton.textContent = canAffordSpin ? `Burn ${SPIN_COST} Tokens` : "Budget Exhausted";
+  autoSpinButton.textContent = state.autospinsRemaining > 0
+    ? `Auto-Burn queued: ${state.autospinsRemaining}`
+    : `Auto-Burn x${AUTO_SPIN_BATCH}`;
   muteToggle.textContent = state.muted ? "Sound: Off" : "Sound: On";
   muteToggle.setAttribute("aria-pressed", String(state.muted));
 }
@@ -202,7 +287,9 @@ function pulsePanel(className) {
 }
 
 function playTone({ frequency, duration, type = "square", gain = 0.03 }) {
-  if (state.muted || !audioContext) return;
+  if (state.muted || !audioContext) {
+    return;
+  }
 
   if (audioContext.state === "suspended") {
     audioContext.resume().catch(() => {});
@@ -236,53 +323,6 @@ function playOutcomeNoise(isWin) {
   playTone({ frequency: 196, duration: 0.2, type: "sawtooth", gain: 0.035 });
 }
 
-function scoreResult(result) {
-  const counts = result.reduce((map, item) => {
-    map[item] = (map[item] || 0) + 1;
-    return map;
-  }, {});
-  const groups = Object.values(counts).sort((a, b) => b - a);
-
-  if (groups[0] === 3) {
-    return {
-      payout: 900,
-      status: `Jackpot. Three ${result[0]} reels. The AI achieved profitability by accident.`,
-      win: true,
-      jackpot: true,
-    };
-  }
-
-  if (groups[0] === 2) {
-    return {
-      payout: 260,
-      status: "Two-of-a-kind. Your model found synergy and immediately upsold you premium tokens.",
-      win: true,
-      jackpot: false,
-    };
-  }
-
-  if (result.includes("Infinite Tokens")) {
-    return {
-      payout: 180,
-      status: 'A fake abundance event. "Infinite Tokens" appeared, so you receive a very finite rebate.',
-      win: true,
-      jackpot: false,
-    };
-  }
-
-  return {
-    payout: 0,
-    status: "No match. The machine interpreted your spin as a benchmark request and billed you anyway.",
-    win: false,
-    jackpot: false,
-  };
-}
-
-function chooseExpense(payout) {
-  const affordable = expenses.filter((item) => item.cost <= Math.max(150, payout + 60));
-  return randomItem(affordable.length ? affordable : expenses);
-}
-
 function wait(ms) {
   return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
@@ -291,7 +331,7 @@ async function animateReel(node, finalValue, delay, duration) {
   await wait(prefersReducedMotion ? 0 : delay);
   node.classList.add("spinning");
 
-  const tickMs = prefersReducedMotion ? 60 : 75;
+  const tickMs = prefersReducedMotion ? 50 : 75;
   const totalTicks = Math.max(4, Math.round(duration / tickMs));
 
   for (let tick = 0; tick < totalTicks; tick += 1) {
@@ -303,39 +343,77 @@ async function animateReel(node, finalValue, delay, duration) {
   node.textContent = finalValue;
 }
 
+function countMatches(result) {
+  return result.reduce((counts, item) => {
+    counts[item] = (counts[item] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+function scoreResult(result) {
+  const counts = countMatches(result);
+  const highestGroup = Math.max(...Object.values(counts));
+
+  if (highestGroup === 3) {
+    return {
+      payout: PAYOUTS.jackpot,
+      status: `Full refund. Three ${result[0]} reels convinced the treasury this was a legitimate research expense.`,
+      win: true,
+      jackpot: true,
+      reason: `All three reels aligned on ${result[0]}`,
+    };
+  }
+
+  if (highestGroup === 2) {
+    const matchedSymbol = Object.keys(counts).find((symbol) => counts[symbol] === 2) || result[0];
+    return {
+      payout: PAYOUTS.matchTwo,
+      status: `Partial refund approved. Two ${matchedSymbol} reels were enough to fool procurement.`,
+      win: true,
+      jackpot: false,
+      reason: `Two ${matchedSymbol} reels triggered a refund`,
+    };
+  }
+
+  if (result.includes("Infinite Tokens")) {
+    return {
+      payout: PAYOUTS.infiniteTokens,
+      status: 'Abundance theater detected. "Infinite Tokens" appeared, so the machine issued a tiny rebate and called it scale.',
+      win: true,
+      jackpot: false,
+      reason: '"Infinite Tokens" showed up and finance panicked',
+    };
+  }
+
+  return {
+    payout: 0,
+    status: "No refund. The machine classified your spin as a benchmarking exercise and billed the full amount.",
+    win: false,
+    jackpot: false,
+    reason: "No matching reels survived the audit",
+  };
+}
+
+function chooseExpense(payout) {
+  const budgetWindow = Math.max(160, payout + 40);
+  const shortlist = expenses.filter((item) => item.cost <= budgetWindow);
+  return randomItem(shortlist.length ? shortlist : expenses);
+}
+
 function pushHistoryEntry(entry) {
   state.recentSpins.unshift(entry);
   state.recentSpins = state.recentSpins.slice(0, MAX_HISTORY);
 }
 
-async function spinOnce() {
-  if (state.spinning || state.balance < state.spinCost) return;
-
-  state.spinning = true;
-  state.balance -= state.spinCost;
-  state.lifetimeSpent += state.spinCost;
-  statusLine.textContent = "Contacting the stochastic token treasury...";
-  lastPayoutNode.textContent = "0";
-  updateUi();
-  playSpinNoise();
-
-  const result = [randomItem(symbols), randomItem(symbols), randomItem(symbols)];
-  await Promise.all(
-    reelNodes.map((node, index) => animateReel(node, result[index], index * 140, 720 + index * 200))
-  );
-
-  const outcome = scoreResult(result);
+function finalizeSpin(result, outcome) {
   const expense = chooseExpense(outcome.payout);
-  const net = outcome.payout - state.spinCost;
+  const net = outcome.payout - SPIN_COST;
 
   state.totalSpins += 1;
   state.balance += outcome.payout;
   state.latestNet = net;
   state.bestPayout = Math.max(state.bestPayout, outcome.payout);
   state.featuredExpense = expense.name;
-  spendTargetNode.textContent = expense.name;
-  lastPayoutNode.textContent = `${formatTokens(outcome.payout)} tokens`;
-  statusLine.textContent = outcome.status;
 
   if (outcome.win) {
     state.winningSpins += 1;
@@ -349,6 +427,10 @@ async function spinOnce() {
     state.jackpots += 1;
   }
 
+  spendTargetNode.textContent = expense.name;
+  lastPayoutNode.textContent = `${formatTokens(outcome.payout)} tokens`;
+  statusLine.textContent = `${outcome.status} ${describeFeaturedExpense(expense)}`;
+
   pushHistoryEntry({
     symbols: result,
     payout: outcome.payout,
@@ -356,23 +438,51 @@ async function spinOnce() {
     expense: expense.name,
     win: outcome.win,
     jackpot: outcome.jackpot,
+    reason: outcome.reason,
   });
 
-  pulsePanel(outcome.payout > 0 ? "flash-win" : "flash-lose");
+  pulsePanel(outcome.win ? "flash-win" : "flash-lose");
   playOutcomeNoise(outcome.win);
+}
+
+async function spinOnce() {
+  if (state.spinning || state.balance < SPIN_COST) {
+    return;
+  }
+
+  state.spinning = true;
+  state.balance -= SPIN_COST;
+  state.lifetimeSpent += SPIN_COST;
+  lastPayoutNode.textContent = "0 tokens";
+  statusLine.textContent = "Charging the speculative compute budget...";
+  updateUi();
+  playSpinNoise();
+
+  const result = [randomItem(symbols), randomItem(symbols), randomItem(symbols)];
+
+  await Promise.all(
+    reelNodes.map((node, index) => animateReel(node, result[index], index * 140, 680 + index * 180))
+  );
+
+  finalizeSpin(result, scoreResult(result));
   state.spinning = false;
   renderExpenses();
   renderHistory();
   updateUi();
-  persistState();
 
   if (state.autospinsRemaining > 0) {
     state.autospinsRemaining -= 1;
-    updateUi();
 
-    if (state.balance >= state.spinCost && state.autospinsRemaining > 0) {
-      window.setTimeout(spinOnce, prefersReducedMotion ? 120 : 420);
+    if (state.autospinsRemaining > 0 && state.balance >= SPIN_COST) {
+      updateUi();
+      window.setTimeout(() => {
+        spinOnce();
+      }, prefersReducedMotion ? 120 : 420);
       return;
+    }
+
+    if (state.autospinsRemaining > 0 && state.balance < SPIN_COST) {
+      statusLine.textContent = "Auto-burn halted. The machine ran out of budget before it ran out of confidence.";
     }
   }
 
@@ -381,19 +491,30 @@ async function spinOnce() {
   persistState();
 }
 
-function handleAutoSpin() {
-  if (state.spinning || state.balance < state.spinCost) return;
-  state.autospinsRemaining = 5;
+function queueAutoSpin() {
+  if (state.spinning || state.balance < SPIN_COST) {
+    return;
+  }
+
+  state.autospinsRemaining = AUTO_SPIN_BATCH;
+  statusLine.textContent = `Auto-burn armed for ${AUTO_SPIN_BATCH} spins. Legal has not reviewed this workflow.`;
   updateUi();
-  persistState();
   spinOnce();
 }
 
-function handleKeydown(event) {
-  if (event.repeat) return;
+function toggleMute() {
+  state.muted = !state.muted;
+  updateUi();
+  persistState();
+}
 
-  const tagName = document.activeElement?.tagName;
-  if (tagName === "INPUT" || tagName === "TEXTAREA" || document.activeElement?.isContentEditable) {
+function handleKeydown(event) {
+  if (event.repeat) {
+    return;
+  }
+
+  const activeTag = document.activeElement?.tagName;
+  if (activeTag === "INPUT" || activeTag === "TEXTAREA" || document.activeElement?.isContentEditable) {
     return;
   }
 
@@ -403,33 +524,21 @@ function handleKeydown(event) {
   }
 
   if (event.key.toLowerCase() === "a") {
-    handleAutoSpin();
+    queueAutoSpin();
   }
 
   if (event.key.toLowerCase() === "m") {
-    state.muted = !state.muted;
-    updateUi();
-    persistState();
+    toggleMute();
   }
 }
 
-spinButton.addEventListener("click", () => {
-  spinOnce();
-});
-
-autoSpinButton.addEventListener("click", () => {
-  handleAutoSpin();
-});
-
-muteToggle.addEventListener("click", () => {
-  state.muted = !state.muted;
-  updateUi();
-  persistState();
-});
-
+spinButton.addEventListener("click", spinOnce);
+autoSpinButton.addEventListener("click", queueAutoSpin);
+muteToggle.addEventListener("click", toggleMute);
 window.addEventListener("keydown", handleKeydown);
 
 renderExpenses();
 renderHistory();
 updateUi();
 spendTargetNode.textContent = state.featuredExpense;
+lastPayoutNode.textContent = `${formatTokens(Math.max(0, state.latestNet + SPIN_COST))} tokens`;
