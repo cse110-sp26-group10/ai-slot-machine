@@ -1,1 +1,1 @@
-
+Refine this vanilla HTML/CSS/JavaScript slot machine app to make it more polished, reliable and coherent while keeping the same AI-satire theme. Improve gameplay clarity, fix bugs, strengthen token spend/win logic and make the UI easier to understand at a glance. Keep the joke consistent across labels, messages, and features. Clean up the code structure and remove redundant or confusing logic if needed. DON'T ADD ANY NEW TECHNOLOGIES, FRAMEWORKS, LIBRARIES, OR EXTERNAL DEPENDENCIES. Keep everything self-contained and browser-runnable.
