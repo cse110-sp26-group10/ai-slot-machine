@@ -1,7 +1,7 @@
 # STEP2-RESULTS.md
 
 ## Top 3 Refinements
-After running the Step 2 refinement round on our five Step 1 finalists (see `step1/STEP1-RESULTS.md`), we selected the following three refined candidates to advance. Selections are based on how much the refinement pass actually improved the app — polish, satire, and code cleanliness — rather than raw rubric score.
+After running the Step 3 refinement round on our three refined step 1 finalists (see `step2/STEP2-RESULTS.md`), we selected the following three refined candidates to advance. Selections are based on how much the refinement pass actually improved the app — polish, satire, and code cleanliness — rather than raw rubric score.
 
 | Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
 |:---:|:---:|:---:|:---:|:---|
