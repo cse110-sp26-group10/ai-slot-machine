@@ -36,4 +36,4 @@
 * **Notes:** - Clean vanilla JavaScript with standard DOM and localStorage APIs. Code is readable but lacks some modularity seen in stronger candidates.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Hudson Gehrke

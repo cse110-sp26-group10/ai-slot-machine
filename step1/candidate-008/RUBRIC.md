@@ -35,4 +35,4 @@
 * **Notes:** - Standard browser APIs throughout. Vanilla JavaScript with clear structure and readable naming across all three files.
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

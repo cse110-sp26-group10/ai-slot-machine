@@ -3,7 +3,7 @@
 ## Experimental Parameters
 To ensure data integrity, all team members must strictly adhere to these constants:
 
-* **Coding Assistant:** Anthropic's Claude Code
+* **Coding Assistant:** OpenAI's Codex
 * **Model String:** `Codex (GPT-5.4)` (Latest available model)
 * **Harness/Environment:** Local terminal via `Codex` CLI
 * **Baseline Prompt:** (Stored in `prompts/original-prompt.txt`)
