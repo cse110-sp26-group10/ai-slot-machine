@@ -1,0 +1,317 @@
+:root {
+  --bg-top: #1e0f28;
+  --bg-bottom: #09070e;
+  --panel: rgba(16, 12, 24, 0.82);
+  --panel-border: rgba(255, 214, 117, 0.25);
+  --gold: #ffd675;
+  --hot: #ff7b54;
+  --mint: #79f0d3;
+  --cream: #fff9ea;
+  --muted: #d4c4d9;
+  --danger: #ff6b7a;
+  --shadow: 0 22px 65px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at top, rgba(255, 123, 84, 0.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(121, 240, 211, 0.12), transparent 22%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), transparent);
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: rise-in 700ms ease;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--mint);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  color: var(--gold);
+  text-shadow: 0 8px 30px rgba(255, 214, 117, 0.18);
+}
+
+.hero-copy {
+  width: min(680px, 100%);
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.machine {
+  background: linear-gradient(180deg, rgba(46, 28, 61, 0.9), rgba(12, 10, 20, 0.95));
+  border: 1px solid var(--panel-border);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.machine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 214, 117, 0.08), transparent 38%);
+  pointer-events: none;
+}
+
+.machine-top,
+.panel,
+.controls,
+.reels,
+.payout-grid {
+  display: grid;
+}
+
+.machine-top {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.bank,
+.message-box,
+.payout-card {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+  backdrop-filter: blur(16px);
+}
+
+.bank-label,
+.message-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.bank-value {
+  margin-top: 0.35rem;
+  display: block;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+}
+
+.reels-frame {
+  margin: 1.5rem 0;
+  padding: 1.4rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top, rgba(255, 214, 117, 0.16), transparent 55%),
+    rgba(7, 7, 12, 0.92);
+  border: 1px solid rgba(255, 214, 117, 0.2);
+  position: relative;
+}
+
+.payline {
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, var(--hot), transparent);
+  box-shadow: 0 0 25px rgba(255, 123, 84, 0.65);
+}
+
+.reels {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.reel {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  font-size: clamp(4rem, 9vw, 6rem);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -12px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.reel.spinning {
+  animation: wobble 180ms linear infinite;
+}
+
+.reel.win {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 0 0 2px rgba(255, 214, 117, 0.28),
+    0 0 35px rgba(255, 214, 117, 0.3),
+    inset 0 -12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.panel {
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.status-message {
+  margin: 0.55rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.controls {
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.spin-button,
+.secondary-button {
+  padding: 1rem 1.2rem;
+}
+
+.spin-button {
+  background: linear-gradient(135deg, var(--gold), #ff9b54);
+  color: #2e1800;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(255, 155, 84, 0.24);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.payouts {
+  margin-top: 2rem;
+  animation: rise-in 900ms ease;
+}
+
+.payout-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.payout-card h3 {
+  color: var(--gold);
+  font-size: 1.55rem;
+  margin-bottom: 0.35rem;
+}
+
+.payout-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(2px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .machine-top,
+  .panel,
+  .payout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    padding-top: 2rem;
+  }
+
+  .reel {
+    min-height: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

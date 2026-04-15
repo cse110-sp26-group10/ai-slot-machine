@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Token Furnace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <p class="eyebrow">SATIRICAL AI CASINO EXPERIENCE</p>
+        <h1>Token Furnace</h1>
+        <p class="tagline">
+          Spin the reels, win imaginary tokens, and immediately burn them on
+          premium-grade machine confidence.
+        </p>
+
+        <div class="status-grid" aria-label="Game status">
+          <article class="status-panel">
+            <span class="status-label">Token Balance</span>
+            <strong id="tokenBalance">120</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Spin Cost</span>
+            <strong id="spinCost">15</strong>
+          </article>
+          <article class="status-panel">
+            <span class="status-label">Hype Meter</span>
+            <strong id="hypeMeter">Cautiously Delusional</strong>
+          </article>
+        </div>
+
+        <section class="machine" aria-labelledby="machine-title">
+          <div class="machine-top">
+            <h2 id="machine-title">Inference Reel Engine</h2>
+            <button id="themeToggle" class="ghost-button" type="button">
+              Toggle Glare
+            </button>
+          </div>
+
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <div class="reel-frame"><span id="reel1" class="reel">🤖</span></div>
+            <div class="reel-frame"><span id="reel2" class="reel">💸</span></div>
+            <div class="reel-frame"><span id="reel3" class="reel">🔥</span></div>
+          </div>
+
+          <div class="controls">
+            <label class="bet-control" for="betRange">
+              <span>Prompt Budget</span>
+              <input id="betRange" type="range" min="5" max="30" step="5" value="15" />
+            </label>
+            <button id="spinButton" class="spin-button" type="button">
+              Spin for Tokens
+            </button>
+          </div>
+
+          <p id="message" class="message">
+            Three matching symbols means the machine accidentally helped.
+          </p>
+        </section>
+
+        <section class="ledger-card">
+          <div class="ledger-head">
+            <h2>Spend Tokens</h2>
+            <p>Because what is victory without monetized disappointment?</p>
+          </div>
+          <div id="shop" class="shop-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="shopItemTemplate">
+      <button class="shop-item" type="button">
+        <span class="shop-title"></span>
+        <span class="shop-meta"></span>
+      </button>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

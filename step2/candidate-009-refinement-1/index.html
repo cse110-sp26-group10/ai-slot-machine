@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Casino-grade inference extraction</p>
+      <div class="hero-copy">
+        <h1>Token Tumbler 9000</h1>
+        <p>Pull the lever, win synthetic bragging rights, and immediately spend your earnings on premium AI nonsense.</p>
+      </div>
+      <div class="hero-stats" aria-label="Game stats">
+        <article>
+          <span class="stat-label">Wallet</span>
+          <strong id="token-balance">1200</strong>
+          <span class="stat-unit">tokens</span>
+        </article>
+        <article>
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spin-cost">120</strong>
+          <span class="stat-unit">tokens</span>
+        </article>
+        <article>
+          <span class="stat-label">Jackpots</span>
+          <strong id="jackpot-count">0</strong>
+          <span class="stat-unit">miracles</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="machine-panel" aria-labelledby="machine-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">100% human-coded slot hardware</p>
+          <h2 id="machine-title">Aligned enough for public demo</h2>
+        </div>
+        <button id="mute-toggle" class="secondary-button" type="button" aria-pressed="false">Sound: On</button>
+      </div>
+
+      <div class="reel-frame" role="img" aria-label="Three slot machine reels with AI satire results">
+        <div class="reel-column">
+          <span class="reel-label">Model</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-0">Prompt Leak</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <span class="reel-label">Pricing</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-1">GPU Throttle</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <span class="reel-label">Outcome</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-2">Context Window</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="primary-button" type="button">Spend 120 Tokens</button>
+        <button id="autospin-button" class="secondary-button" type="button">Auto-Burn x5</button>
+      </div>
+
+      <section class="result-panel" aria-live="polite">
+        <p id="status-line" class="status-line">System ready. Please gamble responsibly with fictional compute credits.</p>
+        <div class="reward-strip">
+          <div>
+            <span class="reward-label">Last payout</span>
+            <strong id="last-payout">0</strong>
+          </div>
+          <div>
+            <span class="reward-label">Spend target</span>
+            <strong id="spend-target">HyperScale Hallucination Cleanup</strong>
+          </div>
+          <div>
+            <span class="reward-label">Heat</span>
+            <strong id="heat-level">Mildly overfit</strong>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="ledger-panel">
+      <div class="ledger-header">
+        <div>
+          <p class="eyebrow">Expense report</p>
+          <h2>Where your tokens went</h2>
+        </div>
+        <span class="ledger-total">Lifetime burned: <strong id="lifetime-spent">0</strong></span>
+      </div>
+      <div class="expense-grid" id="expense-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="expense-template">
+    <article class="expense-card">
+      <div>
+        <p class="expense-name"></p>
+        <span class="expense-tag"></span>
+      </div>
+      <strong class="expense-cost"></strong>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
