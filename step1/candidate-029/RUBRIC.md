@@ -6,8 +6,8 @@
 | **Run ID** | candidate-029 |
 | **Timestamp** | 12:39 AM, Apr 14, 2026 |
 | **Model + Version** | GPT-5.4 Medium |
-| **Input Tokens** | 139,832 / 148,817 |
-| **Output Tokens** | 66,774 / 75,331 |
+| **Input Tokens** | 139,832|
+| **Output Tokens** | 66,774 |
 | **Total Tokens** | 206,606 |
 | **Wall-clock Time (s)** | 327 |
 | **Tool-reported Time (s)**| 322 |
