@@ -5,7 +5,7 @@ After running the Step 4 refinement, we selected the winner.
 
 | Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
 |:---:|:---:|:---:|:---:|:---|
-| 2 | [034](candidate-034-refinement-1/) | 50,871 | 1,682 | Refinement improved the compact layout, event feed, and local session persistence while keeping the app visually tight and thematically consistent. It stayed strong in both satire and code cleanliness, but felt a little less complete than 031 overall. |
+| 1 | [034](candidate-034-refinement-1/) | 516,792 | 1,483 | The strongest overall candidate. The refinement aggregated code logic, particularly in the default state, redundant spin memory and audio handling. On top of this, the refinement also added a wallet meter to the UI. |
 
 ---
 ## 50 Run Metrics
