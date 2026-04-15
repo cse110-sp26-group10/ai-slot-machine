@@ -26,6 +26,7 @@
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
 * **Notes:** - The app is polished and clearly satirical, with strong AI-startup parody in the labels, dashboard language, and result messaging. It looks more organized than the baseline, with a cleaner hero section, telemetry, history/feed, and clearer payout structure. The feature set also feels richer, including persistent saved state and more visible game feedback. 
+The app is even more polished than previous steps, with improved button sizes, an eyecatching spin history with color-coded net token change, and new dark color theme. The slot machine is changed from emojis to words, but they are aligned, and the new spin animation looks more like it's spinning. There is also sounds introduced to enhance the experience. This is overall a net improvement from the previous iteration.
 
 ### Code Quality Scorecard
 * **Score:** 10 / 10 (Using Rubric)
@@ -33,7 +34,7 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - The code is organized around a central saved state, clear render/update functions, and small helper functions for spin resolution, history updates, and reset behavior. It uses standard browser APIs like localStorage, keyboard handling, vibration, and speech synthesis without relying on extra libraries. Overall it reads as clean and maintainable, even if it stops just short of a perfect score. 
+* **Notes:** - The code is organized around a central saved state, clear render/update functions, and small helper functions for spin resolution, history updates, and reset behavior. It uses standard browser APIs like localStorage, keyboard handling, vibration, and speech synthesis without relying on extra libraries. Overall it reads as clean and maintainable, even if it stops just short of a perfect score.
 
 ---
 **Data Entry by:** Han Yang-Lin
