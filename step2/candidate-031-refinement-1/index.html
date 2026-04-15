@@ -9,17 +9,26 @@
 <body>
   <main class="app-shell">
     <section class="hero-card">
-      <p class="eyebrow">Generative gambling for the post-hype era</p>
-      <h1>Token Burn Casino</h1>
-      <p class="tagline">
-        Spin the reels, win more vapor tokens, and immediately spend them on premium AI nonsense.
-      </p>
+      <div class="hero-copy">
+        <p class="eyebrow">Generative gambling for the post-hype era</p>
+        <h1>Token Burn Casino</h1>
+        <p class="tagline">
+          Spin the reels, win more vapor tokens, and immediately spend them on premium AI nonsense.
+        </p>
+      </div>
+
+      <div class="hero-sidecar" aria-label="play instructions">
+        <p class="sidecar-label">Quarterly guidance</p>
+        <p class="sidecar-copy">
+          Space spins. Voice playback reads the latest earnings call. Reset wipes the cap table and starts a fresh delusion cycle.
+        </p>
+      </div>
 
       <div class="scoreboard" aria-label="scoreboard">
-        <article class="stat">
+        <article class="stat stat-primary">
           <span class="stat-label">Wallet</span>
           <strong id="token-count">120</strong>
-          <span class="stat-foot">Prompt chips</span>
+          <span class="stat-foot">Prompt chips on hand</span>
         </article>
         <article class="stat">
           <span class="stat-label">Spin Cost</span>
@@ -31,46 +40,116 @@
           <strong id="mood">Cautiously bullish</strong>
           <span class="stat-foot">Model confidence</span>
         </article>
+        <article class="stat">
+          <span class="stat-label">Win Rate</span>
+          <strong id="win-rate">0%</strong>
+          <span class="stat-foot">Deck-approved optimism</span>
+        </article>
       </div>
     </section>
 
-    <section class="machine-card" aria-labelledby="machine-title">
-      <div class="machine-header">
-        <div>
-          <p class="eyebrow">Enterprise-ready amusement</p>
-          <h2 id="machine-title">Fine-tuned Fortune Reels</h2>
-        </div>
-        <button id="speak-status" class="ghost-button" type="button">Read latest result</button>
-      </div>
+    <section class="dashboard-grid">
+      <section class="machine-card" aria-labelledby="machine-title">
+        <div class="machine-header">
+          <div>
+            <p class="eyebrow">Enterprise-ready amusement</p>
+            <h2 id="machine-title">Fine-tuned Fortune Reels</h2>
+          </div>
 
-      <div class="machine-frame">
-        <div class="reels" aria-live="polite" aria-atomic="true">
-          <div class="reel-window"><span id="reel-0" class="reel-symbol">🤖</span></div>
-          <div class="reel-window"><span id="reel-1" class="reel-symbol">💸</span></div>
-          <div class="reel-window"><span id="reel-2" class="reel-symbol">🪙</span></div>
+          <div class="header-actions">
+            <button id="speak-status" class="ghost-button" type="button">Read latest result</button>
+            <button id="reset-button" class="ghost-button danger-button" type="button">Reset quarter</button>
+          </div>
         </div>
-        <button id="spin-button" class="spin-button" type="button">Spend 15 tokens to spin</button>
-      </div>
 
-      <div class="status-panel">
-        <p id="result-line" class="result-line">Welcome back, visionary. The machine is ready to monetize your curiosity.</p>
-        <p id="spend-line" class="spend-line">No tokens wasted yet. A suspiciously efficient quarter.</p>
-      </div>
+        <div class="machine-frame">
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <div class="reel-window">
+              <span id="reel-0" class="reel-symbol">🤖</span>
+              <span class="reel-caption">Narrative engine</span>
+            </div>
+            <div class="reel-window">
+              <span id="reel-1" class="reel-symbol">💸</span>
+              <span class="reel-caption">Cash furnace</span>
+            </div>
+            <div class="reel-window">
+              <span id="reel-2" class="reel-symbol">🪙</span>
+              <span class="reel-caption">Token printer</span>
+            </div>
+          </div>
+
+          <div class="control-strip">
+            <button id="spin-button" class="spin-button" type="button">Spend 15 tokens to spin</button>
+            <p class="shortcut-hint">Keyboard shortcut: <kbd>Space</kbd></p>
+          </div>
+        </div>
+
+        <div class="status-panel">
+          <span id="result-pill" class="result-pill neutral">Market Open</span>
+          <p id="result-line" class="result-line">Welcome back, visionary. The machine is ready to monetize your curiosity.</p>
+          <p id="spend-line" class="spend-line">No tokens wasted yet. A suspiciously efficient quarter.</p>
+        </div>
+      </section>
+
+      <aside class="telemetry-card" aria-labelledby="telemetry-title">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Live dashboard</p>
+            <h2 id="telemetry-title">Hype Metrics</h2>
+          </div>
+          <p id="trend-line" class="trend-line">No spins yet. Analysts remain blissfully uninformed.</p>
+        </div>
+
+        <div class="telemetry-grid">
+          <article class="telemetry-stat">
+            <span class="stat-label">Spins</span>
+            <strong id="spin-count">0</strong>
+            <span class="stat-foot">Quarter-to-date</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">Current Streak</span>
+            <strong id="streak-count">0</strong>
+            <span class="stat-foot">Consecutive wins</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">Best Payout</span>
+            <strong id="best-payout">0</strong>
+            <span class="stat-foot">Largest single miracle</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">ROI</span>
+            <strong id="roi">0%</strong>
+            <span class="stat-foot">Return on irrationality</span>
+          </article>
+        </div>
+      </aside>
     </section>
 
-    <section class="perk-grid" aria-label="AI joke perks">
-      <article class="perk">
-        <h3>Hallucination Multiplier</h3>
-        <p>Matching three nonsense symbols unlocks a confidence bonus with no supporting evidence.</p>
-      </article>
-      <article class="perk">
-        <h3>Prompt Tax</h3>
-        <p>Every spin costs tokens because your ideas deserve a recurring billing model.</p>
-      </article>
-      <article class="perk">
-        <h3>Synergy Bundle</h3>
-        <p>Win enough and the casino graciously lets you buy more AI-generated buzzwords.</p>
-      </article>
+    <section class="insights-grid">
+      <section class="feed-card" aria-labelledby="feed-title">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Recent activity</p>
+            <h2 id="feed-title">Narrative Feed</h2>
+          </div>
+        </div>
+        <ul id="history-list" class="history-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="perk-grid" aria-label="AI joke perks">
+        <article class="perk">
+          <h3>Hallucination Multiplier</h3>
+          <p>Matching three nonsense symbols unlocks a confidence bonus with no supporting evidence.</p>
+        </article>
+        <article class="perk">
+          <h3>Prompt Tax</h3>
+          <p>Every spin costs tokens because your ideas deserve a recurring billing model.</p>
+        </article>
+        <article class="perk">
+          <h3>Quarterly Amnesia</h3>
+          <p>Your numbers now persist between refreshes, just like an enterprise dashboard nobody wants audited.</p>
+        </article>
+      </section>
     </section>
   </main>
 
