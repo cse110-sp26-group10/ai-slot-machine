@@ -12,7 +12,7 @@
 | **Wall-clock Time (s)** | 661 |
 | **Tool-reported Time (s)**| 658 |
 | **Files Produced** | (Count: 2) index.html, styles.css |
-| **Lines of Code** | 1,054 |
+| **Lines of Code** | 1,682 |
 | **Runs in Browser?** | [X] Yes / [ ] No / [ ] Partial |
 
 ---
