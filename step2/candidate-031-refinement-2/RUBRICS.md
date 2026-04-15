@@ -6,9 +6,9 @@
 | **Run ID** | candidate-031 |
 | **Timestamp** | Apr 14, 2026, 7:45 PM PDT |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** | Not captured |
-| **Output Tokens** | Not captured |
-| **Total Tokens** | Not captured |
+| **Input Tokens** | 895,000 |
+| **Output Tokens** | 14,200 |
+| **Total Tokens** | 909,200 |
 | **Wall-clock Time (s)** | 496 |
 | **Tool-reported Time (s)**| 492 |
 | **Files Produced** | (Count: 2) index.html, app.js |
