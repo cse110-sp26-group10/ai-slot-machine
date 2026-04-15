@@ -1,1 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Burn Casino</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <p class="eyebrow">Generative gambling for the post-hype era</p>
+        <h1>Token Burn Casino</h1>
+        <p class="tagline">
+          Spend prompt chips on a fully unregulated AI forecast engine, then celebrate whatever the dashboard decides counts as revenue.
+        </p>
+      </div>
 
+      <div class="hero-sidecar" aria-label="play instructions">
+        <p class="sidecar-label">Board guidance</p>
+        <p class="sidecar-copy">
+          Each spin costs tokens up front. Match three symbols for a full payout, match two for a smaller rebate, and miss completely for a premium lesson in burn rate.
+        </p>
+      </div>
+
+      <div class="scoreboard" aria-label="scoreboard">
+        <article class="stat stat-primary">
+          <span class="stat-label">Wallet</span>
+          <strong id="token-count">120</strong>
+          <span class="stat-foot">Prompt chips on hand</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Spin Cost</span>
+          <strong id="spin-cost">15</strong>
+          <span class="stat-foot">Tokens per forecast</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Mood</span>
+          <strong id="mood">Cautiously bullish</strong>
+          <span class="stat-foot">Board-approved sentiment</span>
+        </article>
+        <article class="stat">
+          <span class="stat-label">Win Rate</span>
+          <strong id="win-rate">0%</strong>
+          <span class="stat-foot">Deck-safe storytelling</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <section class="machine-card" aria-labelledby="machine-title">
+        <div class="machine-header">
+          <div>
+            <p class="eyebrow">Enterprise-ready amusement</p>
+            <h2 id="machine-title">Fine-tuned Fortune Reels</h2>
+          </div>
+
+          <div class="header-actions">
+            <button id="speak-status" class="ghost-button" type="button">Read latest briefing</button>
+            <button id="reset-button" class="ghost-button danger-button" type="button">Reset quarter</button>
+          </div>
+        </div>
+
+        <div class="machine-frame">
+          <section class="rules-strip" aria-label="payout rules">
+            <article class="rule-chip">
+              <span class="rule-label">Spin Fee</span>
+              <strong id="rule-spin-cost">15 tokens</strong>
+            </article>
+            <article class="rule-chip">
+              <span class="rule-label">Triple Match</span>
+              <strong>3x symbol payout</strong>
+            </article>
+            <article class="rule-chip">
+              <span class="rule-label">Double Match</span>
+              <strong id="pair-payout">12-token rebate</strong>
+            </article>
+          </section>
+
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <div class="reel-window">
+              <span id="reel-0" class="reel-symbol">&#129302;</span>
+              <span id="reel-0-label" class="reel-caption">Narrative engine</span>
+            </div>
+            <div class="reel-window">
+              <span id="reel-1" class="reel-symbol">&#128176;</span>
+              <span id="reel-1-label" class="reel-caption">Cash furnace</span>
+            </div>
+            <div class="reel-window">
+              <span id="reel-2" class="reel-symbol">&#129689;</span>
+              <span id="reel-2-label" class="reel-caption">Token printer</span>
+            </div>
+          </div>
+
+          <div class="control-strip">
+            <button id="spin-button" class="spin-button" type="button">Spend 15 tokens to spin</button>
+            <p class="shortcut-hint">Keyboard shortcut: <kbd>Space</kbd></p>
+          </div>
+        </div>
+
+        <div class="status-panel">
+          <span id="result-pill" class="result-pill neutral">Market Open</span>
+          <p id="result-line" class="result-line">Welcome back, visionary. The machine is ready to monetize your curiosity.</p>
+          <p id="spend-line" class="spend-line">No tokens wasted yet. A suspiciously efficient quarter.</p>
+        </div>
+      </section>
+
+      <aside class="telemetry-card" aria-labelledby="telemetry-title">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Live dashboard</p>
+            <h2 id="telemetry-title">Hype Metrics</h2>
+          </div>
+          <p id="trend-line" class="trend-line">No spins yet. Analysts remain blissfully uninformed.</p>
+        </div>
+
+        <div class="telemetry-grid">
+          <article class="telemetry-stat">
+            <span class="stat-label">Spins</span>
+            <strong id="spin-count">0</strong>
+            <span class="stat-foot">Quarter-to-date</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">Current Streak</span>
+            <strong id="streak-count">0</strong>
+            <span class="stat-foot">Consecutive payouts</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">Best Payout</span>
+            <strong id="best-payout">0</strong>
+            <span class="stat-foot">Largest single miracle</span>
+          </article>
+          <article class="telemetry-stat">
+            <span class="stat-label">ROI</span>
+            <strong id="roi">0%</strong>
+            <span class="stat-foot">Return on irrationality</span>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <section class="insights-grid">
+      <section class="feed-card" aria-labelledby="feed-title">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Recent activity</p>
+            <h2 id="feed-title">Board Minutes</h2>
+          </div>
+        </div>
+        <ul id="history-list" class="history-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="perk-grid" aria-label="AI satire notes">
+        <article class="perk">
+          <h3>Revenue Recognition</h3>
+          <p>Triple matches pay out based on symbol hype value, because the machine believes pricing is just storytelling with numbers.</p>
+        </article>
+        <article class="perk">
+          <h3>Usage-Based Billing</h3>
+          <p>Every spin charges tokens first, allowing the ledger to stay honest even when the product absolutely does not.</p>
+        </article>
+        <article class="perk">
+          <h3>Quarterly Memory</h3>
+          <p>Your metrics persist between refreshes, just like a startup dashboard everyone trusts until due diligence begins.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <template id="burst-template">
+    <span class="burst-token">&#129689;</span>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
