@@ -3,8 +3,8 @@
 ## 📊 Technical Metrics
 | Field | Value |
 | :--- | :--- |
-| **Run ID** | candidate-### |
-| **Timestamp** | |
+| **Run ID** | candidate-034 |
+| **Timestamp** | 4/14/26 - 10:38 PM |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
 | **Input Tokens** | 56,918 |
 | **Output Tokens** | 25,314 |
@@ -12,7 +12,7 @@
 | **Wall-clock Time (s)** | 8:35 |
 | **Tool-reported Time (s)**| 8:25 |
 | **Files Produced** | (Count: 3) index.html, script.js, styles.css |
-| **Lines of Code** | 1483 |
+| **Lines of Code** | 1,483 |
 | **Runs in Browser?** | [x] Yes / [ ] No / [ ] Partial |
 
 ---
