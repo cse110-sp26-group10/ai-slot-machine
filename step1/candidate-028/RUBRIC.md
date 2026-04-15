@@ -47,4 +47,4 @@
 
 ---
 
-**Data Entry by:** b
+**Data Entry by:** Bethany Miyamoto
