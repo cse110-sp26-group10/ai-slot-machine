@@ -18,10 +18,6 @@ Overall, the user interface is very polished .
 -loc are changing 
 -not reliable 
 
-### 1. Structural Drift (Architecture)
+### What We Learned
 
 In all of the candidates, a JavaScript file, a CSS file, and an HTML file was output, with minor differences. Codex would get the names wrong sometimes linking all the files together and it would result in the app not working. All the page layouts looked mostly the same, with a title/wallet section, then the slot machine, and then some auxilary information/features at the bottom of the page.
-
-### 2. Feature Drift (Requirement Hallucination)
-
-Most of the time, Codex was able to get most of the core functionality correct. Sometimes Codex would also leave out a few things, such as displaying the wallet, or a reset button. Codex would also add extra buttons that didn't really do anything, which debatably adds to the theming of the AI slot machine.
