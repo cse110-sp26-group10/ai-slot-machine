@@ -17,6 +17,9 @@ After the refinement rounds, the overall code quality improved, especially if th
 ### 2. No Predictive Factors
 Codex has a lot of variability in its responses. It often produces different code and approaches to the same prompt. Metrics such as token count or lines of code do not reliably correlate to code quality, indicating some degree of unpredictability and unreliability.  
 
+### 3. Under the Surface Issues
+At first glance, the code appears to work well. However, after multiple runs and testing, several issues became apparent. In Candidate 31, long words would get truncated. Additionally, refinement-prompt-4 caused formatting problems in Candidate 31. It would replace emojis with text, failling to align and size properly. 
+
 ## What We Learned
 
 We learned that AI can generate usable applications, demonstrating its practical value in software development. However, it also has limitations that developers need to recognize. The resulting code is not always clean or easy to read, and common metrics do not reliably predict quality. AI is a powerful tool, but it requires refinement by developers to improve the final application. 
