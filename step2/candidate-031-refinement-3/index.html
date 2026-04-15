@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VC Funding Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <p class="eyebrow">Unregulated AI optimism, now with reels</p>
+        <h1>VC Funding Simulator</h1>
+        <p class="hero-text">
+          Burn tokens on a suspiciously confident slot machine packed with AI buzzwords.
+          Three-of-a-kind means <strong>Securing VC Funding</strong>. A miss means
+          <strong>Model Collapse</strong>.
+        </p>
+      </div>
+
+      <div class="hero-note">
+        <p class="eyebrow">Board Memo</p>
+        <p>
+          Every spin charges tokens up front because the startup already hired growth.
+          Match hype symbols like GPU, AGI, and Hallucination to convince someone this is
+          a platform.
+        </p>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel dashboard-panel" aria-label="core dashboard">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Founder Dashboard</p>
+            <h2>Runway Console</h2>
+          </div>
+          <p id="status-pill" class="status-pill neutral">Market Idle</p>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card metric-card-featured">
+            <span class="metric-label">Wallet</span>
+            <strong id="wallet-value" class="metric-value">150</strong>
+            <span class="metric-foot">Tokens still not audited</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Spin Cost</span>
+            <strong id="spin-cost-value" class="metric-value">15</strong>
+            <span class="metric-foot">Burn per narrative cycle</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Mood</span>
+            <strong id="mood-value" class="metric-value metric-text">Seed-round euphoric</strong>
+            <span class="metric-foot">Board-approved sentiment</span>
+          </div>
+        </div>
+
+        <div class="status-copy">
+          <p id="result-line" class="result-line">The machine is calibrated and ready to convert vibes into valuation.</p>
+          <p id="summary-line" class="summary-line">No burn yet. Finance has briefly achieved inner peace.</p>
+        </div>
+      </article>
+
+      <article class="panel stats-panel" aria-label="spin statistics">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Telemetry</p>
+            <h2>Founder Metrics</h2>
+          </div>
+        </div>
+
+        <div class="metrics-grid compact">
+          <div class="metric-card">
+            <span class="metric-label">Spin Count</span>
+            <strong id="spin-count-value" class="metric-value">0</strong>
+            <span class="metric-foot">Deck rehearsals</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Best Hit</span>
+            <strong id="best-hit-value" class="metric-value">0</strong>
+            <span class="metric-foot">Largest miracle</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Win Streak</span>
+            <strong id="win-streak-value" class="metric-value">0</strong>
+            <span class="metric-foot">Consecutive funding delusions</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="play-grid">
+      <section class="panel machine-panel" aria-labelledby="machine-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Slot Engine</p>
+            <h2 id="machine-title">Fine-Tuned Funding Reels</h2>
+          </div>
+          <p id="trend-line" class="trend-line">No spins yet. The roadmap remains unchallenged.</p>
+        </div>
+
+        <div class="payout-strip" aria-label="payout guide">
+          <div class="payout-card">
+            <span class="metric-label">Triple Match</span>
+            <strong>Securing VC Funding</strong>
+          </div>
+          <div class="payout-card">
+            <span class="metric-label">Double Match</span>
+            <strong id="pair-payout-value">Soft pivot rebate</strong>
+          </div>
+          <div class="payout-card">
+            <span class="metric-label">No Match</span>
+            <strong>Model Collapse</strong>
+          </div>
+        </div>
+
+        <div class="machine-frame">
+          <div class="machine-top-light"></div>
+          <div class="reels" aria-live="polite" aria-atomic="true">
+            <article class="reel-window">
+              <div id="reel-0" class="reel-symbol" data-reel-symbol>GPU</div>
+              <p id="reel-0-caption" class="reel-caption">Capital-intensive flex</p>
+            </article>
+            <article class="reel-window">
+              <div id="reel-1" class="reel-symbol" data-reel-symbol>AGI</div>
+              <p id="reel-1-caption" class="reel-caption">Timeline unspecified</p>
+            </article>
+            <article class="reel-window">
+              <div id="reel-2" class="reel-symbol" data-reel-symbol>GPU</div>
+              <p id="reel-2-caption" class="reel-caption">Demo requires a data center</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <button id="spin-button" class="primary-button" type="button">Burn 15 Tokens</button>
+          <button id="reset-button" class="secondary-button" type="button">Reset Wallet</button>
+          <button id="sound-button" class="secondary-button" type="button" aria-pressed="true">Sound On</button>
+        </div>
+
+        <p class="shortcut-hint">Press <kbd>Space</kbd> to spin if you prefer keyboard-first financial ruin.</p>
+      </section>
+
+      <aside class="panel history-panel" aria-labelledby="history-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Ledger</p>
+            <h2 id="history-title">Previous Spins</h2>
+          </div>
+        </div>
+
+        <ul id="history-list" class="history-list"></ul>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

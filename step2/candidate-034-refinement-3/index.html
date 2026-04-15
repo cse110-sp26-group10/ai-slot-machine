@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VC Funding Simulator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Synthetic Hype Entertainment</p>
+          <h1>VC Funding Simulator</h1>
+          <p class="tagline">
+            Burn tokens, align buzzwords, and pray the board mistakes variance for
+            product-market fit.
+          </p>
+        </div>
+        <aside class="hero-note">
+          <p class="panel-label">Board Memo</p>
+          <p>
+            Triple buzzwords mean Securing VC Funding. Miss the narrative and the
+            machine declares Model Collapse. Everything is fake except the emotional
+            damage.
+          </p>
+        </aside>
+      </section>
+
+      <section class="machine-panel" aria-label="AI satire slot machine">
+        <div class="dashboard">
+          <article class="metric-card metric-card-primary">
+            <span class="metric-label">Wallet</span>
+            <strong id="walletValue">120</strong>
+            <span class="metric-note">tokens still unburned</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Spin Cost</span>
+            <strong id="spinCostValue">15</strong>
+            <span class="metric-note">tokens per vision deck</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Mood</span>
+            <strong id="moodValue">Overfitted</strong>
+            <span class="metric-note">confidence remains synthetic</span>
+          </article>
+        </div>
+
+        <div class="layout">
+          <section class="play-area">
+            <div class="reels-shell">
+              <div class="machine-topline">
+                <span class="signal-pill">Series A-ish</span>
+                <span class="signal-copy">Investor optics currently unstable</span>
+              </div>
+
+              <div class="reels" aria-live="polite" aria-label="Slot machine reels">
+                <div class="reel-window">
+                  <div class="reel-track" id="reel0"></div>
+                </div>
+                <div class="reel-window">
+                  <div class="reel-track" id="reel1"></div>
+                </div>
+                <div class="reel-window">
+                  <div class="reel-track" id="reel2"></div>
+                </div>
+              </div>
+
+              <div class="payline" aria-hidden="true"></div>
+            </div>
+
+            <div class="controls">
+              <button id="spinButton" class="button button-primary" type="button">
+                Burn 15 Tokens
+              </button>
+              <button id="resetButton" class="button button-secondary" type="button">
+                Reset Wallet
+              </button>
+              <button id="soundButton" class="button button-secondary" type="button">
+                Sound On
+              </button>
+            </div>
+
+            <p class="shortcut-hint">Press <kbd>Space</kbd> to burn faster.</p>
+
+            <section class="status-panels">
+              <article class="message-card">
+                <span id="resultBadge" class="result-badge neutral">Market Open</span>
+                <h2 id="headline" class="headline">
+                  The machine is ready to reposition your losses as strategy.
+                </h2>
+                <p id="summary" class="summary">
+                  Pull the lever and let three AI buzzwords decide whether finance calls
+                  it vision or a crater.
+                </p>
+                <p id="spinFormula" class="spin-formula">
+                  Each spin burns 15 tokens. Any pair refunds 20. Triples unlock peak
+                  nonsense.
+                </p>
+              </article>
+
+              <article class="stats-card">
+                <div class="section-heading">
+                  <h2>Stats</h2>
+                </div>
+                <div class="stats-grid">
+                  <div class="stat-tile">
+                    <span class="metric-label">Spin Count</span>
+                    <strong id="spinCountValue">0</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span class="metric-label">Best Hit</span>
+                    <strong id="bestHitValue">None</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span class="metric-label">Win Streak</span>
+                    <strong id="winStreakValue">0</strong>
+                  </div>
+                  <div class="stat-tile">
+                    <span class="metric-label">Net Change</span>
+                    <strong id="netValue">0</strong>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </section>
+
+          <aside class="sidebar">
+            <section class="sidebar-card">
+              <div class="section-heading">
+                <h2>Payout Logic</h2>
+                <span class="chip">hype-adjusted</span>
+              </div>
+              <ul class="payout-list" id="payoutList"></ul>
+            </section>
+
+            <section class="sidebar-card">
+              <div class="section-heading">
+                <h2>Spin History</h2>
+                <span class="chip">latest pivots</span>
+              </div>
+              <ul id="historyList" class="history-list"></ul>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <template id="historyItemTemplate">
+      <li class="history-item">
+        <div class="history-topline">
+          <strong class="history-combo"></strong>
+          <span class="history-net"></span>
+        </div>
+        <p class="history-message"></p>
+      </li>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
