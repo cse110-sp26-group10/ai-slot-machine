@@ -20,20 +20,26 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 4 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Good satirical framing with AI token burn and hype jokes. Spin behavior and balance logic work correctly. Visual layout is clean and unbroken.
+* **Notes:** 
+* - No token reset 
+* - White line across the slots 
+* - Works when there are tokens 
+* - Added upgrades feature 
 
 ### Code Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Clean vanilla stack with standard browser APIs. Well-structured across HTML, CSS, and JavaScript with readable variable and function naming.
+* **Notes:** 
+* - Code looks good, readable 
+* - Logic checks out and functions for different functionalities are present
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

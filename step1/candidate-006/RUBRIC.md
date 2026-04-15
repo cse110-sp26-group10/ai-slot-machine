@@ -20,20 +20,25 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 6 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Solid AI satire through token economy and spending jokes. Spin and balance mechanics work correctly. Clean and functional UI layout.
+* **Notes:** 
+* - Works somewhat, the history will display numbers outside the rollable values
+* - Sometimes the rolled values will be cut off
+* 
 
 ### Code Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Standard browser APIs used throughout. Code is clean and readable with logical structure across all three files.
+* **Notes:** 
+* - Certain rolled values will add additional tokens - not displayed on the UI
+* - Otherwise, code looks fine, readable and uses standard APIs
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

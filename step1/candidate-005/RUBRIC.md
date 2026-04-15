@@ -20,20 +20,24 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 7 / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - AI satire present through token spend and win mechanics. Functional spin logic. Visual design is competent but on the simpler end compared to other runs.
+* **Notes:** 
+* - Works well. Stores some history (last 5 spin results) 
+* - Logic and tokens checks out
 
 ### Code Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 10 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Standard browser APIs only. Readable and reasonably modular code. Clean separation across the three files.
+* **Notes:** 
+* - Code looks clean and readable 
+* - Uses the standard APIs 
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu

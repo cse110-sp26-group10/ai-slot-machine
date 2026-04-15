@@ -20,12 +20,15 @@
 ## 📝 Qualitative Evaluation
 
 ### App Quality Scorecard
-* **Score:** 8 / 10 (Using Rubric)
+* **Score:** 7 / 10 (Using Rubric)
 * **Checklist:**
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Strong satirical tone with token economy jokes and AI hype parody. Spin and scoring logic work as expected. Layout is solid and well-rendered.
+* **Notes:** 
+* - Spinning and reset all work fine 
+* - Added an upgrades feature
+* - Added a premium slop feature that just takes 30 tokens? 
 
 ### Code Quality Scorecard
 * **Score:** 9 / 10 (Using Rubric)
@@ -33,7 +36,9 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Well-organized vanilla JavaScript with clear function separation. Uses standard DOM, localStorage, and timer APIs. Naming conventions are consistent and descriptive.
+* **Notes:** 
+* - Code is mostly readable 
+* - Uses standard APIs
 
 ---
-**Data Entry by:** Team Member
+**Data Entry by:** Aron Wu
