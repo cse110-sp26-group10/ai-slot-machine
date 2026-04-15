@@ -8,7 +8,7 @@ After running the Step 4 refinement, we selected the winner.
 | 2 | [034](candidate-034-refinement-1/) | 50,871 | 1,682 | Refinement improved the compact layout, event feed, and local session persistence while keeping the app visually tight and thematically consistent. It stayed strong in both satire and code cleanliness, but felt a little less complete than 031 overall. |
 
 ---
-## 50 run metrics
+## 50 Run Metrics
 https://docs.google.com/spreadsheets/d/1cmxEUhfjNtM8FvXq1ETLny9ivmZ7PKYbPorf3MLcqCI/edit
 
 ## 🔍 Scientific Findings / Team Observations
