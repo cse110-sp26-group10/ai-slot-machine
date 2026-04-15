@@ -24,7 +24,10 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Solid AI satire through token economy and spending jokes. Spin and balance mechanics work correctly. UI layout is clean and functional.
+* **Notes:** 
+* - Looks mostly well 
+* - The spin value text is not wrapped and is cut off
+* - Part of the spin history is lost as you spin more
 
 ### Code Quality Scorecard
 * **Score:** 9 / 10 (Using Rubric)
@@ -32,7 +35,9 @@
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Vanilla JavaScript using only standard browser APIs. Readable, well-organized code across all three files with descriptive naming.
+* **Notes:** 
+* - Code looks fine
+* - Uses standard APIs and is readable 
 
 ---
 **Data Entry by:** Aron Wu

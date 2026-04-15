@@ -24,15 +24,18 @@
     - [x] Satirical (Makes fun of AI)
     - [x] Functional (Spin/Token logic works)
     - [x] Visuals (Layout isn't broken)
-* **Notes:** - Strong AI satire with token burn, hype-cycle references, and monetization jokes. Spin and payout logic work correctly. Polished visual layout with no broken elements.
-
+* **Notes:** 
+* - Works well for the most part 
+* - Auto burn says it runs 5x, runs 6x 
 ### Code Quality Scorecard
 * **Score:** 9 / 10 (Using Rubric)
 * **Checklist:**
     - [x] No Hallucinations (Standard APIs used)
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
-* **Notes:** - Clean vanilla JavaScript with standard DOM, localStorage, and timer APIs. Well-structured with clear function names and consistent coding style.
+* **Notes:**
+* - Code looks clean
+* - Uses standard APIs
 
 ---
 **Data Entry by:** Aron Wu
