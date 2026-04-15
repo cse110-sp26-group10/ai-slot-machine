@@ -1,23 +1,29 @@
 # FINAL-REPORT.md
 
-## Final Candidate
-Based on our team's evaluation rubric (defined in `RUBRIC.md`), we have selected the following five candidates to proceed to the Final Refinement Round. 
+## FINAL Refinements
+After running the Step 4 refinement, we selected the winner. 
 
-| Rank | Candidate ID | Total Tokens | Lines of Code | Efficiency (LOC/1k) | Selection Rationale |
-|:---:|:---:|:---:|:---:|:---:|:---|
-| 1 | 031 | 127,210 | 587 | 0.0046 | Extremely polished, with animations and intuitive layout |
-| 2 | 034 | 151,850 | 709 | 0.0046 | App is done well, has a cheeky mood meter |
-| 3 | 009 | 283,000 | 730 | 0.0026 | Fits the theme very well, has a fun "where your tokens went" section |
+| Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
+|:---:|:---:|:---:|:---:|:---|
+| 1 | [034](candidate-034-refinement-1/) | 516,792 | 1,483 | The strongest overall candidate. The refinement aggregated code logic, particularly in the default state, redundant spin memory and audio handling. On top of this, the refinement also added a wallet meter to the UI. |
 
-## 🔍 Key Observations
+---
+## 50 Run Metrics
+https://docs.google.com/spreadsheets/d/1cmxEUhfjNtM8FvXq1ETLny9ivmZ7PKYbPorf3MLcqCI/edit
 
-Overall, the user interface is very polished . 
--little buggy 
--not the cleanest code 
--not the easiest to read 
--loc are changing 
--not reliable 
+## 🔍 Scientific Findings / Team Observations
 
-### What We Learned
+### 1. Under the Surface Issues
+At first glance, the code appears to work well. However, after multiple runs and testing, a couple of issues became apparent. In Candidate 31, long words would get truncated. Additionally, refinement-prompt-4 caused formatting problems in Candidate 31. It would replace emojis with text, failling to align and size properly. 
 
-In all of the candidates, a JavaScript file, a CSS file, and an HTML file was output, with minor differences. Codex would get the names wrong sometimes linking all the files together and it would result in the app not working. All the page layouts looked mostly the same, with a title/wallet section, then the slot machine, and then some auxilary information/features at the bottom of the page.
+### 2. Better Code Quality
+After the refinement rounds, the overall code quality improved, especially if the initial implementation is already strong. However, improvement does not mean code is the most readable or clean. 
+
+### 3. No Predictive Factors
+Codex has a lot of variability in its responses. It often produces different code and approaches to the same prompt. Metrics such as token count or lines of code do not reliably correlate to code quality, indicating some degree of unpredictability and unreliability.  
+
+## 🎓 What We Learned
+
+We learned that AI can generate usable applications, demonstrating its practical value in software development. However, it also has limitations that developers need to recognize. The resulting code is not always clean or easy to read, and common metrics do not reliably predict quality. AI is a powerful tool, but it requires refinement by developers to improve the final application. 
+
+
