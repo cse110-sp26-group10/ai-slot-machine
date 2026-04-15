@@ -36,4 +36,4 @@
 * **Notes:** - The overall code is still very similar to other candidates. Nothing looks terrible. It uses a Google font API, and the JS looks standard.
 
 ---
-**Data Entry by:** [Team Member Name]
+**Data Entry by:** Hudson Gehrke

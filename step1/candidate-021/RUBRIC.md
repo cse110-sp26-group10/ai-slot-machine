@@ -36,4 +36,4 @@
 * **Notes:** - includes animated reels, prompt-token spending and payouts, sarcastic AI-themed win/loss commentary, a reset flow, a sound toggle using the Web Audio API, and responsive styling
 
 ---
-**Data Entry by:** Bethany Miyamoto
+**Data Entry by:** Hudson Gehrke
