@@ -1,0 +1,39 @@
+# Field Notes: [Run ID]
+
+## 📊 Technical Metrics
+| Field | Value |
+| :--- | :--- |
+| **Run ID** | candidate-### |
+| **Timestamp** | |
+| **Model + Version** | OpenAI Codex (GPT-5.4) |
+| **Input Tokens** | |
+| **Output Tokens** | |
+| **Total Tokens** | |
+| **Wall-clock Time (s)** | |
+| **Tool-reported Time (s)**| |
+| **Files Produced** | (Count: ) [e.g., index.html, script.js] |
+| **Lines of Code** | |
+| **Runs in Browser?** | [ ] Yes / [ ] No / [ ] Partial |
+
+---
+
+## 📝 Qualitative Evaluation
+
+### App Quality Scorecard
+* **Score:** ___ / 10 (Using Rubric)
+* **Checklist:**
+    - [ ] Satirical (Makes fun of AI)
+    - [ ] Functional (Spin/Token logic works)
+    - [ ] Visuals (Layout isn't broken)
+* **Notes:** - 
+
+### Code Quality Scorecard
+* **Score:** ___ / 10 (Using Rubric)
+* **Checklist:**
+    - [ ] No Hallucinations (Standard APIs used)
+    - [ ] Readability (Semantic naming)
+    - [ ] Clean Structure (No spaghetti)
+* **Notes:** - 
+
+---
+**Data Entry by:** Aron Wu

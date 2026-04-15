@@ -1,26 +1,31 @@
-# STEP2-RESULTS.md
+# STEP3-RESULTS.md
 
-## Top 3 Refinements
-After running the Step 2 refinement round on our five Step 1 finalists (see `step1/STEP1-RESULTS.md`), we selected the following three refined candidates to advance. Selections are based on how much the refinement pass actually improved the app — polish, satire, and code cleanliness — rather than raw rubric score.
+## Top 2 Refinements
+After running the Step 3 refinement round on our three refined step 1 finalists (see `step2/STEP2-RESULTS.md`), we selected the following two refined candidates to advance. Selections are based on how much the refinement pass actually improved the app — polish, satire, and code cleanliness — rather than raw rubric score.
 
 | Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
 |:---:|:---:|:---:|:---:|:---|
-| 1 | [031](candidate-031-refinement-1/) | 909,200 | 1,108 | Already the strongest baseline; refinement added persistent state, a clean reset flow, and richer per-spin telemetry without breaking the polished UI. |
-| 2 | [034](candidate-034-refinement-1/) | 785,500 | 1,054 | Refinement tightened the layout into a compact results area and added a richer event feed plus local session persistence, while keeping the cheeky mood-meter personality intact. |
+| 1 | [031](candidate-031-refinement-1/) | 72,130 | 1,336 | Still the strongest overall candidate. The refinement added persistent state, a clean reset flow, and richer per-spin telemetry without hurting the already polished UI or readable structure. |
+| 2 | [034](candidate-034-refinement-1/) | 50,871 | 1,682 | Refinement improved the compact layout, event feed, and local session persistence while keeping the app visually tight and thematically consistent. It stayed strong in both satire and code cleanliness, but felt a little less complete than 031 overall. |
 
+---
 
 ## 🔍 Key Observations
 
-Running the same refinement prompt across five candidates made it much easier to see where Codex reliably improves a codebase and where it just shuffles things around. Candidates that started from a cleaner structure (031, 034) picked up meaningful upgrades — persistence, reset flows, better telemetry — in a single pass. Candidates with weaker baselines tended to get more code without getting proportionally better.
+Running the same refinement prompt across three strong candidates made it easier to see what Codex improves reliably and what it tends to leave mostly unchanged. The best results came from candidates that already had a clean structure and a polished interaction model. In this round, 031 and 034 clearly benefited the most from refinement, while the third candidate remained solid but did not improve as meaningfully.
 
-### 1. Refinement Helps Polished Baselines Most
+### 1. Refinement Rewards Strong Baselines
 
-The refinements that moved the needle were the ones applied to apps that were already coherent. 031 and 034 gained real features (persistent state, richer event history, tighter result panels). Weaker baselines like 028 got longer files but not a qualitatively better experience, which is why they didn't make this cut.
+The biggest gains came from apps that were already coherent before the refinement pass. Both 031 and 034 picked up meaningful improvements — better persistence, clearer reset behavior, stronger telemetry, and tighter UI organization. Their refinements felt additive rather than disruptive, which is what made them stand out.
 
-### 2. Satire Survives Refinement Better Than Expected
+### 2. Polish and Structure Matter More Than Extra Features
 
-Our worry going in was that a "clean this up" pass would sand off the AI-satire personality. It mostly didn't. 009 kept (and arguably sharpened) its hallucination-themed reel symbols, and 034 kept its mood meter. Codex seems to treat the themed strings as content to preserve rather than noise to normalize.
+The winning candidates did not just add more code. They improved clarity. 031 became easier to read and use while adding richer state handling, and 034 sharpened its layout and feedback without becoming messy. The weaker finalist still had personality, but it did not make the same leap in overall quality.
 
-### 3. Token Cost Is Not Predictive of Refinement Quality
+### 3. Satire Held Up Well in the Best Candidates
 
-031 spent the most tokens on refinement (~909K) and produced the best result, but 009 spent roughly half that (~465K) and still landed in the top three with the strongest thematic voice. Refinement token cost looks more correlated with how much Codex chose to rewrite than with how much the app actually improved.
+A useful outcome from this round was that refinement did not flatten the humor. Both 031 and 034 kept their AI-satire voice intact while becoming more polished. The joke still comes through in the labels, telemetry, and status text, but the apps now feel more intentional and complete rather than just funny.
+
+### 4. More Tokens Did Not Automatically Mean a Better App
+
+031 used the most refinement tokens and ended up as the best result, but the gap was not just about token cost. What mattered more was how effectively the refinement improved usability, coherence, and structure. The top two were the candidates where the extra generation effort translated into visible quality gains.

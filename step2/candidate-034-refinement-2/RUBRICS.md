@@ -1,14 +1,14 @@
-# Field Notes: candidate-034
+# Field Notes: candidate-044
 
 ## 📊 Technical Metrics
 | Field | Value |
 | :--- | :--- |
-| **Run ID** | candidate-034 |
+| **Run ID** | candidate-044 |
 | **Timestamp** | 4/14/26-8:21PM |
 | **Model + Version** | OpenAI Codex (GPT-5.4) |
-| **Input Tokens** | 770,000 |
-| **Output Tokens** | 15,500 |
-| **Total Tokens** | 785,500 |
+| **Input Tokens** | 48,130 |
+| **Output Tokens** | 2,741 |
+| **Total Tokens** | 50,871 |
 | **Wall-clock Time (s)** | 661 |
 | **Tool-reported Time (s)**| 658 |
 | **Files Produced** | (Count: 2) index.html, styles.css |

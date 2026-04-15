@@ -1,23 +1,20 @@
 # FINAL-REPORT.md
 
-## Final Candidate
-Based on our team's evaluation rubric (defined in `RUBRIC.md`), we have selected the following five candidates to proceed to the Final Refinement Round. 
+## FINAL Refinements
+After running the Step 4 refinement, we selected the winner. 
 
-| Rank | Candidate ID | Total Tokens | Lines of Code | Efficiency (LOC/1k) | Selection Rationale |
-|:---:|:---:|:---:|:---:|:---:|:---|
-| 1 | 031 | 127,210 | 587 | 0.0046 | Extremely polished, with animations and intuitive layout |
-| 2 | 034 | 151,850 | 709 | 0.0046 | App is done well, has a cheeky mood meter |
-| 3 | 009 | 283,000 | 730 | 0.0026 | Fits the theme very well, has a fun "where your tokens went" section |
+| Rank | Candidate ID | Total Tokens (refine) | Lines of Code | Selection Rationale |
+|:---:|:---:|:---:|:---:|:---|
+| 1 | [031](candidate-031-refinement-1/) | 72,130 | 1,336 | Still the strongest overall candidate. The refinement added persistent state, a clean reset flow, and richer per-spin telemetry without hurting the already polished UI or readable structure. |
+| 2 | [034](candidate-034-refinement-1/) | 50,871 | 1,682 | Refinement improved the compact layout, event feed, and local session persistence while keeping the app visually tight and thematically consistent. It stayed strong in both satire and code cleanliness, but felt a little less complete than 031 overall. |
+
+---
 
 ## 🔍 Key Observations
 
-Overall, the user interface is very polished . 
--little buggy 
--not the cleanest code 
--not the easiest to read 
--loc are changing 
--not reliable 
+
 
 ### What We Learned
 
-In all of the candidates, a JavaScript file, a CSS file, and an HTML file was output, with minor differences. Codex would get the names wrong sometimes linking all the files together and it would result in the app not working. All the page layouts looked mostly the same, with a title/wallet section, then the slot machine, and then some auxilary information/features at the bottom of the page.
+We learned that AI can generate usable applications. However, there are drawbacks that programmers need to acknowledge and understand. The code may not be the cleanest or easiest to read. There are no factors, such as tokens or LOC, that can predict code’s quality. 
+
