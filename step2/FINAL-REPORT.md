@@ -20,6 +20,6 @@ Codex has a lot of variability in its responses. It often produces different cod
 
 ## What We Learned
 
-We learned that AI can generate usable applications, demonstrating its practical value in software development. However, it also has limitations that developers need to recognize. The resulting code is not always clean or easy to read, and common metrics do not reliably predict quality. AI is a powerful tool, but it requires refinement by developers and programmers to improve the application. 
+We learned that AI can generate usable applications, demonstrating its practical value in software development. However, it also has limitations that developers need to recognize. The resulting code is not always clean or easy to read, and common metrics do not reliably predict quality. AI is a powerful tool, but it requires refinement by developers to improve the final application. 
 
 
