@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Token Tumbler 9000</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <div class="hero-topline">
+        <p class="eyebrow">Casino-grade inference extraction</p>
+        <p class="hero-chip">Satire mode: fully funded</p>
+      </div>
+      <div class="hero-copy">
+        <div>
+          <h1>Token Tumbler 9000</h1>
+          <p>Pay tokens for each spin, hope for a reimbursement from the algorithm, then watch finance recommend a fresh batch of premium AI nonsense.</p>
+        </div>
+        <div class="telemetry-strip" aria-label="Session telemetry">
+          <article>
+            <span class="stat-label">Refund Rate</span>
+            <strong id="win-rate">0%</strong>
+            <span class="stat-unit">historically dubious</span>
+          </article>
+          <article>
+            <span class="stat-label">Best Rebate</span>
+            <strong id="best-payout">0</strong>
+            <span class="stat-unit">tokens</span>
+          </article>
+        </div>
+      </div>
+      <div class="hero-stats" aria-label="Game stats">
+        <article>
+          <span class="stat-label">Budget Left</span>
+          <strong id="token-balance">1200</strong>
+          <span class="stat-unit">tokens</span>
+        </article>
+        <article>
+          <span class="stat-label">Spin Burn</span>
+          <strong id="spin-cost">120</strong>
+          <span class="stat-unit">tokens</span>
+        </article>
+        <article>
+          <span class="stat-label">Full Refunds</span>
+          <strong id="jackpot-count">0</strong>
+          <span class="stat-unit">miracles</span>
+        </article>
+      </div>
+    </section>
 
+    <section class="machine-panel" aria-labelledby="machine-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">100% human-coded slot hardware</p>
+          <h2 id="machine-title">Aligned enough for public demo</h2>
+        </div>
+        <button id="mute-toggle" class="secondary-button" type="button" aria-pressed="false">Sound: On</button>
+      </div>
+
+      <div class="reel-frame" role="img" aria-label="Three slot machine reels with AI satire results">
+        <div class="reel-column">
+          <span class="reel-label">Model</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-0">Prompt Leak</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <span class="reel-label">Pricing</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-1">GPU Throttle</div>
+          </div>
+        </div>
+        <div class="reel-column">
+          <span class="reel-label">Outcome</span>
+          <div class="reel-window">
+            <div class="reel-symbol" id="reel-2">Context Window</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="spin-button" class="primary-button" type="button">Burn 120 Tokens</button>
+        <button id="autospin-button" class="secondary-button" type="button">Auto-Burn x5</button>
+      </div>
+      <div class="control-meta" aria-label="Machine telemetry">
+        <span id="streak-badge" class="meta-pill">Heater: 0</span>
+        <span id="spins-badge" class="meta-pill">Spins: 0</span>
+        <span class="meta-pill meta-hint">Shortcuts: Space spin, A auto, M mute</span>
+      </div>
+
+      <section class="result-panel" aria-live="polite">
+        <p id="status-line" class="status-line">System ready. Please gamble responsibly with fictional compute credits.</p>
+        <div class="reward-strip">
+          <div>
+            <span class="reward-label">Last rebate</span>
+            <strong id="last-payout">0 tokens</strong>
+          </div>
+          <div>
+            <span class="reward-label">Finance recommends</span>
+            <strong id="spend-target">HyperScale Hallucination Cleanup</strong>
+          </div>
+          <div>
+            <span class="reward-label">Heat</span>
+            <strong id="heat-level">Mildly overfit</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="rules-panel" aria-labelledby="rules-title">
+        <div class="subsection-header">
+          <p class="eyebrow">Pricing disclosure</p>
+          <h3 id="rules-title">What this machine actually does</h3>
+        </div>
+        <div class="rules-grid">
+          <article class="rule-card">
+            <span class="reward-label">Every spin</span>
+            <strong>Burns 120 tokens</strong>
+            <p>The machine always charges first. Accountability is not part of the demo.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Two matching reels</span>
+            <strong>Rebates 240 tokens</strong>
+            <p>A modest refund for accidentally aligning the roadmap with reality.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Three matching reels</span>
+            <strong>Rebates 960 tokens</strong>
+            <p>A miracle-grade overpayment caused by fully synchronized buzzwords.</p>
+          </article>
+          <article class="rule-card">
+            <span class="reward-label">Contains Infinite Tokens</span>
+            <strong>Rebates 160 tokens</strong>
+            <p>A tiny consolation prize for seeing abundance theater without any abundance.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="ledger-panel">
+      <div class="ledger-header">
+        <div>
+          <p class="eyebrow">Expense report</p>
+          <h2>Where the budget allegedly went</h2>
+        </div>
+        <span class="ledger-total">Lifetime burned: <strong id="lifetime-spent">0</strong></span>
+      </div>
+      <div class="ledger-summary" aria-label="Performance summary">
+        <article class="summary-card">
+          <span class="reward-label">Refunded spins</span>
+          <strong id="winning-spins">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="reward-label">Longest heater</span>
+          <strong id="best-streak">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="reward-label">Latest net</span>
+          <strong id="latest-net">0</strong>
+        </article>
+      </div>
+      <div class="ledger-grid">
+        <section class="catalog-panel" aria-labelledby="catalog-title">
+          <div class="subsection-header">
+            <p class="eyebrow">Marketplace</p>
+            <h3 id="catalog-title">Approved nonsense purchases</h3>
+          </div>
+          <div class="expense-grid" id="expense-grid" aria-live="polite"></div>
+        </section>
+        <section class="history-panel" aria-labelledby="history-title">
+          <div class="subsection-header">
+            <p class="eyebrow">Live ledger</p>
+            <h3 id="history-title">Recent burns and reimbursements</h3>
+          </div>
+          <div class="history-list" id="history-list" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <template id="expense-template">
+    <article class="expense-card">
+      <div>
+        <p class="expense-name"></p>
+        <span class="expense-tag"></span>
+      </div>
+      <strong class="expense-cost"></strong>
+    </article>
+  </template>
+
+  <template id="history-template">
+    <article class="history-card">
+      <div class="history-copy">
+        <p class="history-headline"></p>
+        <p class="history-symbols"></p>
+      </div>
+      <div class="history-values">
+        <strong class="history-net"></strong>
+        <span class="history-outcome"></span>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
