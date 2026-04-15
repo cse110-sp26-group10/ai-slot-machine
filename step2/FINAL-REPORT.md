@@ -8,8 +8,6 @@ Based on our team's evaluation rubric (defined in `RUBRIC.md`), we have selected
 | 1 | 031 | 127,210 | 587 | 0.0046 | Extremely polished, with animations and intuitive layout |
 | 2 | 034 | 151,850 | 709 | 0.0046 | App is done well, has a cheeky mood meter |
 | 3 | 009 | 283,000 | 730 | 0.0026 | Fits the theme very well, has a fun "where your tokens went" section |
-| 4 | 028 | 116,200 | 564 | 0.0048 | A little less polished with boring theming, but has a fun last outcome section |
-| 5 | 029 | 201,400 | 938 | 0.0046 | Funny "LUCKY PROMPT" section which fits the theming |
 
 ## 🔍 Key Observations
 
