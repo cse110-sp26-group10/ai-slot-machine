@@ -37,8 +37,8 @@
     - [x] Readability (Semantic naming)
     - [x] Clean Structure (No spaghetti)
 * **Notes:** - 
-  - The JavaScript uses standard browser APIs like localStorage, DOM updates, keyboard handling, vibration, and speech synthesis. :contentReference[oaicite:0]{index=0}
-  - Function and variable names are readable, and the logic is separated into clear pieces like loading state, rendering, spin resolution, history updates, and reset behavior. :contentReference[oaicite:1]{index=1}
+  - The JavaScript uses standard browser APIs like localStorage, DOM updates, keyboard handling, vibration, and speech synthesis.
+  - Function and variable names are readable, and the logic is separated into clear pieces like loading state, rendering, spin resolution, history updates, and reset behavior.
   - The app feels cleaner and more focused than some earlier candidates, especially in how it presents status, history, and payout rules. 
 
 ---
